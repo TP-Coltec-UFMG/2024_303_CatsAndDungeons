@@ -22,7 +22,7 @@ ___
 ### Menu Principal
 <p align="center">
   <br>
-  <img src="/readmeAssets/menuAjustes.png">
+  <img src="/readmeAssets/menuIdle.gif">
 </p>
 <p align="justify">
 O menu principal apresenta quatro botões, cada um deles levando à uma área diferente:</p>
