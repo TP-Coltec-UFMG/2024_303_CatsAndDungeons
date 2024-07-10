@@ -120,7 +120,7 @@ ___
   É possível se mover em 2 direções, que variam dependendo se são plataformas **verticais** (esquerda e direita) ou **horizontais** (cima e baixo)
 
   <!-- Imagem dele espadando coisas -->
-  <img src="readmeAssets/AtaqueV4.png" style="float: left;" width="40%">
+  <img src="readmeAssets/AtaqueV4.png"  width="40%">
 
   <p style="align-text: right;">Com sua <inRainbows>espada</inRainbows> o gato pode desferir ataques grandes e circulares para derrotar inimigos no seu caminho. A espada é poderosa, porém, ela não pode ser usada a todo momento</p> 
 <p style="clear: both;"></p>
@@ -129,6 +129,8 @@ ___
   <!-- Imagem com enfoque nos pontos, (talvez com uma seta?) -->
   
 ### Elementos
+  <img src="readmeAssets/Elementos.png">
+
 #### Bons
   <!--  Flexbox com imagens com enfoque nas moedas e poder  -->
   - Moedas: aumenta pontuação geral e de moedas
@@ -146,6 +148,7 @@ ___
   - Continuar Jogo
   - Reiniciar jogo
   - Voltar ao menu
+
   #### Menu de Game over
   <!-- Imagem menu gameover -->
   O menu de GameOver mostra ao jogador seu desempenho no último jogo, informando a **pontuação** adquirida, a **distância** percorrida e as **moedas** coletadas. Além de contar com duas opções de botões, sendo eles:
@@ -153,10 +156,14 @@ ___
   - Voltar ao menu
 
 ## Recursos de acessibilidade
+
   ### Modo audio binaural
+  <img src="readmeAssets/ModoBinaural.png" width="50%">
+  
   - Áudio binaural para identificar onde estão elementos
   - Mapa somente na vertical
   - Menos elementos para não ter sobrecarga de sons
+
   ### Modo alto contraste
   - Cada tipo de elemento e o personagem, têm uma cor única destacada do fundo
   - Fundo tem menos destaque para destacar mais os elementos importantes

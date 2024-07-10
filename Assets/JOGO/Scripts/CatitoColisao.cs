@@ -89,7 +89,9 @@ public class CatitoColisao : MonoBehaviour
             }
             else if (podeTomarDano){
 
-                GerenciadorAudio.instance.TocarSFX("Tomar Dano");
+                if(GerenciadorAudio.instance!=null){
+                	GerenciadorAudio.instance.TocarSFX("Tomar Dano");
+                }
                 catitoAnim.SetBool("AtordoadoImortal", false);
                 timer = 0;
                 camera.Shake(tempoMonstro, 1f, 1f);
