@@ -1,5 +1,5 @@
 <head> 
-  <style scoped>
+  <style>
     #titulo{
       display: flex;
     }
