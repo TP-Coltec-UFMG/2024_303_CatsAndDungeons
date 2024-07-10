@@ -8,6 +8,7 @@ public class SceneLoaderGame : MonoBehaviour {
     [SerializeField] private Toggle toggleAB;
     private string cenaPraCarregar;
     private bool modoAcessivel;
+    [SerializeField] Animator transitorAnim;
 
     void Start() {
         modoAcessivel = intToBool(PlayerPrefs.GetInt("AudioBinaural"));
@@ -20,10 +21,16 @@ public class SceneLoaderGame : MonoBehaviour {
             cenaPraCarregar = "CenaPrincipal";
         }
 
-        LoadScene(cenaPraCarregar);
+        StartCoroutine(LoadScene(cenaPraCarregar));
     }
-    public void LoadScene(string cena) {
+    public IEnumerator LoadScene(string cena) {
+        
+        transitorAnim.SetTrigger("Comecar");
+
+        yield return new WaitForSeconds(1f);
+
         SceneManager.LoadScene(cena);
+
     }
 
     public void ToggleAudioBinaural(){
