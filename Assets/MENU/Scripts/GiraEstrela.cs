@@ -6,21 +6,9 @@ using UnityEngine.UI;
 public class GiraEstrela : MonoBehaviour
 {
     private RectTransform[] estrelaRECT = new RectTransform[5];
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     public void atualizaGiro(Slider slider){
         estrelaRECT = slider.GetComponentsInChildren<RectTransform>();
-
 
         for(int i = 0; i < estrelaRECT.Length; i++){
             if(estrelaRECT[i].CompareTag("Estrela")){

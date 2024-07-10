@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Kitty Runner.sln"
+    "dotnet.defaultSolution": "Kitty-Runner.sln"
 }

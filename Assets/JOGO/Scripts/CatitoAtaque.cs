@@ -1,0 +1,69 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.InputSystem;
+
+public class CatitoAtaque : MonoBehaviour
+{
+    // Start is called before the first frame update
+    
+    //private PlayerInput playerInput; 
+    private Animator catitoAnim;
+
+    [SerializeField] private Image espadaIcon;
+    private PlayerInput playerInput;
+
+    [SerializeField] private CameraTreme cameraTreme;
+
+    private GameObject colisorAtaque;
+
+    private bool atacando;
+    private bool podeAtacar = false;
+
+    private float ataqueCooldownTimer;
+    private const float tempoMaximoAtaque = 0.2f;
+
+    //private Collider2D catitoColider;
+    void Start()
+    {
+        playerInput = GetComponent<PlayerInput>();
+        catitoAnim = this.GetComponent<Animator>();
+        colisorAtaque = this.transform.GetChild(0).gameObject;
+        colisorAtaque.SetActive(false);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        ataqueCooldownTimer += Time.deltaTime;
+
+        if (ataqueCooldownTimer > 2){
+            espadaIcon.enabled = true;
+            podeAtacar = true;
+        }
+        else{
+            espadaIcon.enabled = false;
+            podeAtacar = false;
+        }
+
+        if (playerInput.actions["Ataque"].triggered && podeAtacar){
+            catitoAnim.SetTrigger("Atacar");
+            StartCoroutine(atacar());
+        }
+    }
+
+    IEnumerator atacar()
+    {
+        ataqueCooldownTimer = 0;
+        cameraTreme.Shake(0.1f, 5f, 5f);
+        yield return new WaitForSeconds(0.2f);
+        atacando = true;
+        colisorAtaque.SetActive(atacando); //ativa o collider de ataque
+
+        yield return new WaitForSeconds(tempoMaximoAtaque);
+        atacando = false;
+        colisorAtaque.SetActive(atacando); //desativa o collider de ataque
+
+    }
+}

@@ -10,6 +10,20 @@ TagManager:
   - Estrela
   - Musica
   - EfeitoSonoro
+  - Reflexo
+  - Gerador
+  - Plataforma
+  - Armadilha
+  - EspecialImortal
+  - EspecialPontos
+  - Spawner
+  - Inimigo
+  - Catito
+  - Ataque
+  - Horizontal
+  - ParedeChao
+  - Vertical
+  - Tocha
   layers:
   - Default
   - TransparentFX
@@ -18,8 +32,8 @@ TagManager:
   - Water
   - UI
   - CVDFilter
-  - 
-  - 
+  - Chao
+  - Objetos
   - 
   - 
   - 
@@ -44,6 +58,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Chao
+    uniqueID: 4082893351
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Resto
+    uniqueID: 1008081165
     locked: 0

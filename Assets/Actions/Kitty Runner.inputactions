@@ -48,7 +48,7 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -99,7 +99,7 @@
                 {
                     "name": "",
                     "id": "691456f4-660c-4d7f-87c7-e07d631246a4",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/ctrl",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

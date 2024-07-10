@@ -38,6 +38,5 @@ public class iniciaJogo : MonoBehaviour
 
             botoes[i].interactable = true; 
         }
-
     }
 }

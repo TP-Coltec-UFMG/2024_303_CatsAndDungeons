@@ -18,8 +18,5 @@ public class NewBehaviourScript : MonoBehaviour{
          if(Input.GetMouseButtonUp(0)){
             Cursor.SetCursor(texturaIdle, cursorHotspot, CursorMode.ForceSoftware); 
          }
-
     }
-
-   
 }
