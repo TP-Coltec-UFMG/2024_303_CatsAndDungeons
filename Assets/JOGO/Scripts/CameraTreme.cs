@@ -2,27 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class CameraTreme : MonoBehaviour
 {
     public GameObject ShakeFX;
     private float shakeFrequency, shakeAmplitude, shakeTimer;
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
+    private bool modoAcessivel;
+    void Start(){
+    	int cenaAtual = SceneManager.GetActiveScene().buildIndex;
 
-     void Update()
+        if (cenaAtual == 2) {
+		modoAcessivel = true;
+        } else {
+		modoAcessivel = false;
+        }
+    
+    }
+    
+    
+    void Update()
     {
-        if (shakeTimer > 0)
-        {
-            virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = shakeAmplitude;
-            virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = shakeFrequency;
+    	if(!modoAcessivel){
+	    	if (shakeTimer > 0)
+		{
+		    virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = shakeAmplitude;
+		    virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = shakeFrequency;
 
-            shakeTimer -= Time.deltaTime;
-        }
-        else
-        {
-            virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0f;
-            virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0f;
-        }
+		    shakeTimer -= Time.deltaTime;
+		}
+		else
+		{
+		    virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0f;
+		    virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0f;
+		}
+    	}
+        
     }
 
     public void Shake(float duracaoShake, float amplitude, float frequencia){

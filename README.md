@@ -1,18 +1,46 @@
 <head> 
-  <style>
+  <style scoped>
     #titulo{
       display: flex;
     }
+    inRainbows{
+      animation: trocaCores 5s infinite;
+    }
+    @keyframes trocaCores {
+    0% { color: red; }
+    25% { color: blue; }
+    50% { color: green; }
+    75% { color: yellow; }
+    100% { color: red; }
+}
   </style> 
 <head>
-  
-  <div ID="titulo">
-    <h1  align="center">Unnamed Game About Cats and Dungeons</h1>
-  </div>
-  
-  <p>Um gato mago guerreiro, que desde pequeno, escuta histórias de seu pai sobre como todos os gatos da família foram heróis, então sente-se obrigado a seguir os passos da família para honrar as tradições. Ele decide pegar seu amuleto, que porta uma espada, e encontra uma masmorra para explorar. No entanto, o que ele não imaginava era que seus medos de fracasso e inseguranças dificultariam seu processo. Sempre que comete uma pequena falha, sua mente o perturba, como se houvesse um monstro o acompanhando durante sua jornada.</p>
 
-  ## Menu
+  ## Índice
+
+-  [Menu](#Menu)
+    - [Menu Principal](#menu-principal)
+    - [Painel de Ajustes](#painel-de-ajustes)
+    - [Remapeamento de controles](#remapeamento-de-controles-1)
+-  [Jogo](#Jogo)
+    - [Jogabilidade](#jogabilidade)
+    - [Pontuação](#pontuação)
+    - [Elementos](#elementos)
+    - [Menus](#menus)
+-  [Recursos de Acessibilidade](#Modos-de-acessibilidade)
+    - [Modo Áudio Binaural](#modo-audio-binaural)
+    - [Modo Alto Contraste](#modo-alto-contraste)
+
+
+<div ID="titulo">
+    <h1  align="center">Unnamed Game About Cats and Dungeons</h1>
+</div>
+  
+<p style="text-align: justify">Um <inRainbows>gato mago guerreiro</inRainbows>, que desde pequeno, escuta histórias de seu pai sobre como todos os gatos da família foram heróis, então sente-se obrigado a seguir os passos da família para honrar as tradições. Ele decide pegar seu amuleto, que porta uma espada, e encontra uma masmorra para explorar. 
+
+No entanto, o que ele não imaginava era que seus medos de fracasso e inseguranças dificultariam seu processo. Sempre que comete uma pequena falha, sua mente o perturba, como se houvesse um monstro o acompanhando durante sua jornada.</p>
+
+## Menu
   <p align="center">
     <br>
     <img src="readmeAssets/MenuJogo.png">
@@ -21,7 +49,7 @@
 
   ___
 
-  ### Menu Principal
+### Menu Principal
   <p align="center">
     <br>
     <img src="readmeAssets/MenuPrincipal.png">
@@ -47,7 +75,7 @@
 
   ___
 
-  ### Painel de Ajustes
+### Painel de Ajustes
   <p align="center">
     <br>
     <img src="readmeAssets/MenuAjustesLeitorTela.png">
@@ -55,22 +83,22 @@
   <p align="justify">
   No painel de ajustes do jogo é possível encontrar diversas opções de configurações do jogo, incluindo: </p>
 
-  #### Volume
+#### Volume
   - Geral
   - Música
   - Efeitos sonoros
-  #### Acessibilidade
+#### Acessibilidade
   - **Leitura de Tela**: Acrecenta um leitor de tela ao jogo que lê qualquer conteúdo que contenha texto
   - **Modo deficiência visual**: modo de jogo em que é possível ser jogado mesmo sem o uso da visão
     
   - **Modo alto contraste**: modo de jogo com o intuito de auxiliar aqueles que têm baixa visão
   
   - **Modo Daltonismo**: conta com filtro para os 3 diferentes tipos de daltonismo: Deuteranopia, Tritanopia e Protanopia
-   #### Remapeamento de controles
+#### Remapeamento de controles
   Botão que leva a um menu para redefinir os controles usados no jogo
 
   ___
-  ### Remapeamento de controles
+### Remapeamento de controles
    <p align="center">
     <br>
       <img src="readmeAssets/MenuRemapearControles.png">
@@ -83,30 +111,36 @@
   </p>
 
 ___
-  ## Jogo
-  ### Jogabilidade
+## Jogo
+### Jogabilidade
   O gato corre infinitamente por plataformas irregulares **geradas automaticamente**, que contém diversos elementos
   <!-- Imagem dele andando -->
-  É possível se mover em 2 direções, que variam dependendo se são plataformas **verticais** (esquerda e direita) ou **horizontais** (cima e baixo)
-  <!-- Imagem dele espadando coisas -->
-  Com sua espada o gato pode desferir ataques grandes e circulares para derrotar inimigos no seu caminho. A espada é poderosa, porém, ela não pode ser usada a todo momento 
+  <img src="readmeAssets/AndandoDungeonV3.png"  width="50%" style="">
 
-  ### Pontuação
+  É possível se mover em 2 direções, que variam dependendo se são plataformas **verticais** (esquerda e direita) ou **horizontais** (cima e baixo)
+
+  <!-- Imagem dele espadando coisas -->
+  <img src="readmeAssets/AtaqueV4.png" style="float: left;" width="40%">
+
+  <p style="align-text: right;">Com sua <inRainbows>espada</inRainbows> o gato pode desferir ataques grandes e circulares para derrotar inimigos no seu caminho. A espada é poderosa, porém, ela não pode ser usada a todo momento</p> 
+<p style="clear: both;"></p>
+
+### Pontuação
   <!-- Imagem com enfoque nos pontos, (talvez com uma seta?) -->
   
-  ### Elementos
-  #### Bons
+### Elementos
+#### Bons
   <!--  Flexbox com imagens com enfoque nas moedas e poder  -->
   - Moedas: aumenta pontuação geral e de moedas
   - Poder de imortalidade: deixa personagem imortal por alguns segundos
   <!-- - Poder de pontuação: faz ganhar pontuação dobrada por alguns segundos -->
-  #### Ruins
+#### Ruins
   <!-- Flexbox com imagens com enfoque nos inimigos e armadilhas -->
   - **Armadilhas**: causam dano no personagem
   - **Inimigos**: causam dano no personagem, mas podem ser atacados
 
-  ### Menus
-  #### Menu de pause
+### Menus
+#### Menu de pause
   <!-- Imagem menu pause -->
   O menu de pause conta com três opções de botões diferentes, sendo eles:
   - Continuar Jogo
@@ -118,7 +152,7 @@ ___
   - Reiniciar jogo
   - Voltar ao menu
 
-  ## Modos de acessibilidade
+## Recursos de acessibilidade
   ### Modo audio binaural
   - Áudio binaural para identificar onde estão elementos
   - Mapa somente na vertical

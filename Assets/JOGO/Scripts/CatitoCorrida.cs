@@ -174,6 +174,13 @@ public class CatitoCorrida : MonoBehaviour
     }
 
     void tremeDash(){
-        cameraTreme.Shake(0.1f, 2f, 2f);
+    	int cenaAtual = SceneManager.GetActiveScene().buildIndex;
+    	print(cenaAtual);
+        if (cenaAtual == 2) {
+        //
+        } else {
+            cameraTreme.Shake(0.1f, 2f, 2f);
+        }
+        
     }
 }
