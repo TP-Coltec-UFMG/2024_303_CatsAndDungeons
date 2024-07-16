@@ -17,6 +17,7 @@ public class GeradorPlataforma : MonoBehaviour
     [SerializeField] GameObject plataformaInicial;
     GameObject plataformaSpawnada;
     private MudarContraste mudarContraste;
+    private quantidadePlataformas = 0;
     
 
     // Start is called before the first frame update
@@ -59,6 +60,12 @@ public class GeradorPlataforma : MonoBehaviour
         ultimoindice = indicePlatSelecionada;
 
         plataformasusadas++;
+        quantidadePlataformas++;
+
+        if (quantidadePlataformas == 10) {
+            quantidadePlataformas = 0;
+            
+        }
 
         if (plataformasusadas == plataformas.Count) {
             for(int i = 0; i < plataformas.Count; i++){

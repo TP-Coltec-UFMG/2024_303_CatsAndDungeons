@@ -7,7 +7,6 @@ public class SceneLoaderMenu : MonoBehaviour
 {
     public void LoadScene() {
         Time.timeScale = 1;
-        print("Tentei coisar");
         SceneManager.LoadScene("Menu", LoadSceneMode.Single);
     }
 }

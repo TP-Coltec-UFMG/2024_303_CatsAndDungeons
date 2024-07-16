@@ -142,8 +142,7 @@ public class CatitoCorrida : MonoBehaviour
                     break;
                     //faz nada
             }
-        }
-        
+        }   
     }
 
     void OnTriggerEnter2D(Collider2D corredor){
@@ -154,7 +153,6 @@ public class CatitoCorrida : MonoBehaviour
                 catitoAnim.SetInteger("Orientacao", 0);
                 //rbCatito.velocity = new Vector2(velocidadeCatito * Time.deltaTime, 0);
                 rbCatito.velocity = new Vector2(velocidadeCatito, 0);
-
                 break;
             case ("VerticalPraBaixo"):
                 orientacao = Display.vertical;
