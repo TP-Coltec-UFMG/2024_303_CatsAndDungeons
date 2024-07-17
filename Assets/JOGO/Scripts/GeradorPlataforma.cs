@@ -17,7 +17,7 @@ public class GeradorPlataforma : MonoBehaviour
     [SerializeField] GameObject plataformaInicial;
     GameObject plataformaSpawnada;
     private MudarContraste mudarContraste;
-    private quantidadePlataformas = 0;
+    private int quantidadePlataformas = 0;
     
 
     // Start is called before the first frame update
