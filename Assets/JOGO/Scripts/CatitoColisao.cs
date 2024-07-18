@@ -53,8 +53,7 @@ public class CatitoColisao : MonoBehaviour
             catitoAnim.SetBool("AtordoadoImortal", true);
         }else{
             catitoAnim.SetBool("AtordoadoImortal", false);
-        }
-        
+        } 
     }
 
     void OnTriggerEnter2D(Collider2D colider){
@@ -72,6 +71,10 @@ public class CatitoColisao : MonoBehaviour
 
             case ("Gerador"):
                 gerador.criaPlataforma();
+                break;
+            
+            case ("Transferidor"):
+                gerador.mudaCena();
                 break;
         }
     }
@@ -125,9 +128,7 @@ public class CatitoColisao : MonoBehaviour
             }
         }
         
-
-            //Empurra Catito para trás e ativa monstro
-        
+            //Empurra Catito para trás e ativa monstro 
     }
 
     public bool estaAtordoado(){
@@ -137,5 +138,4 @@ public class CatitoColisao : MonoBehaviour
             return false;
         }
     }
-
 }
