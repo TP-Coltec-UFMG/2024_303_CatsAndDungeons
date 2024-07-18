@@ -18,6 +18,7 @@ public class GeradorPlataforma : MonoBehaviour
     GameObject plataformaSpawnada;
     private MudarContraste mudarContraste;
     private int quantidadePlataformas = 0;
+    private SceneLoader loader;
     
 
     // Start is called before the first frame update
@@ -49,7 +50,7 @@ public class GeradorPlataforma : MonoBehaviour
             plataformaSpawnada = Instantiate(plataformas[indicePlatSelecionada].objetoPlataforma, new Vector3(0, tamanho), Quaternion.identity);//x, y
             plataformaSpawnada.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
             PlataformaTamanho = plataformaSpawnada.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.y;
-        } else{
+        } else {
             plataformaSpawnada = Instantiate(plataformas[indicePlatSelecionada].objetoPlataforma, new Vector3(tamanho, 0), Quaternion.identity);//x, y
             plataformaSpawnada.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
             PlataformaTamanho = plataformaSpawnada.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
@@ -62,9 +63,9 @@ public class GeradorPlataforma : MonoBehaviour
         plataformasusadas++;
         quantidadePlataformas++;
 
-        if (quantidadePlataformas == 10) {
+        if (quantidadePlataformas == 11) {
             quantidadePlataformas = 0;
-            
+            loader.LoadScene();
         }
 
         if (plataformasusadas == plataformas.Count) {
