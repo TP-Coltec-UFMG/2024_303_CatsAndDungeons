@@ -47,15 +47,14 @@ public class Menus : MonoBehaviour
     }
 
     public void DespausarJogo(){
-    	 monstroAnim.gameObject.SetActive(true);
+    	monstroAnim.gameObject.SetActive(true);
         menuGameOver.SetActive(false);
         menuPausa.SetActive(false);
         GerenciadorAudio.instance.ContinuarSons();
         Time.timeScale = 1;
     }
    
-    public void reiniciaJogo(){
-
+    public void ReiniciaJogo(){
 
         Time.timeScale = 1;
 

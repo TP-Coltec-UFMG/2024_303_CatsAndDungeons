@@ -20,6 +20,7 @@ public class GeradorPlataforma : MonoBehaviour
     private MudarContraste mudarContraste;
     private int quantidadePlataformas = 0;
     private SceneLoader loader;
+    private const int maximoPlataformasArea = 10;
 
     // Start is called before the first frame update
     void Start() {
@@ -42,8 +43,9 @@ public class GeradorPlataforma : MonoBehaviour
 
     public void criaPlataforma(){
 
+        //Checa se já fez plataformas demais
         quantidadePlataformas++;
-        if (quantidadePlataformas == 11) {
+        if (quantidadePlataformas >= maximoPlataformasArea) {
             quantidadePlataformas = 0;
             if(cenaAtual == "CenaAcessivel"){
                 //...
@@ -56,17 +58,17 @@ public class GeradorPlataforma : MonoBehaviour
                 indicePlatSelecionada = (int)UnityEngine.Random.Range(0, plataformas.Count);
             } while(plataformas[indicePlatSelecionada].foiSpawnada || indicePlatSelecionada == ultimoindice);
             
-            int PlataformaTamanho;
+            int plataformaTamanho;
             if(cenaAtual == "CenaAcessivel"){
                 plataformaSpawnada = Instantiate(plataformas[indicePlatSelecionada].objetoPlataforma, new Vector3(0, tamanho), Quaternion.identity);//x, y
                 plataformaSpawnada.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
-                PlataformaTamanho = plataformaSpawnada.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.y;
+                plataformaTamanho = plataformaSpawnada.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.y;
             } else {
                 plataformaSpawnada = Instantiate(plataformas[indicePlatSelecionada].objetoPlataforma, new Vector3(tamanho, 0), Quaternion.identity);//x, y
                 plataformaSpawnada.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
-                PlataformaTamanho = plataformaSpawnada.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
+                plataformaTamanho = plataformaSpawnada.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
             }
-            tamanho += PlataformaTamanho;
+            tamanho += plataformaTamanho;
 
             plataformas[indicePlatSelecionada].foiSpawnada = true;
             ultimoindice = indicePlatSelecionada;
@@ -80,7 +82,7 @@ public class GeradorPlataforma : MonoBehaviour
                 plataformasusadas = 0;
             }
 
-            ativaItens();
+            AtivaItens();
 
             //APLICAR ALTO CONTRASTE
             //mudarContraste.altoContraste(plataformaSpawnada.GetComponentsInChildren<SpriteRenderer>());
@@ -89,7 +91,7 @@ public class GeradorPlataforma : MonoBehaviour
         }
     }
 
-    void ativaItens(){
+    void AtivaItens(){
         //Horizontal
 
         //Pega os containers com os esquemas
