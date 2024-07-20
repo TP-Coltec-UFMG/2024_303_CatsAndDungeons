@@ -20,7 +20,7 @@ public class GeradorPlataforma : MonoBehaviour
     private MudarContraste mudarContraste;
     private int quantidadePlataformas = 0;
     private SceneLoader loader;
-    private const int maximoPlataformasArea = 10;
+    private const int maximoPlataformasArea = 11;
 
     // Start is called before the first frame update
     void Start() {
@@ -45,10 +45,10 @@ public class GeradorPlataforma : MonoBehaviour
 
         //Checa se já fez plataformas demais
         quantidadePlataformas++;
-        if (quantidadePlataformas >= maximoPlataformasArea) {
+        if (quantidadePlataformas == maximoPlataformasArea) {
             quantidadePlataformas = 0;
             if(cenaAtual == "CenaAcessivel"){
-                //...
+                Instantiate(plataformaFinal, new Vector3(0, tamanho), Quaternion.identity);//x, y
             } else {  
                 Instantiate(plataformaFinal, new Vector3(tamanho, 0), Quaternion.identity);//x, y
             }
