@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/CenaGelo.unity
     guid: 0b56bec768e8f894fb5a5e67696273df
   - enabled: 1
+    path: Assets/Scenes/CenaFogo.unity
+    guid: dbb9a5de219c9a549bad93147093f5c1
+  - enabled: 1
     path: Assets/Scenes/CenaAcessivel.unity
     guid: 523699aeb2bb0ae4bb9b8a2467bda344
   - enabled: 1

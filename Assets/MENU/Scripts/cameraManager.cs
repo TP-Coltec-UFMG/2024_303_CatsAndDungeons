@@ -9,7 +9,7 @@ public class cameraManager : MonoBehaviour
     private int daltonismo;
     private ColorBlindFilter filter;
 
-    [SerializeField] bool tirarURP;
+    [SerializeField] private bool tirarURP;
     void Start()
     {
         if (tirarURP)

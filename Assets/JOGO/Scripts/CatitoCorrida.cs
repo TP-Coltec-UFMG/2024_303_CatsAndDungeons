@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -35,8 +36,7 @@ public class CatitoCorrida : MonoBehaviour
 
         int cenaAtual = SceneManager.GetActiveScene().buildIndex;
 
-        print(cenaAtual);
-        if (cenaAtual == 2) {
+        if (Convert.ToBoolean(PlayerPrefs.GetInt("AudioBinaural"))) {
             quantidadePraAndar = 2;
         } else {
             quantidadePraAndar = 1;
@@ -172,9 +172,7 @@ public class CatitoCorrida : MonoBehaviour
     }
 
     void tremeDash(){
-    	int cenaAtual = SceneManager.GetActiveScene().buildIndex;
-    	print(cenaAtual);
-        if (cenaAtual == 2) {
+        if (Convert.ToBoolean(PlayerPrefs.GetInt("AudioBinaural"))) {
         //
         } else {
             cameraTreme.Shake(0.1f, 2f, 2f);

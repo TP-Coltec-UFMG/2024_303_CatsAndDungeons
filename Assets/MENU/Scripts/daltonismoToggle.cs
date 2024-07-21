@@ -6,29 +6,31 @@ using TMPro;
 using UnityEngine.Rendering;
 public class daltonismoToggle : MonoBehaviour
 {
-    // Start is called before the first frame update
 
     private Toggle toggleDalt;
     [SerializeField] private TMP_Dropdown dropdownDalt;
     private TMP_Text textDalt;
     [SerializeField] RenderPipelineAsset URP;
 
-    void Start()
+    void Awake()
     {
-        toggleDalt = this.GetComponent<Toggle>();
-        textDalt = dropdownDalt.GetComponentInChildren<TMP_Text>();
-    }
+        this.toggleDalt = this.GetComponent<Toggle>();
+        this.textDalt = dropdownDalt.GetComponentInChildren<TMP_Text>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (PlayerPrefs.GetInt("Daltonismo") == 1)
+        {
+            GraphicsSettings.defaultRenderPipeline = null;
+        }
+        else
+        {
+            GraphicsSettings.defaultRenderPipeline = URP;
+        }
     }
 
     public void aoTrocarValor()
     {
         
-        if (toggleDalt.isOn)
+        if (this.toggleDalt.isOn)
         {
             GraphicsSettings.defaultRenderPipeline = null;
             
