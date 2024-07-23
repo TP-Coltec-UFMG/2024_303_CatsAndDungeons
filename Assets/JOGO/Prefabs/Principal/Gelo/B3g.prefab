@@ -2495,6 +2495,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 0, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 2
+      m_TileSpriteIndex: 2
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 1, y: 0, z: 0}
     second:
       serializedVersion: 2
@@ -6561,7 +6571,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: f634ff71ef6fb3f47b7200951070920d, type: 2}
   - m_RefCount: 95
     m_Data: {fileID: 11400000, guid: 9d7fc63d8bd750a4dba7f957e62201f2, type: 2}
-  - m_RefCount: 108
+  - m_RefCount: 109
     m_Data: {fileID: 11400000, guid: fff1579ac5252fe4389a99af6b2e3592, type: 2}
   - m_RefCount: 114
     m_Data: {fileID: 11400000, guid: 0839724ca25e9d44ca944f4885deab59, type: 2}
@@ -6574,7 +6584,7 @@ Tilemap:
     m_Data: {fileID: 341408020, guid: d6430e80fecff7a4a8fc69c100887658, type: 3}
   - m_RefCount: 95
     m_Data: {fileID: -849120468, guid: d6430e80fecff7a4a8fc69c100887658, type: 3}
-  - m_RefCount: 108
+  - m_RefCount: 109
     m_Data: {fileID: 159465424, guid: d6430e80fecff7a4a8fc69c100887658, type: 3}
   - m_RefCount: 114
     m_Data: {fileID: 2000576603, guid: d6430e80fecff7a4a8fc69c100887658, type: 3}
@@ -6583,7 +6593,7 @@ Tilemap:
   - m_RefCount: 95
     m_Data: {fileID: -495427674, guid: d6430e80fecff7a4a8fc69c100887658, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 609
+  - m_RefCount: 610
     m_Data:
       e00: 1
       e01: 0
@@ -6602,7 +6612,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 609
+  - m_RefCount: 610
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -6897,7 +6907,7 @@ Transform:
   m_GameObject: {fileID: 2823216942506159786}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.5, y: -7.99, z: 0}
+  m_LocalPosition: {x: 24.5, y: 7.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14395,7 +14405,7 @@ Transform:
   m_GameObject: {fileID: 6436796800777611752}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 45.5, y: -8.97, z: 0}
+  m_LocalPosition: {x: 45.5, y: 7.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
