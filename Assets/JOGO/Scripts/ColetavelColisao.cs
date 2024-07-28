@@ -7,6 +7,7 @@ public class ColetavelColisao : MonoBehaviour
     private Pontuador pontuador;
     private Poderes poderes;
     private Animator coletavelAnimator;
+    private bool coletado = false;
 
     void Start(){
         this.pontuador = FindObjectOfType<Pontuador>();
@@ -20,25 +21,33 @@ public class ColetavelColisao : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collider){
         if (collider.CompareTag("Catito")){
-            switch(this.gameObject.tag){
-            	case ("Moeda"):
-                    pontuador.pontuaMoeda();
-                    
-                    StartCoroutine(Sumir());
-            	break;		
+            if(!coletado){
+                switch(this.gameObject.tag){
+                    case ("Moeda"):
+                        pontuador.pontuaMoeda();
+                        
+                        StartCoroutine(Sumir());
+                    break;		
 
-                case ("EspecialImortal"):
-                    poderes = collider.gameObject.GetComponent<Poderes>();
-                    StartCoroutine(poderes.Imortalidade());
-                    Destroy(this.gameObject);//Colocar animação correta
-                break;
+                    case ("EspecialImortal"):
+                        poderes = collider.gameObject.GetComponent<Poderes>();
+                        StartCoroutine(poderes.Imortalidade());
+                        StartCoroutine(Sumir());
+                    break;
+
+                    case ("EspecialPontos"):
+                        poderes = collider.gameObject.GetComponent<Poderes>();
+                        poderes.DoublePoints();
+                        Object.Destroy(this.gameObject);
+                    break;
+                }
             }
     	}
     }
 
     private IEnumerator Sumir() {
         coletavelAnimator.SetTrigger("Coletado");
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(3);
         Object.Destroy(this.gameObject);
         
     }

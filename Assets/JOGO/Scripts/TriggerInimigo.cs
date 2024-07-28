@@ -64,23 +64,25 @@ public class TriggerInimigo : MonoBehaviour
     }
 
     private IEnumerator extensaoAtaque(){
-        if (this.inimigoMorte.morto == false)
-        {
-            yield break;
-        }
+        // if (this.inimigoMorte.morto == false)
+        // {
+        //     yield break;
+        // }
         yield return new WaitForSeconds(0.2f);
 
-        if (this.inimigoMorte.morto == false)
-        {
-            yield break;
-        }
+        // if (this.inimigoMorte.morto == false)
+        // {
+        //     yield break;
+        // }
+        print("estou atacando");
         atacando = true; //ativa o collider de ataque
         yield return new WaitForSeconds(0.2f);
 
-        if (this.inimigoMorte.morto == false)
-        {
-            yield break;
-        }
+        // if (this.inimigoMorte.morto == false)
+        // {
+        //     yield break;
+        // }
+        print("nao estou atacando");
         atacando = false;
         //colisorAtaque.SetActive(atacando); //desativa o collider de ataque
     }

@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 using System;
 using Unity.Mathematics;
+using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class Pontuador : MonoBehaviour
 {
@@ -15,18 +17,20 @@ public class Pontuador : MonoBehaviour
     [SerializeField] private TMP_Text textoPontuacao;
     private int pontuacaoTotal, pontuacaoExterna;
     [SerializeField] private TMP_Text textoPontuacaoPainel;
-
     //Pontuação moedas
     [SerializeField] private TMP_Text textoMoedas;
-    private int valorMoeda = 5;
+    private int valorMoeda = 3;
     private int num = 1;
     private int pontuacaoMoedas;
     [SerializeField] private TMP_Text textoMoedasPainel;
-    
+    [SerializeField] private Image doublePointsIcon;
+    [SerializeField] private Animator pontosAnimator;
     // Start is called before the first frame update
     void Start(){
         pontuacaoMoedas = 0;
         textoMoedas.text = pontuacaoMoedas.ToString();
+        doublePointsIcon.enabled = false;
+
     }
 
     // Update is called once per frame
@@ -60,8 +64,15 @@ public class Pontuador : MonoBehaviour
     public IEnumerator duplicaValores() {
         valorMoeda = valorMoeda*2;
         num = 2;
+        doublePointsIcon.enabled = true;
+        pontosAnimator.SetBool("Dobrado", true);
         yield return new WaitForSeconds(10);
+
+        
         valorMoeda = valorMoeda/2;
         num = 1;
+        doublePointsIcon.enabled = false;
+        pontosAnimator.SetBool("Dobrado", false);
+
     }
 }
