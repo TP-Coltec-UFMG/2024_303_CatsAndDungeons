@@ -8,11 +8,10 @@ public class CatitoColisao : MonoBehaviour
     private Pontuador pontuador;
     private GeradorPlataforma gerador;
     private new CameraTreme camera;
-
+    [SerializeField] private CameraSegue cameraSegue;
     private Rigidbody2D rbCatito;
     private Display orientacao;
     private Animator catitoAnim;
-    [SerializeField] private GameObject painel;
     [SerializeField] float forcaImpulso;
     private float velocidadeCatito;
     public Vector2 posicaoInicial;
@@ -75,6 +74,9 @@ public class CatitoColisao : MonoBehaviour
             
             case ("Transferidor"):
                 gerador.mudaCena();
+                break;
+            case ("MudaCamMov"):
+                cameraSegue.podeMover = !cameraSegue.podeMover;
                 break;
         }
     }

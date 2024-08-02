@@ -25,6 +25,7 @@ TagManager:
   - Vertical
   - Tocha
   - Transferidor
+  - MudaCamMov
   layers:
   - Default
   - TransparentFX
