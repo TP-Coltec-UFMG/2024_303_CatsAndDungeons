@@ -12,13 +12,13 @@ public class GerenciadorAudio : MonoBehaviour
     [SerializeField] AudioSource tocadorSFX;
 
     private const float volumeMusicaReduzido = 0.005f;
-    private const float volumeMusicaPadrao = 0.1f;
+    //private const float volumeMusicaPadrao = 0.1f;
 
     public static GerenciadorAudio instance { get; private set; }
     //Para usar o Gerenciador de �udio, use GerenciadorAudio.instance.Funcao(); ou GerenciadorAudio.instance.atributo;
     
     
-    // Start is called before the first frame update
+    
     void Awake() //
     {
         if(instance == null) {
@@ -52,7 +52,7 @@ public class GerenciadorAudio : MonoBehaviour
             print("Som nao encontrado");
         } else {
             if (nome == "Tomar Dano" || nome == "Morte") {
-                tocadorMusica.volume = volumeMusicaReduzido;
+                tocadorMusica.volume = volumeMusicaReduzido * PlayerPrefs.GetFloat("volumeMusica") * PlayerPrefs.GetFloat("volumeGeral");
                 tocadorSFX.clip = somPraTocar.audio;
                 tocadorSFX.Play();
             } else {
@@ -67,8 +67,11 @@ public class GerenciadorAudio : MonoBehaviour
 
     void Update() {
         if (!tocadorSFX.isPlaying) {
-            tocadorMusica.volume = volumeMusicaPadrao;
+            tocadorMusica.volume = PlayerPrefs.GetFloat("volumeMusica") * PlayerPrefs.GetFloat("volumeGeral");
         }    
+        if (tocadorSFX.isPlaying) {
+            tocadorSFX.volume = PlayerPrefs.GetFloat("volumeEfeitoSonoro") * PlayerPrefs.GetFloat("volumeGeral");
+        }
     }
 
     public void PausarSons(){

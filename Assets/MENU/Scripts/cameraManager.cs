@@ -10,15 +10,20 @@ public class cameraManager : MonoBehaviour
     private ColorBlindFilter filter;
 
     [SerializeField] private bool tirarURP;
-    void Start()
+    void Awake()
     {
-        if (tirarURP)
-        {
-            GraphicsSettings.defaultRenderPipeline = null;
-        }
         daltonismo = PlayerPrefs.GetInt("Daltonismo");
         filter = GetComponent<ColorBlindFilter>();
 
+        if(daltonismo>0){
+            tirarURP = true;
+        }
+        if (tirarURP){
+            GraphicsSettings.defaultRenderPipeline = null;
+        }
+
+        
+        print("tentei trocar daltonismo");
 
         switch (daltonismo)
         {
