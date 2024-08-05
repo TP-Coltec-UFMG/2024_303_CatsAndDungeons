@@ -13,4 +13,9 @@ public class SceneLoader: MonoBehaviour
             SceneManager.LoadScene((index-3), LoadSceneMode.Single);
         }
     }
+    public static bool IsGameScene(){
+        
+        return SceneManager.GetActiveScene().name.StartsWith("Cena");
+        
+    }
 }

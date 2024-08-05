@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3020773036987777070}
   - component: {fileID: 7554102477093751570}
   - component: {fileID: 1046900423305370349}
-  - component: {fileID: 2468600358023376755}
   - component: {fileID: 8962968455549920449}
   - component: {fileID: 4446049384365798313}
   m_Layer: 0
@@ -111,18 +110,6 @@ MonoBehaviour:
   catitoCorrida: {fileID: 0}
   monstroAnim: {fileID: 0}
   monstro: {fileID: 0}
---- !u!114 &2468600358023376755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6151320169971058148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be78fe6c0b4f215448cd2c10d49f15ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8962968455549920449
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class GerenciadorAudio : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class GerenciadorAudio : MonoBehaviour
     [SerializeField] Som[] efeitosSonoros;
     [SerializeField] AudioSource tocadorMusica; 
     [SerializeField] AudioSource tocadorSFX;
-
+    private bool isFading = false;
     private const float volumeMusicaReduzido = 0.005f;
     //private const float volumeMusicaPadrao = 0.1f;
 
@@ -31,7 +32,7 @@ public class GerenciadorAudio : MonoBehaviour
     }
 
     void Start() {
-        TocarMusica("Trilha Dungeon Normal");   
+        
     }
 
     public void TocarMusica(string nome) {
@@ -41,7 +42,7 @@ public class GerenciadorAudio : MonoBehaviour
             print("Musica nao encontrada");
         } else {
             tocadorMusica.clip = musicaPraTocar.audio;
-            tocadorMusica.Play();
+            StartCoroutine(FadeIn(tocadorMusica, 3f));
         }
     }
 
@@ -66,13 +67,25 @@ public class GerenciadorAudio : MonoBehaviour
     }
 
     void Update() {
-        if (!tocadorSFX.isPlaying) {
+
+        if (!tocadorSFX.isPlaying && !isFading) {
             tocadorMusica.volume = PlayerPrefs.GetFloat("volumeMusica") * PlayerPrefs.GetFloat("volumeGeral");
         }    
         if (tocadorSFX.isPlaying) {
             tocadorSFX.volume = PlayerPrefs.GetFloat("volumeEfeitoSonoro") * PlayerPrefs.GetFloat("volumeGeral");
         }
+        //fazer código que verifica se a cena atual é de jogo ou não
+        //if (tocadorMusica.isPlaying==false && SceneManager.GetActiveScene().)
     }
+    private void OnEnable()
+    {
+        if(SceneLoader.IsGameScene()){
+            this.TocarMusica("Trilha Dungeon Loop");   
+        }  else{
+            this.PausarSons();
+        }
+    }
+    
 
     public void PausarSons(){
         tocadorMusica.Pause();
@@ -83,4 +96,37 @@ public class GerenciadorAudio : MonoBehaviour
         tocadorMusica.UnPause();
         tocadorSFX.UnPause();
     }
+
+
+    public IEnumerator FadeOut (AudioSource audioSource, float DuracaoFade) {
+        isFading = true;
+        float volumeInicial = audioSource.volume;
+
+        while (audioSource.volume > 0) {
+            audioSource.volume -= volumeInicial * Time.deltaTime / DuracaoFade;
+            yield return null;
+        }
+
+        audioSource.Pause();
+        audioSource.volume = volumeInicial;
+        isFading = false;
+    }
+    
+    public IEnumerator FadeIn(AudioSource audioSource, float DuracaoFade)
+    {
+        isFading = true;
+        float volumeInicial = 0.2f;
+
+        audioSource.volume = 0;
+        audioSource.Play();
+
+        while (audioSource.volume < 1.0f){
+            audioSource.volume += volumeInicial * Time.deltaTime / DuracaoFade;
+            yield return null;
+        }
+
+        audioSource.volume = 1f;
+        isFading = false;
+    }
+
 }
