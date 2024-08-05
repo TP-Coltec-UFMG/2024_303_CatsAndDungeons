@@ -12,6 +12,7 @@ public class TriggerInimigo : MonoBehaviour
     private Collider2D colliderTrigger;
 
     private InimigoMorte inimigoMorte;
+    private VerificaAtaqueInimigo inimigoStatus;
 
     private bool tocandoCatito;
     // Start is called before the first frame update
@@ -19,7 +20,10 @@ public class TriggerInimigo : MonoBehaviour
     {
         inimigoAnim = transform.parent.GetChild(0).gameObject.GetComponent<Animator>();
         inimigoMorte = this.transform.parent.GetChild(0).gameObject.GetComponent<InimigoMorte>();
+        inimigoStatus = this.transform.parent.GetChild(0).gameObject.GetComponent<VerificaAtaqueInimigo>();
     }
+    
+
 
     // Update is called once per frame
     void Update()
@@ -30,7 +34,8 @@ public class TriggerInimigo : MonoBehaviour
         }
     }
     private void OnTriggerEnter2D(Collider2D collider){
-        if (collider.CompareTag("Catito")){
+        if (collider.CompareTag("Catito") && !inimigoStatus.IsAlreadyAttacking()){
+            inimigoStatus.AttackStatus(true);
             tocandoCatito = true;
             catitoColisao = collider.gameObject.GetComponent<CatitoColisao>();
             switch (this.gameObject.name)
@@ -64,6 +69,7 @@ public class TriggerInimigo : MonoBehaviour
     }
 
     private IEnumerator extensaoAtaque(){
+        
         // if (this.inimigoMorte.morto == false)
         // {
         //     yield break;
@@ -74,7 +80,7 @@ public class TriggerInimigo : MonoBehaviour
         // {
         //     yield break;
         // }
-        print("estou atacando");
+        
         atacando = true; //ativa o collider de ataque
         yield return new WaitForSeconds(0.2f);
 
@@ -82,7 +88,7 @@ public class TriggerInimigo : MonoBehaviour
         // {
         //     yield break;
         // }
-        print("nao estou atacando");
+        inimigoStatus.AttackStatus(false);
         atacando = false;
         //colisorAtaque.SetActive(atacando); //desativa o collider de ataque
     }

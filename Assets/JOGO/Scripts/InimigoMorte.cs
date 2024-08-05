@@ -19,18 +19,35 @@ public class InimigoMorte : MonoBehaviour
 
         this.morto = true;
         inimigoCollider.enabled = false;
+
+        this.SortearSomMorte();
         inimigoAnim.SetTrigger("Morrer");
+
         StartCoroutine(MorteTime());
     }
 
     private IEnumerator MorteTime(){
-        
-        
         yield return new WaitForSeconds(1);
         for (int i = 1; i < inimigoPai.childCount; i++) { //pra cada filho do pai do inimigo, excluindo o proprio inimigo, desative o gameobject
             this.inimigoPai.GetChild(i).gameObject.SetActive(false);
         }
         Destroy(this.inimigoPai.gameObject);
+    }
 
+    private void SortearSomMorte(){
+        switch(Random.Range(0, 3)){//retorna um inteiro entre 0 e 1
+            case 0:
+                GerenciadorAudio.instance.TocarSFX("InimigoMorte");
+                break;
+            case 1:
+                GerenciadorAudio.instance.TocarSFX("InimigoMorteB");
+                break;
+            case 2:
+                GerenciadorAudio.instance.TocarSFX("InimigoMorteC");
+                break;
+            default:
+                print("Sortearam o som meio errado aqui");
+                break;
+        }
     }
 }

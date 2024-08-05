@@ -23,7 +23,6 @@ public class cameraManager : MonoBehaviour
         }
 
         
-        print("tentei trocar daltonismo");
 
         switch (daltonismo)
         {

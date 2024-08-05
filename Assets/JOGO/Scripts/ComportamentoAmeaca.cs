@@ -27,6 +27,7 @@ public class ComportamentoAmeaca : MonoBehaviour
                 if (this.CompareTag("Inimigo")){
                     inimigoMorte.Morrer();
                 } else {
+                    GerenciadorAudio.instance.TocarSFX("Explodir Armadilha");
                     ameacaAnimator.SetTrigger("Morrer");
                 }
             }else{

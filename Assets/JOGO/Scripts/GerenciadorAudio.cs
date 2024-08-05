@@ -116,11 +116,11 @@ public class GerenciadorAudio : MonoBehaviour
     {
         isFading = true;
         float volumeInicial = 0.2f;
-
+        float volumeTotal = PlayerPrefs.GetFloat("volumeMusica") * PlayerPrefs.GetFloat("volumeGeral");
         audioSource.volume = 0;
         audioSource.Play();
 
-        while (audioSource.volume < 1.0f){
+        while (audioSource.volume < volumeTotal){
             audioSource.volume += volumeInicial * Time.deltaTime / DuracaoFade;
             yield return null;
         }

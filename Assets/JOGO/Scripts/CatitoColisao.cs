@@ -86,7 +86,7 @@ public class CatitoColisao : MonoBehaviour
     }
 
     IEnumerator recebeDano(){
-        print(podeTomarDano);
+        
         if (!poderes.isImortal()){
             if (podeMorrer){
                 GerenciadorAudio.instance.TocarSFX("Morte");

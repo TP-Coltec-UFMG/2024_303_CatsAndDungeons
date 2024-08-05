@@ -57,6 +57,7 @@ public class CatitoAtaque : MonoBehaviour
     {
         ataqueCooldownTimer = 0;
         cameraTreme.Shake(0.1f, 5f, 5f);
+        this.SortearSomAtaque();
         yield return new WaitForSeconds(0.2f);
         atacando = true;
         colisorAtaque.SetActive(atacando); //ativa o collider de ataque
@@ -65,5 +66,21 @@ public class CatitoAtaque : MonoBehaviour
         atacando = false;
         colisorAtaque.SetActive(atacando); //desativa o collider de ataque
 
+    }
+
+    private void SortearSomAtaque(){
+        
+
+        switch(Random.Range(0, 2)){//retorna um inteiro entre 0 e 1
+            case 0:
+                GerenciadorAudio.instance.TocarSFX("Ataque");
+                break;
+            case 1:
+                GerenciadorAudio.instance.TocarSFX("AtaqueB");
+                break;
+            default:
+                print("Sortearam o som meio errado aqui");
+                break;
+        }
     }
 }

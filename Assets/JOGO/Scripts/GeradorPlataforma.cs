@@ -142,7 +142,7 @@ public class GeradorPlataforma : MonoBehaviour
                 indiceEsquema = (int)UnityEngine.Random.Range(0, quantEsquemasH); //Sorteia um esquema para colocar at� pegar um que j� n�o tenha sido ativado
             } while(esquemasH[indiceEsquema].activeInHierarchy);
 
-            print("indice spawnado" + indiceEsquema);
+            
             esquemasH[indiceEsquema].transform.position = area.transform.position;
             esquemasH[indiceEsquema].SetActive(true);
         }
@@ -156,7 +156,7 @@ public class GeradorPlataforma : MonoBehaviour
                 indiceEsquema = (int)UnityEngine.Random.Range(0, quantEsquemasV); //Sorteia um esquema para colocar at� pegar um que j� n�o tenha sido ativado
             } while (esquemasV[indiceEsquema].activeInHierarchy);
 
-            print("indice spawnado" + indiceEsquema);
+            
             esquemasV[indiceEsquema].transform.position = area.transform.position;
             esquemasV[indiceEsquema].SetActive(true);
         }

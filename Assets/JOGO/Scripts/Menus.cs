@@ -56,9 +56,10 @@ public class Menus : MonoBehaviour
    
     public void ReiniciaJogo(){
 
-        Time.timeScale = 1;
+        
 
         SceneManager.LoadScene("CenaPrincipal", LoadSceneMode.Single);
+        Time.timeScale = 1;
         /*
         menuGameOver.SetActive(false);
         menuPausa.SetActive(false);

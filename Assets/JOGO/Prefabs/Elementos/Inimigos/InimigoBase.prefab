@@ -412,6 +412,7 @@ GameObject:
   - component: {fileID: 1521933087634402801}
   - component: {fileID: 3720522009277633307}
   - component: {fileID: 486765371877516961}
+  - component: {fileID: 2992467485534034166}
   m_Layer: 0
   m_Name: InimigoOBJ
   m_TagString: Inimigo
@@ -619,7 +620,19 @@ MonoBehaviour:
   - {x: 0.56066895, y: -0.8350843, z: 0}
   m_ShapePathHash: -1661449227
   m_Mesh: {fileID: 0}
-  m_InstanceId: 64952
+  m_InstanceId: 57622
   m_LocalBounds:
     m_Center: {x: 0.0947628, y: -0.82358277, z: 0}
     m_Extent: {x: 0.46590614, y: 0.015246868, z: 0}
+--- !u!114 &2992467485534034166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7098132020098545753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e4748f042fa7e41a1fd33799758c1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

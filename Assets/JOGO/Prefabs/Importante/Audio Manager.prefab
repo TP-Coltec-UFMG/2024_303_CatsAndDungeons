@@ -46,7 +46,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -153,7 +153,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7446661447292451847}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 6.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -177,11 +177,23 @@ MonoBehaviour:
   musicas:
   - nome: Trilha Dungeon Normal
     audio: {fileID: 8300000, guid: c6a3a9b3d0838fb4b9c8670abe92bc8d, type: 3}
+  - nome: Trilha Dungeon Loop
+    audio: {fileID: 8300000, guid: abc9ebf429ad27e468fe0baceb8df3cb, type: 3}
   efeitosSonoros:
   - nome: Tomar Dano
     audio: {fileID: 8300000, guid: b39dbc93fe0ae624da6e137c3567bb8d, type: 3}
   - nome: Morte
     audio: {fileID: 8300000, guid: bfa80c1b620baf44383ab8196a46a991, type: 3}
+  - nome: Ataque
+    audio: {fileID: 8300000, guid: a42f4d4cc948bd043a177ff68ad6f383, type: 3}
+  - nome: AtaqueB
+    audio: {fileID: 8300000, guid: 6c95a4502b07984429d4c455a5b138b9, type: 3}
+  - nome: InimigoMorte
+    audio: {fileID: 8300000, guid: 631ebd679c654fb4f9060cc742c5f9e2, type: 3}
+  - nome: InimigoMorteB
+    audio: {fileID: 8300000, guid: 0a0994e99fe5d204ea9e8510ae6a5f5e, type: 3}
+  - nome: InimigoMorteC
+    audio: {fileID: 8300000, guid: f0f939d9701c8014eb2153a588058fda, type: 3}
   tocadorMusica: {fileID: 1250476193907473621}
   tocadorSFX: {fileID: 8976626235193991823}
 --- !u!1 &7799133962051266083

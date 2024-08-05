@@ -24,18 +24,22 @@ public class ColetavelColisao : MonoBehaviour
             if(!coletado){
                 switch(this.gameObject.tag){
                     case ("Moeda"):
+                        //GerenciadorAudio.instance.TocarSFX("");
                         pontuador.pontuaMoeda();
-                        
+                        GerenciadorAudio.instance.TocarSFX("Pegar Moeda");
+
                         StartCoroutine(Sumir());
                     break;		
 
                     case ("EspecialImortal"):
                         poderes = collider.gameObject.GetComponent<Poderes>();
+                        GerenciadorAudio.instance.TocarSFX("PowerUp Imortal");
                         StartCoroutine(poderes.Imortalidade());
                         StartCoroutine(Sumir());
                     break;
 
                     case ("EspecialPontos"):
+                        GerenciadorAudio.instance.TocarSFX("PowerUp DoublePoints");
                         poderes = collider.gameObject.GetComponent<Poderes>();
                         poderes.DoublePoints();
                         Object.Destroy(this.gameObject);
