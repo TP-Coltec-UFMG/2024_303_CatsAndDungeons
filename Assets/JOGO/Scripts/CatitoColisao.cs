@@ -70,6 +70,7 @@ public class CatitoColisao : MonoBehaviour
 
             case ("Gerador"):
                 gerador.criaPlataforma();
+                Destroy(colider.gameObject);
                 break;
             
             case ("Transferidor"):

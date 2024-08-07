@@ -13,7 +13,7 @@ public class Accessibility_EditorFunctions
 	static public string PluginFolder = "Assets/UAP";
 
 	static Texture2D AccessibilityIcon = null;
-	static string versionURL = "http://www.metalpopgames.com/assetstore/accessibility/UAP_Version.txt";
+	static string versionURL = "https://www.metalpopgames.com/assetstore/accessibility/UAP_Version.txt";
 
 	static bool VersionCheckRunning = false;
 #if UNITY_2018_3_OR_NEWER
@@ -117,7 +117,7 @@ public class Accessibility_EditorFunctions
 	[MenuItem("Tools/UAP Accessibility/Documentation")]
 	static public void OpenDocumentation()
 	{
-		Application.OpenURL("http://www.metalpopgames.com/assetstore/accessibility/doc");
+		Application.OpenURL("https://www.metalpopgames.com/assetstore/accessibility/doc");
 	}
 
 	//////////////////////////////////////////////////////////////////////////

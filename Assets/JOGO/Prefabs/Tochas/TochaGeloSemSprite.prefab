@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5208324266314097215, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5208324266314097215, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -212073945
+      objectReference: {fileID: 0}
     - target: {fileID: 5414812985189364974, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -55,6 +63,18 @@ PrefabInstance:
     - target: {fileID: 6467528535819622869, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
       propertyPath: m_Name
       value: TochaGeloSemSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767280912392991969, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767280912392991969, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[0]
+      value: -212073945
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767280912392991969, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[1]
+      value: 1008081165
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

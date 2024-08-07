@@ -146,7 +146,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.05, y: -0.44}
-  m_Size: {x: 0.84, y: 0.67}
+  m_Size: {x: 0.75, y: 0.48}
   m_Direction: 0
 --- !u!50 &2517437456447492310
 Rigidbody2D:
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56421f5f08f06f1408dec0acd62fac6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  painel: {fileID: 0}
+  cameraSegue: {fileID: 0}
   forcaImpulso: 10
   posicaoInicial: {x: 0, y: 0}
 --- !u!95 &5812116113648862935
@@ -275,6 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dee473d69972504aae37d3d863412c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imortalIcon: {fileID: 0}
 --- !u!114 &6698716696163624447
 MonoBehaviour:
   m_ObjectHideFlags: 0

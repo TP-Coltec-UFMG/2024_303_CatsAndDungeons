@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5463118308786178707}
-  - component: {fileID: 814422130696302900}
   - component: {fileID: 3020773036987777070}
   - component: {fileID: 7554102477093751570}
   - component: {fileID: 1046900423305370349}
@@ -30,32 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6151320169971058148}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &814422130696302900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6151320169971058148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e0a477173196924a8842b9e38f778bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textoDistanciaPainel: {fileID: 0}
-  textoPontuacao: {fileID: 0}
-  textoPontuacaoPainel: {fileID: 0}
-  textoMoedas: {fileID: 0}
-  textoMoedasPainel: {fileID: 0}
-  doublePointsIcon: {fileID: 0}
-  pontosAnimator: {fileID: 0}
 --- !u!114 &3020773036987777070
 MonoBehaviour:
   m_ObjectHideFlags: 0

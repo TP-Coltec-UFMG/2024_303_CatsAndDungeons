@@ -18855,49 +18855,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1544023820893161903}
     m_Modifications:
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.b
-      value: 0.69803923
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.g
-      value: 0.49736124
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.r
-      value: 0.24705881
-      objectReference: {fileID: 0}
     - target: {fileID: 7897265216043349353, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
       propertyPath: m_Name
       value: TochaGeloSemSprite (18)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8514794149413399110, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_SpriteTilingProperty.pivot.y
-      value: -0.083333336
-      objectReference: {fileID: 0}
-    - target: {fileID: 8514794149413399110, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.375
-      objectReference: {fileID: 0}
-    - target: {fileID: 8514794149413399110, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 8943675399066750595, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 6845051950456510372, guid: 5ad7a67cb2a48444493650b153ed6088, type: 3}
-    - target: {fileID: 8943675399066750595, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.b
-      value: 0.9339623
-      objectReference: {fileID: 0}
-    - target: {fileID: 8943675399066750595, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.g
-      value: 0.9339623
-      objectReference: {fileID: 0}
-    - target: {fileID: 8943675399066750595, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.r
-      value: 0.9339623
       objectReference: {fileID: 0}
     - target: {fileID: 9186421334099794002, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
       propertyPath: m_LocalPosition.x

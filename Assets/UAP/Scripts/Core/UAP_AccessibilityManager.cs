@@ -478,7 +478,7 @@ public class UAP_AccessibilityManager : MonoBehaviour
 		if (currentLanguageIndex < 0)
 		{
 			currentLanguageIndex = 1;
-			Debug.LogWarning("[Accessibility] Current language '" + m_CurrentLanguage + "' is not supported. Defaulting to language " + supportedLanguages[currentLanguageIndex]);
+			//Debug.LogWarning("[Accessibility] Current language '" + m_CurrentLanguage + "' is not supported. Defaulting to language " + supportedLanguages[currentLanguageIndex]);
 		}
 
 		// Load localization values for current language into dictionary

@@ -77,7 +77,7 @@ public class Menus : MonoBehaviour
 
     public void GameOver(){
     
-        pontuador.preenchePainel();
+        Pontuador.instance.preenchePainel();
         menuGameOver.SetActive(true);
         monstroAnim.gameObject.SetActive(false);
         Time.timeScale = 0;

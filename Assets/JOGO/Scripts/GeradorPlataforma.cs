@@ -20,7 +20,7 @@ public class GeradorPlataforma : MonoBehaviour
     private MudarContraste mudarContraste;
     private int quantidadePlataformas = 0;
     private SceneLoader loader;
-    private const int maximoPlataformasArea = 11;
+    private const int maximoPlataformasArea = 5;
 
     // Start is called before the first frame update
     void Start() {

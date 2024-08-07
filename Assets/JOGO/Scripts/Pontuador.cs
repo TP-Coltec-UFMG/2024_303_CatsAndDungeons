@@ -10,21 +10,39 @@ using Unity.VisualScripting;
 public class Pontuador : MonoBehaviour
 {
     //Distância
-    private float timer;
+    public float timer;
     [SerializeField] private TMP_Text textoDistanciaPainel;
 
     //Pontuação total
     [SerializeField] private TMP_Text textoPontuacao;
-    private int pontuacaoTotal, pontuacaoExterna;
+    public int pontuacaoTotal, pontuacaoExterna;
     [SerializeField] private TMP_Text textoPontuacaoPainel;
     //Pontuação moedas
     [SerializeField] private TMP_Text textoMoedas;
     private int valorMoeda = 3;
     private int num = 1;
-    private int pontuacaoMoedas;
+    public int pontuacaoMoedas;
     [SerializeField] private TMP_Text textoMoedasPainel;
     [SerializeField] private Image doublePointsIcon;
     [SerializeField] private Animator pontosAnimator;
+    
+    public static Pontuador instance { get; private set; }
+    //Para usar o Gerenciador de �udio, use Pontuador.instance.Funcao(); ou Pontuador.instance.atributo;
+    
+    
+    
+    void Awake() //
+    {
+        if(instance == null) {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        } else {
+            Destroy(this.gameObject);
+        }
+        
+    }
+    
+    
     // Start is called before the first frame update
     void Start(){
         pontuacaoMoedas = 0;
@@ -47,9 +65,9 @@ public class Pontuador : MonoBehaviour
     }
 
     public void preenchePainel(){
-        textoPontuacaoPainel.text = pontuacaoTotal.ToString();
+        textoPontuacaoPainel.text = pontuacaoTotal.ToString(); //resolvido
         textoDistanciaPainel.SetText("" + (int)Math.Ceiling(timer));
-        textoMoedasPainel.text = pontuacaoMoedas.ToString();
+        textoMoedasPainel.text = pontuacaoMoedas.ToString();//resolvido
     }
 
     public void zeraPontuacao(){
