@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2e4e6036a13cbf11e8c516a2e2901ad7
+guid: d419b89e3b78b450ba65abfad78ec970
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -132,7 +132,7 @@ ScriptedImporter:
       y: 4
       width: 26
       height: 38
-    spriteID: dddead3241a786e5682408e670550f69
+    spriteID: 17fa5a5fe530a08a4bbaf37c60fc3003
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -152,7 +152,7 @@ ScriptedImporter:
       y: 102
       width: 26
       height: 39
-    spriteID: 106f0b26998951f7f8579e3181245a70
+    spriteID: 0503508edfecde01f95a5ba20f420e40
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -172,7 +172,7 @@ ScriptedImporter:
       y: 4
       width: 26
       height: 41
-    spriteID: 31cb042e291224138bb6b59690153c44
+    spriteID: c8316a5c3e7b24bb9826a5c365608993
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -192,7 +192,7 @@ ScriptedImporter:
       y: 53
       width: 26
       height: 41
-    spriteID: 6add483a5f63ae38b9b8e5130afdb4f6
+    spriteID: a98475ccc5304026fbb65ad8be666f47
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -212,7 +212,7 @@ ScriptedImporter:
       y: 94
       width: 26
       height: 35
-    spriteID: 20657aaed38882830bedfedf238a86cc
+    spriteID: 773e3920a9e1fc04fad7196e8ae97912
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -232,7 +232,7 @@ ScriptedImporter:
       y: 50
       width: 26
       height: 36
-    spriteID: bf0efac133aeab06a80a123e4eda18a6
+    spriteID: 6b9428cb27ba1848882c099ec036f647
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -252,7 +252,7 @@ ScriptedImporter:
       y: 137
       width: 26
       height: 35
-    spriteID: 7703a490f18a61eb7aa6dd055d304573
+    spriteID: ecb5e0ad6c1ad5357aba0bc3ef8d8c33
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -272,7 +272,7 @@ ScriptedImporter:
       y: 180
       width: 26
       height: 35
-    spriteID: 0c445cf677f489461999bafda9366784
+    spriteID: 26520bb9344fd552c988f0c9b4cb579e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -292,7 +292,7 @@ ScriptedImporter:
       y: 149
       width: 26
       height: 39
-    spriteID: 01dc0dd0a28d59ba89fb5782f7364e3d
+    spriteID: 23f04f3f3e201c93fa22e69dd2a4dbd9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -312,7 +312,7 @@ ScriptedImporter:
       y: 196
       width: 26
       height: 39
-    spriteID: e5c87d856eb568d51b0ac88d48fd3882
+    spriteID: 73b436ec20e948ff780a75752e46cc02
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -338,7 +338,7 @@ ScriptedImporter:
         y: 13
         width: 26
         height: 38
-      spriteId: dddead3241a786e5682408e670550f69
+      spriteId: 17fa5a5fe530a08a4bbaf37c60fc3003
     - name: MonstroFogo_Frame_1
       frameIndex: 1
       additiveSortOrder: 0
@@ -347,7 +347,7 @@ ScriptedImporter:
         y: 13
         width: 26
         height: 39
-      spriteId: 106f0b26998951f7f8579e3181245a70
+      spriteId: 0503508edfecde01f95a5ba20f420e40
     - name: MonstroFogo_Frame_2
       frameIndex: 2
       additiveSortOrder: 0
@@ -356,7 +356,7 @@ ScriptedImporter:
         y: 13
         width: 26
         height: 41
-      spriteId: 31cb042e291224138bb6b59690153c44
+      spriteId: c8316a5c3e7b24bb9826a5c365608993
     - name: MonstroFogo_Frame_3
       frameIndex: 3
       additiveSortOrder: 0
@@ -365,7 +365,7 @@ ScriptedImporter:
         y: 13
         width: 26
         height: 41
-      spriteId: 6add483a5f63ae38b9b8e5130afdb4f6
+      spriteId: a98475ccc5304026fbb65ad8be666f47
     - name: MonstroFogo_Frame_4
       frameIndex: 4
       additiveSortOrder: 0
@@ -374,7 +374,7 @@ ScriptedImporter:
         y: 13
         width: 26
         height: 35
-      spriteId: 20657aaed38882830bedfedf238a86cc
+      spriteId: 773e3920a9e1fc04fad7196e8ae97912
     - name: MonstroFogo_Frame_5
       frameIndex: 5
       additiveSortOrder: 0
@@ -383,7 +383,7 @@ ScriptedImporter:
         y: 13
         width: 26
         height: 36
-      spriteId: bf0efac133aeab06a80a123e4eda18a6
+      spriteId: 6b9428cb27ba1848882c099ec036f647
     - name: MonstroFogo_Frame_6
       frameIndex: 6
       additiveSortOrder: 0
@@ -392,7 +392,7 @@ ScriptedImporter:
         y: 13
         width: 26
         height: 35
-      spriteId: 7703a490f18a61eb7aa6dd055d304573
+      spriteId: ecb5e0ad6c1ad5357aba0bc3ef8d8c33
     - name: MonstroFogo_Frame_7
       frameIndex: 7
       additiveSortOrder: 0
@@ -401,7 +401,7 @@ ScriptedImporter:
         y: 13
         width: 26
         height: 35
-      spriteId: 0c445cf677f489461999bafda9366784
+      spriteId: 26520bb9344fd552c988f0c9b4cb579e
     - name: MonstroFogo_Frame_8
       frameIndex: 8
       additiveSortOrder: 0
@@ -410,7 +410,7 @@ ScriptedImporter:
         y: 13
         width: 26
         height: 39
-      spriteId: 01dc0dd0a28d59ba89fb5782f7364e3d
+      spriteId: 23f04f3f3e201c93fa22e69dd2a4dbd9
     - name: MonstroFogo_Frame_9
       frameIndex: 9
       additiveSortOrder: 0
@@ -419,7 +419,7 @@ ScriptedImporter:
         y: 13
         width: 26
         height: 39
-      spriteId: e5c87d856eb568d51b0ac88d48fd3882
+      spriteId: 73b436ec20e948ff780a75752e46cc02
     linkedCells: []
     parentIndex: -1
   platformSettings: []
