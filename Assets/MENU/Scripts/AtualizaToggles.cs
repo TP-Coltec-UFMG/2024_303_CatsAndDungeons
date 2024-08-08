@@ -21,9 +21,9 @@ public class AtualizaToggles : MonoBehaviour
     void Start(){
 
         //print("Leitor de tela " + Convert.ToBoolean(PlayerPrefs.GetInt("LeitorTela")));
-        print("AudioBinaural " + Convert.ToBoolean(PlayerPrefs.GetInt("AudioBinaural")));
-        print("AltoContraste " + Convert.ToBoolean(PlayerPrefs.GetInt("AltoContraste")));
-        print("Daltonismo " + Convert.ToBoolean(PlayerPrefs.GetInt("Daltonismo")));
+        //print("AudioBinaural " + Convert.ToBoolean(PlayerPrefs.GetInt("AudioBinaural")));
+        //print("AltoContraste " + Convert.ToBoolean(PlayerPrefs.GetInt("AltoContraste")));
+        //print("Daltonismo " + Convert.ToBoolean(PlayerPrefs.GetInt("Daltonismo")));
 
         //leituraTelaToggle.isOn = Convert.ToBoolean(PlayerPrefs.GetInt("LeitorTela"));
         
@@ -33,8 +33,4 @@ public class AtualizaToggles : MonoBehaviour
         daltonismoToggle.isOn = Convert.ToBoolean(PlayerPrefs.GetInt("Daltonismo"));
     }
 
-    // Update is called once per frame
-    void Update(){
-        
-    }
 }

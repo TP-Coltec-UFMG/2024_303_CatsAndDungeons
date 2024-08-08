@@ -6,6 +6,7 @@ using System;
 using Unity.Mathematics;
 using UnityEngine.UI;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class Pontuador : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class Pontuador : MonoBehaviour
     private int num = 1;
     public int pontuacaoMoedas;
     [SerializeField] private TMP_Text textoMoedasPainel;
-    [SerializeField] private Image doublePointsIcon;
+    private Image doublePointsIcon;
     [SerializeField] private Animator pontosAnimator;
     
     public static Pontuador instance { get; private set; }
@@ -47,6 +48,7 @@ public class Pontuador : MonoBehaviour
     void Start(){
         pontuacaoMoedas = 0;
         textoMoedas.text = pontuacaoMoedas.ToString();
+        doublePointsIcon = GameObject.Find("DoublePointsIcon").GetComponent<Image>();
         doublePointsIcon.enabled = false;
 
     }
@@ -92,5 +94,26 @@ public class Pontuador : MonoBehaviour
         doublePointsIcon.enabled = false;
         pontosAnimator.SetBool("Dobrado", false);
 
+    }
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    // Função chamada sempre que uma cena é carregada
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("Cena trocada para: " + scene.name);
+        
+        if(SceneLoader.IsGameScene()){
+            doublePointsIcon = GameObject.Find("DoublePointsIcon").GetComponent<Image>();
+        }else{
+            Destroy(this.gameObject);
+        }
     }
 }

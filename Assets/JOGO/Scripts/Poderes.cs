@@ -34,7 +34,7 @@ public class Poderes : MonoBehaviour
     }
 
     public void DoublePoints(){
-        StartCoroutine(pontuador.duplicaValores());
+        StartCoroutine(Pontuador.instance.duplicaValores());
     }
 
     public bool isImortal(){

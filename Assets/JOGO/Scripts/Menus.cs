@@ -76,7 +76,8 @@ public class Menus : MonoBehaviour
     }
 
     public void GameOver(){
-    
+        FindFirstObjectByType<GameOverMenu>(FindObjectsInactive.Include).PreenchePainel();
+        //substituirrr por preenchePainel 
         Pontuador.instance.preenchePainel();
         menuGameOver.SetActive(true);
         monstroAnim.gameObject.SetActive(false);

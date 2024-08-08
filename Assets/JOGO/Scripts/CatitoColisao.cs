@@ -64,7 +64,7 @@ public class CatitoColisao : MonoBehaviour
                 break;
 
             case ("EspecialPontos"):
-                StartCoroutine(pontuador.duplicaValores());
+                StartCoroutine(Pontuador.instance.duplicaValores());
                 Destroy(colider.gameObject);
                 break;
 
