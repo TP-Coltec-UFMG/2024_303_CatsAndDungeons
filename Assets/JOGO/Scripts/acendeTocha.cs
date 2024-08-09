@@ -14,7 +14,9 @@ public class acendeTocha : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("MainCamera")) {
+            
             tochaAnim.SetTrigger("Acender");
+            
         }
     }
 }

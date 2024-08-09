@@ -66,11 +66,6 @@ public class Pontuador : MonoBehaviour
         pontuacaoExterna += valorMoeda;
     }
 
-    public void preenchePainel(){
-        textoPontuacaoPainel.text = pontuacaoTotal.ToString(); //resolvido
-        textoDistanciaPainel.SetText("" + (int)Math.Ceiling(timer));
-        textoMoedasPainel.text = pontuacaoMoedas.ToString();//resolvido
-    }
 
     public void zeraPontuacao(){
         timer = 0;

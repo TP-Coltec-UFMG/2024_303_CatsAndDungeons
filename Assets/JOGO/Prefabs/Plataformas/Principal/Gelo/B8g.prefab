@@ -14633,14 +14633,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2475839838388460647}
     m_Modifications:
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.b
-      value: 0.11372549
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.g
-      value: 0.41568628
-      objectReference: {fileID: 0}
     - target: {fileID: 7897265216043349353, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
       propertyPath: m_Name
       value: TochaGeloSemSprite (6)
@@ -14703,14 +14695,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2475839838388460647}
     m_Modifications:
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.b
-      value: 0.11372549
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.g
-      value: 0.41568628
-      objectReference: {fileID: 0}
     - target: {fileID: 7897265216043349353, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
       propertyPath: m_Name
       value: TochaGeloSemSprite (14)
@@ -14835,14 +14819,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2475839838388460647}
     m_Modifications:
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.b
-      value: 0.11372549
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.g
-      value: 0.41568628
-      objectReference: {fileID: 0}
     - target: {fileID: 7897265216043349353, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
       propertyPath: m_Name
       value: TochaGeloSemSprite (11)
@@ -14905,14 +14881,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2475839838388460647}
     m_Modifications:
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.b
-      value: 0.11372549
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.g
-      value: 0.41568628
-      objectReference: {fileID: 0}
     - target: {fileID: 7897265216043349353, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
       propertyPath: m_Name
       value: TochaGeloSemSprite (8)
@@ -15161,14 +15129,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2475839838388460647}
     m_Modifications:
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.b
-      value: 0.11372549
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.g
-      value: 0.41568628
-      objectReference: {fileID: 0}
     - target: {fileID: 7897265216043349353, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
       propertyPath: m_Name
       value: TochaGeloSemSprite (3)
@@ -15231,14 +15191,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2475839838388460647}
     m_Modifications:
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.b
-      value: 0.11372549
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.g
-      value: 0.41568628
-      objectReference: {fileID: 0}
     - target: {fileID: 7897265216043349353, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
       propertyPath: m_Name
       value: TochaGeloSemSprite (4)
@@ -15301,14 +15253,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2475839838388460647}
     m_Modifications:
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.b
-      value: 0.11372549
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.g
-      value: 0.41568628
-      objectReference: {fileID: 0}
     - target: {fileID: 7897265216043349353, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
       propertyPath: m_Name
       value: TochaGeloSemSprite (13)
@@ -15433,14 +15377,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2475839838388460647}
     m_Modifications:
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.b
-      value: 0.11372549
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.g
-      value: 0.41568628
-      objectReference: {fileID: 0}
     - target: {fileID: 7897265216043349353, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
       propertyPath: m_Name
       value: TochaGeloSemSprite (10)
@@ -15503,14 +15439,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2475839838388460647}
     m_Modifications:
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.b
-      value: 0.11372549
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.g
-      value: 0.41568628
-      objectReference: {fileID: 0}
     - target: {fileID: 7897265216043349353, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
       propertyPath: m_Name
       value: TochaGeloSemSprite (12)
@@ -15573,14 +15501,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2475839838388460647}
     m_Modifications:
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.b
-      value: 0.11372549
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.g
-      value: 0.41568628
-      objectReference: {fileID: 0}
     - target: {fileID: 7897265216043349353, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
       propertyPath: m_Name
       value: TochaGeloSemSprite (2)
@@ -15705,14 +15625,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2475839838388460647}
     m_Modifications:
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.b
-      value: 0.11372549
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.g
-      value: 0.41568628
-      objectReference: {fileID: 0}
     - target: {fileID: 7897265216043349353, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
       propertyPath: m_Name
       value: TochaGeloSemSprite (1)
@@ -15775,14 +15687,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2475839838388460647}
     m_Modifications:
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.b
-      value: 0.11372549
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.g
-      value: 0.41568628
-      objectReference: {fileID: 0}
     - target: {fileID: 7897265216043349353, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
       propertyPath: m_Name
       value: TochaGeloSemSprite (7)
@@ -16031,14 +15935,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2475839838388460647}
     m_Modifications:
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.b
-      value: 0.11372549
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.g
-      value: 0.41568628
-      objectReference: {fileID: 0}
     - target: {fileID: 7897265216043349353, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
       propertyPath: m_Name
       value: TochaGeloSemSprite (9)
@@ -16101,14 +15997,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2475839838388460647}
     m_Modifications:
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.b
-      value: 0.11372549
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.g
-      value: 0.41568628
-      objectReference: {fileID: 0}
     - target: {fileID: 7897265216043349353, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
       propertyPath: m_Name
       value: TochaGeloSemSprite
@@ -16171,22 +16059,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2475839838388460647}
     m_Modifications:
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.b
-      value: 0.11372549
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616654736285227101, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_Color.g
-      value: 0.41568628
-      objectReference: {fileID: 0}
-    - target: {fileID: 6960120403839082897, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6960120403839082897, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7897265216043349353, guid: dc9c69de678fd5f4bbf4db71add36b93, type: 3}
       propertyPath: m_Name
       value: TochaGeloSemSprite (5)

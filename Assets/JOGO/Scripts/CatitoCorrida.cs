@@ -153,6 +153,7 @@ public class CatitoCorrida : MonoBehaviour
                 catitoAnim.SetInteger("Orientacao", 0);
                 //rbCatito.velocity = new Vector2(velocidadeCatito * Time.deltaTime, 0);
                 rbCatito.velocity = new Vector2(velocidadeCatito, 0);
+                corredor.GetComponent<Collider2D>().enabled = false;
                 break;
             case ("VerticalPraBaixo"):
                 orientacao = Display.vertical;
@@ -160,6 +161,8 @@ public class CatitoCorrida : MonoBehaviour
                 catitoAnim.SetInteger("Orientacao", 1);
                 //rbCatito.velocity = new Vector2(0, -velocidadeCatito*Time.deltaTime);
                 rbCatito.velocity = new Vector2(0, -velocidadeCatito);
+                corredor.GetComponent<Collider2D>().enabled = false;
+
                 break;
             case ("VerticalPraCima"):
                 orientacao = Display.vertical;
@@ -167,6 +170,8 @@ public class CatitoCorrida : MonoBehaviour
                 catitoAnim.SetInteger("Orientacao", 2);
                 //rbCatito.velocity = new Vector2(0, velocidadeCatito*Time.deltaTime);
                 rbCatito.velocity = new Vector2(0, velocidadeCatito);
+                corredor.GetComponent<Collider2D>().enabled = false;
+
                 break;
         }
     }
@@ -175,6 +180,7 @@ public class CatitoCorrida : MonoBehaviour
         if (Convert.ToBoolean(PlayerPrefs.GetInt("AudioBinaural"))) {
         //
         } else {
+            print("era pra tremer ne");
             cameraTreme.Shake(0.1f, 2f, 2f);
         }
         

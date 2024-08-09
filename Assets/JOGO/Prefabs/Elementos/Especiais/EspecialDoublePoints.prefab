@@ -29,6 +29,14 @@ PrefabInstance:
       value: EspecialPontos
       objectReference: {fileID: 0}
     - target: {fileID: 3850320821593034437, guid: 9853b93d6c60f234fbfdee2a4fcb51e4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3850320821593034437, guid: 9853b93d6c60f234fbfdee2a4fcb51e4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3850320821593034437, guid: 9853b93d6c60f234fbfdee2a4fcb51e4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
