@@ -257,8 +257,8 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1008081165
+  m_SortingOrder: 1000
   m_TargetDisplay: 0
 --- !u!114 &8202065880045011817
 MonoBehaviour:
@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
+  m_ReferencePixelsPerUnit: 16
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
@@ -312,12 +312,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e0a477173196924a8842b9e38f778bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 0
   textoDistanciaPainel: {fileID: 0}
   textoPontuacao: {fileID: 467802338183668024}
+  pontuacaoTotal: 0
+  pontuacaoExterna: 0
   textoPontuacaoPainel: {fileID: 0}
   textoMoedas: {fileID: 9189046571300134183}
+  pontuacaoMoedas: 0
   textoMoedasPainel: {fileID: 0}
-  doublePointsIcon: {fileID: 0}
   pontosAnimator: {fileID: 1531904266221181025}
 --- !u!1 &6174099929014942646
 GameObject:

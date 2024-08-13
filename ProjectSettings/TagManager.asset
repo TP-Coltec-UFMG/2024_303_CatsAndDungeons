@@ -26,6 +26,7 @@ TagManager:
   - Tocha
   - Transferidor
   - MudaCamMov
+  - Cinematica
   layers:
   - Default
   - TransparentFX

@@ -9,18 +9,18 @@ public class GeradorPlataforma : MonoBehaviour
     private List<Plataforma> plataformas = new List<Plataforma>();
     [SerializeField] private List<GameObject> gameObPlats = new List<GameObject>();
     private List<GameObject> Areas = new List<GameObject>();
-    int plataformasusadas = 0;
-    int indicePlatSelecionada;
-    int ultimoindice = -1;
-    int tamanho;
+    private int plataformasusadas = 0;
+    private int indicePlatSelecionada;
+    private int ultimoindice = -1;
+    private int tamanho;
     private string cenaAtual;
     [SerializeField] GameObject plataformaInicial;
     [SerializeField] GameObject plataformaFinal;
-    GameObject plataformaSpawnada;
+    private GameObject plataformaSpawnada;
     private MudarContraste mudarContraste;
     private int quantidadePlataformas = 0;
     private SceneLoader loader;
-    private const int maximoPlataformasArea = 5;
+    [SerializeField] private int maximoPlataformasArea = 5;
     [SerializeField] int quantidadeParaSubtrairPlatInicial = 5;
 
     // Start is called before the first frame update

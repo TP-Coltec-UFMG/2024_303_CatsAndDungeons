@@ -78,6 +78,12 @@ public class CatitoColisao : MonoBehaviour
                 break;
             case ("MudaCamMov"):
                 cameraSegue.podeMover = !cameraSegue.podeMover;
+                if(cameraSegue.podeMover){
+                    CinematicoBrain.instance.DesligarCinematica();
+                }else{
+                    CinematicoBrain.instance.LigarCinematica();
+                }
+                
                 break;
         }
     }
