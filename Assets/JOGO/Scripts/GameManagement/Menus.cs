@@ -57,8 +57,11 @@ public class Menus : MonoBehaviour
     public void ReiniciaJogo(){
 
         
-
-        SceneManager.LoadScene("CenaPrincipal", LoadSceneMode.Single);
+        if(SceneLoader.IsAcessibleScene()){
+            SceneManager.LoadScene("CenaAcessivel", LoadSceneMode.Single);
+        }else{
+            SceneManager.LoadScene("CenaPrincipal", LoadSceneMode.Single);
+        }
         Time.timeScale = 1;
         /*
         menuGameOver.SetActive(false);

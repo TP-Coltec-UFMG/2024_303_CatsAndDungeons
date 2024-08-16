@@ -66,6 +66,19 @@ public class GerenciadorAudio : MonoBehaviour
 
     }
 
+    public void TocarSFX(AudioClip clipe) {
+        Som somPraTocar = new Som(clipe);
+
+        if (somPraTocar == null) {
+            print("Som nao encontrado");
+        } else {
+           tocadorSFX.PlayOneShot(somPraTocar.audio);
+        }
+
+        
+
+    }
+
     void Update() {
 
         if (!tocadorSFX.isPlaying && !isFading) {

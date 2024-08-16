@@ -6,15 +6,31 @@ using UnityEngine.UI;
 
 public class SceneLoaderGame : MonoBehaviour {
     [SerializeField] private Toggle toggleAB;
-    private string cenaPraCarregar;
+    private string cenaPraCarregar, cenaAtual;
     private bool modoAcessivel;
-    [SerializeField] Animator transitorAnim;
+    [SerializeField] private Animator transitorAnim;
 
     void Start() {
         modoAcessivel = intToBool(PlayerPrefs.GetInt("AudioBinaural"));
-        toggleAB.isOn = modoAcessivel;
+        cenaAtual = SceneManager.GetActiveScene().name;
+        if(toggleAB!=null){
+            toggleAB.isOn = modoAcessivel;
+        }
     }
-    public void iniciarJogo(){
+    public void IniciarJogo(){
+        PlayerPrefs.SetString("Modo de jogo", "Historia");
+        if (modoAcessivel){
+            cenaPraCarregar = "CenaAcessivel";
+        } else if(cenaAtual=="AnimacaoInicial"){
+            cenaPraCarregar = "CenaPrincipal";
+        }else{
+            cenaPraCarregar = "AnimacaoInicial";
+        }
+
+        StartCoroutine(LoadScene(cenaPraCarregar));
+    }
+    public void IniciarJogoInfinito(){
+        PlayerPrefs.SetString("Modo de jogo", "Infinito");    
         if (modoAcessivel){
             cenaPraCarregar = "CenaAcessivel";
         } else {
@@ -23,6 +39,7 @@ public class SceneLoaderGame : MonoBehaviour {
 
         StartCoroutine(LoadScene(cenaPraCarregar));
     }
+
     public IEnumerator LoadScene(string cena) {
         
         transitorAnim.SetTrigger("Comecar");

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class CinematicoBrain : MonoBehaviour
 {
@@ -26,5 +28,27 @@ public class CinematicoBrain : MonoBehaviour
 
     public void DesligarCinematica(){
         animatorCinematica.SetBool("cinema", false);
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    // Função chamada sempre que uma cena é carregada
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("Cena trocada para: " + scene.name);
+        
+        if(SceneLoader.IsGameScene()){
+            
+        }else{
+            Destroy(this.gameObject);
+        }
     }
 }

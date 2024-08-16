@@ -45,11 +45,15 @@ public class SceneLoader: MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        if (index != indexMaximoPadrao || index != indexMaximoAcessivel) {
+        if(index != indexMaximoAcessivel && index != indexMaximoPadrao){
             SceneManager.LoadScene((index+1), LoadSceneMode.Single);
-        } else {
-            SceneManager.LoadScene((index-3), LoadSceneMode.Single);
-        }
+        }else{
+            if(PlayerPrefs.GetString("Modo de jogo")=="Historia"){
+                SceneManager.LoadScene("AnimacaoFinal");
+            }else{
+                SceneManager.LoadScene((index-(NumeroCenasJogo/2)), LoadSceneMode.Single);
+            }
+        }        
     }
     public static bool IsGameScene(){
         return SceneManager.GetActiveScene().name.StartsWith("Cena");

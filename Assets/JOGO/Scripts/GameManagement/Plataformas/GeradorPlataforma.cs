@@ -160,7 +160,7 @@ public class GeradorPlataforma : MonoBehaviour
         }
     }
 
-    public void mudaCena(){
+    public void MudaCena(){
         StartCoroutine(loader.LoadScene());
     }
 }

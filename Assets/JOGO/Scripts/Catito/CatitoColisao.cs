@@ -74,7 +74,7 @@ public class CatitoColisao : MonoBehaviour
                 break;
             
             case ("Transferidor"):
-                gerador.mudaCena();
+                gerador.MudaCena();
                 break;
             case ("MudaCamMov"):
                 cameraSegue.podeMover = !cameraSegue.podeMover;
@@ -89,10 +89,10 @@ public class CatitoColisao : MonoBehaviour
     }
 
     public void simplifiedReceberDano(){
-        StartCoroutine(recebeDano());
+        StartCoroutine(RecebeDano());
     }
 
-    IEnumerator recebeDano(){
+    IEnumerator RecebeDano(){
         
         if (!poderes.isImortal()){
             if (podeMorrer){
