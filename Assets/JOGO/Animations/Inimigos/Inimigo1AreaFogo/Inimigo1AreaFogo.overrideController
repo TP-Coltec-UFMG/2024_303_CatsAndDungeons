@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Inimigo1AreaFogo
+  m_Controller: {fileID: 9100000, guid: c5ccb5d0a8b2d6b46999a25694c1eda9, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 8981a44ffe67fc04bbf0a9e8ee3b0fb4, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7faf80411ef59584b90b4005068f12da, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 455d6840ac86bdf4793435a06e6bcf7b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 11065d5851608f4448ea2b6140e057c1, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ae3330832e9c0fb42b9715c8f7296c9b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 11065d5851608f4448ea2b6140e057c1, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 3f697b9b867dd224782c23a85d6b96fe, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 11065d5851608f4448ea2b6140e057c1, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: df3585812a44f3347a84a53877e3cd5c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 11065d5851608f4448ea2b6140e057c1, type: 2}
