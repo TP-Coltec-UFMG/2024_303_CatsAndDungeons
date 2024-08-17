@@ -23,11 +23,11 @@ public class CinematicoBrain : MonoBehaviour
 
     // Update is called once per frame
     public void LigarCinematica(){
-        animatorCinematica.SetBool("cinema", true);
+        animatorCinematica.SetTrigger("cinemaAbrir");
     }
 
     public void DesligarCinematica(){
-        animatorCinematica.SetBool("cinema", false);
+        animatorCinematica.SetTrigger("cinemaFechar");
     }
 
     private void OnEnable()
@@ -43,9 +43,8 @@ public class CinematicoBrain : MonoBehaviour
     // Função chamada sempre que uma cena é carregada
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("Cena trocada para: " + scene.name);
         
-        if(SceneLoader.IsGameScene()){
+        if(SceneLoader.IsGameScene()||SceneLoader.IsAnimScene()){
             
         }else{
             Destroy(this.gameObject);

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Dialogo
 {
@@ -23,7 +24,7 @@ namespace Dialogo
             }
 
             //espera ate o jogador clicar na tela para pular o dialogo
-            yield return new WaitUntil(() =>Input.GetMouseButtonDown(0));
+            yield return new WaitUntil(() =>Input.GetMouseButtonDown(0)||Input.GetKeyDown(KeyCode.Space));
             DialogoConcluido = true;
         }
     }

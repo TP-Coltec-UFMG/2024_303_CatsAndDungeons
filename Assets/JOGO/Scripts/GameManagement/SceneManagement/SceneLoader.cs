@@ -6,14 +6,13 @@ using UnityEngine.SceneManagement;
 public class SceneLoader: MonoBehaviour
 {
     private int NumeroCenasJogo = 6;
-    private int indexMaximoPadrao;
-    private int indexMaximoAcessivel;
+    private const int indexMaximoPadrao = 4;
+    private const int indexMaximoAcessivel = 7;
     private const int tiposDeJogo = 2;
     [SerializeField] Animator transitorAnim;
     void Start()
     {
         //pega a quantidade de cenas de jogo que tem
-        Debug.Log("quantidade de cenas do jogo" + SceneManager.sceneCountInBuildSettings);
         
 
         // for(int i = 0; i< SceneManager.sceneCount; i++){
@@ -29,13 +28,12 @@ public class SceneLoader: MonoBehaviour
         //     }  
         // }
         
-        Debug.Log("quantidade de cenas de gameplay" + NumeroCenasJogo);
         //IndexMaximo é o último index de gameplay de cada tipo de cena, acessivel e padrao
         //Pega o index da cenaPrincipal, e soma com NumeroCenasJogo/2
         //divide-se pela quantidade de tipos de jogos
         //subtrai-se 1 para desconsiderar a propria cena
-        indexMaximoPadrao = SceneManager.GetSceneByName("CenaPrincipal").buildIndex + (NumeroCenasJogo/tiposDeJogo) - 1;
-        indexMaximoAcessivel = SceneManager.GetSceneByName("CenaAcessivel").buildIndex + (NumeroCenasJogo/tiposDeJogo) - 1;
+        //indexMaximoPadrao = SceneManager.GetSceneByName("CenaPrincipal").buildIndex + 2;
+        //indexMaximoAcessivel = SceneManager.GetSceneByName("CenaAcessivel").buildIndex + 2;
 
     }
      public IEnumerator LoadScene() {
@@ -45,9 +43,12 @@ public class SceneLoader: MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
+
         if(index != indexMaximoAcessivel && index != indexMaximoPadrao){
+            print("so passa pro proximo");
             SceneManager.LoadScene((index+1), LoadSceneMode.Single);
         }else{
+            print(PlayerPrefs.GetString("Modo de jogo"));
             if(PlayerPrefs.GetString("Modo de jogo")=="Historia"){
                 SceneManager.LoadScene("AnimacaoFinal");
             }else{
@@ -57,6 +58,9 @@ public class SceneLoader: MonoBehaviour
     }
     public static bool IsGameScene(){
         return SceneManager.GetActiveScene().name.StartsWith("Cena");
+    }
+    public static bool IsAnimScene(){
+        return SceneManager.GetActiveScene().name.StartsWith("Animacao");
     }
 
     public static bool IsGameScene(Scene scene){

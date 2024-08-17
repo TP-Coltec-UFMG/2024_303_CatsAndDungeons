@@ -77,14 +77,16 @@ public class Pontuador : MonoBehaviour
     }
 
     public IEnumerator duplicaValores() {
-        valorMoeda = valorMoeda*2;
+        valorMoeda *= 2;
         num = 2;
         doublePointsIcon.enabled = true;
         pontosAnimator.SetBool("Dobrado", true);
+
+
         yield return new WaitForSeconds(10);
 
         
-        valorMoeda = valorMoeda/2;
+        valorMoeda /= 2;
         num = 1;
         doublePointsIcon.enabled = false;
         pontosAnimator.SetBool("Dobrado", false);

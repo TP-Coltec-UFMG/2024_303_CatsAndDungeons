@@ -24,7 +24,8 @@ namespace Dialogo{
                 StartCoroutine(DesativarDialogo(transform.GetChild(i).gameObject.GetComponent<Animator>()));
                 yield return new WaitForSeconds(1.5f);
             }
-            yield return new WaitForSeconds(3f);
+            CinematicoBrain.instance.LigarCinematica();
+            yield return new WaitForSeconds(2f);
             StartCoroutine(FindFirstObjectByType<SceneLoaderGame>().LoadScene("CenaPrincipal"));
         }
 
@@ -40,7 +41,7 @@ namespace Dialogo{
         }
         private IEnumerator DesativarDialogo(Animator dialogoAnim){
             dialogoAnim.SetTrigger("Sumir");
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(1f);
             dialogoAnim.gameObject.SetActive(false);
         }
     }

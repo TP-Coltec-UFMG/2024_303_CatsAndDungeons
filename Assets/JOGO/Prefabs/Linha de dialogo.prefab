@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8654825839082620196}
   - component: {fileID: 5909584473472088961}
   - component: {fileID: 3963921661224190750}
+  - component: {fileID: 2712691505130670247}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -75,6 +76,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &2712691505130670247
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4239969975511590706}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7260058579551108157
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,7 +100,6 @@ GameObject:
   - component: {fileID: 3773421161837292143}
   - component: {fileID: 8574885266577754771}
   - component: {fileID: 4254729119108711179}
-  - component: {fileID: 2949305695872992251}
   - component: {fileID: 6952460515552491422}
   m_Layer: 5
   m_Name: Linha de dialogo
@@ -231,18 +243,6 @@ MonoBehaviour:
   tamanhoFonte: 24.5
   delayEntreLetras: 0.05
   audioLetra: {fileID: 8300000, guid: c92e3a4ddcdf2d242b46a70827dde39c, type: 3}
---- !u!225 &2949305695872992251
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7260058579551108157}
-  m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!95 &6952460515552491422
 Animator:
   serializedVersion: 5

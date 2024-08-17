@@ -62,6 +62,7 @@ public class Menus : MonoBehaviour
         }else{
             SceneManager.LoadScene("CenaPrincipal", LoadSceneMode.Single);
         }
+        Pontuador.instance.zeraPontuacao();
         Time.timeScale = 1;
         /*
         menuGameOver.SetActive(false);

@@ -76,6 +76,7 @@ public class CatitoColisao : MonoBehaviour
             case ("Transferidor"):
                 gerador.MudaCena();
                 break;
+                
             case ("MudaCamMov"):
                 cameraSegue.podeMover = !cameraSegue.podeMover;
                 if(cameraSegue.podeMover){

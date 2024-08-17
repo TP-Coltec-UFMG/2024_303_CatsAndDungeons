@@ -1,13 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using UnityEditor.ShaderGraph;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-
 public enum PosicoesH{cima = 1, meio = 0, baixo = -1}
 public enum PosicoesV{esquerda = 1, meio = 0, direita = -1}
 public enum Display{horizontal, vertical}
@@ -180,7 +174,6 @@ public class CatitoCorrida : MonoBehaviour
         if (Convert.ToBoolean(PlayerPrefs.GetInt("AudioBinaural"))) {
         //
         } else {
-            print("era pra tremer ne");
             cameraTreme.Shake(0.1f, 2f, 2f);
         }
         

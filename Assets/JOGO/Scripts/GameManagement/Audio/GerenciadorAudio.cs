@@ -31,10 +31,6 @@ public class GerenciadorAudio : MonoBehaviour
         
     }
 
-    void Start() {
-        
-    }
-
     public void TocarMusica(string nome) {
         Som musicaPraTocar = Array.Find(musicas, x => x.nome == nome);
 
@@ -90,14 +86,7 @@ public class GerenciadorAudio : MonoBehaviour
         //fazer código que verifica se a cena atual é de jogo ou não
         //if (tocadorMusica.isPlaying==false && SceneManager.GetActiveScene().)
     }
-    private void OnEnable()
-    {
-        if(SceneLoader.IsGameScene()){
-            this.TocarMusica("Trilha Dungeon Loop");   
-        }  else{
-            this.PausarSons();
-        }
-    }
+   
     
 
     public void PausarSons(){
@@ -142,4 +131,26 @@ public class GerenciadorAudio : MonoBehaviour
         isFading = false;
     }
 
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    // Função chamada sempre que uma cena é carregada
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if(SceneLoader.IsGameScene()){
+            this.TocarMusica("Trilha Dungeon Loop");   
+        }  else{
+            this.PausarSons();
+        }
+    }
 }
+
+
