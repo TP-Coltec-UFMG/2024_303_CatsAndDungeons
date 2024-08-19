@@ -20,9 +20,9 @@ public class SceneLoaderGame : MonoBehaviour {
     public void IniciarJogo(){
         PlayerPrefs.SetString("Modo de jogo", "Historia");
         if (modoAcessivel){
-            cenaPraCarregar = "CenaAcessivel";
+            cenaPraCarregar = "CenaAcessivelInicial";
         } else if(cenaAtual=="AnimacaoInicial"){
-            cenaPraCarregar = "CenaPrincipal";
+            cenaPraCarregar = "CenaPrincipalInicial";
         }else{
             cenaPraCarregar = "AnimacaoInicial";
         }
@@ -32,9 +32,9 @@ public class SceneLoaderGame : MonoBehaviour {
     public void IniciarJogoInfinito(){
         PlayerPrefs.SetString("Modo de jogo", "Infinito");    
         if (modoAcessivel){
-            cenaPraCarregar = "CenaAcessivel";
+            cenaPraCarregar = "CenaAcessivelInicial";
         } else {
-            cenaPraCarregar = "CenaPrincipal";
+            cenaPraCarregar = "CenaPrincipalInicial";
         }
 
         StartCoroutine(LoadScene(cenaPraCarregar));

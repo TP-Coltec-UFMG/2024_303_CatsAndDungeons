@@ -26,7 +26,7 @@ namespace Dialogo{
             }
             CinematicoBrain.instance.LigarCinematica();
             yield return new WaitForSeconds(2f);
-            StartCoroutine(FindFirstObjectByType<SceneLoaderGame>().LoadScene("CenaPrincipal"));
+            StartCoroutine(FindFirstObjectByType<SceneLoaderGame>().LoadScene("CenaPrincipalInicial"));
         }
 
         private void DesativarTodosDialogos(){

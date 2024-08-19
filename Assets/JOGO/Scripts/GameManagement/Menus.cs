@@ -58,9 +58,9 @@ public class Menus : MonoBehaviour
 
         
         if(SceneLoader.IsAcessibleScene()){
-            SceneManager.LoadScene("CenaAcessivel", LoadSceneMode.Single);
+            SceneManager.LoadScene("CenaAcessivelInicial", LoadSceneMode.Single);
         }else{
-            SceneManager.LoadScene("CenaPrincipal", LoadSceneMode.Single);
+            SceneManager.LoadScene("CenaPrincipalInicial", LoadSceneMode.Single);
         }
         Pontuador.instance.zeraPontuacao();
         Time.timeScale = 1;

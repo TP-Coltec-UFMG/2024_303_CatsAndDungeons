@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7375003589377849973}
   - component: {fileID: 21474567888894588}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Transferidor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -185,6 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GOcatito: {fileID: 0}
   catito: {fileID: 0}
+  podeMover: 0
 --- !u!1 &6519064766984412341
 GameObject:
   m_ObjectHideFlags: 0

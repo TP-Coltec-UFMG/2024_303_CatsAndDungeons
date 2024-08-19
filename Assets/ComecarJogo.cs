@@ -15,12 +15,6 @@ public class ComecarJogo : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private IEnumerator estadoInicialJogo(){
 
         Animator PressAnyKeyAnim = GameObject.Find("PressAnyKeyCanvas").GetComponent<Animator>();
@@ -29,6 +23,8 @@ public class ComecarJogo : MonoBehaviour
         Animator pontuadorAnim = GameObject.Find("Pontuador").GetComponent<Animator>();
 
         Animator UIAnim = GameObject.Find("--UI--").transform.GetChild(0).GetComponent<Animator>();
+
+        StatusJogo.statusAtual = Status.cinema;
 
         
         //desliga as coisas tipo deixar o gato em idle
@@ -44,7 +40,7 @@ public class ComecarJogo : MonoBehaviour
             yield return null;
         }
         //yield return new WaitUntil(() => Input.anyKeyDown);
-        
-
     }
+
+    
 }
