@@ -78,7 +78,7 @@ PrefabInstance:
       objectReference: {fileID: 22100000, guid: ab3262e890b454f4e811ff8d5bf0c675, type: 2}
     - target: {fileID: 6909817356958647617, guid: 4811221a6e56a9ac1bf4f9b51df098a8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.349998
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6909817356958647617, guid: 4811221a6e56a9ac1bf4f9b51df098a8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -159,7 +159,7 @@ MonoBehaviour:
   - {x: 0.96388245, y: -0.69370776, z: 0}
   m_ShapePathHash: -1063843719
   m_Mesh: {fileID: 0}
-  m_InstanceId: -770700
+  m_InstanceId: 138682
   m_LocalBounds:
     m_Center: {x: 0.0000019073486, y: -0.6604663, z: 0}
     m_Extent: {x: 0.96388054, y: 0.03324142, z: 0}
