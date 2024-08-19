@@ -424,6 +424,7 @@ GameObject:
   - component: {fileID: 8202065880045011817}
   - component: {fileID: 1049669157574084581}
   - component: {fileID: 8747778454718261862}
+  - component: {fileID: 2782425893088214772}
   m_Layer: 5
   m_Name: Pontuador
   m_TagString: Untagged
@@ -536,6 +537,18 @@ MonoBehaviour:
   pontuacaoMoedas: 0
   textoMoedasPainel: {fileID: 0}
   pontosAnimator: {fileID: 1531904266221181025}
+--- !u!225 &2782425893088214772
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5011642944889088944}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &6174099929014942646
 GameObject:
   m_ObjectHideFlags: 0

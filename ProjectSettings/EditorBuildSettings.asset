@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/AnimacaoInicial.unity
     guid: 33f1db392edd63b49ae4fafce7de696a
   - enabled: 1
-    path: Assets/Scenes/CenaPrincipal.unity
+    path: Assets/Scenes/CenaPrincipalInicial.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/CenaGelo.unity
@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CenaFogo.unity
     guid: dbb9a5de219c9a549bad93147093f5c1
+  - enabled: 1
+    path: Assets/Scenes/CenaPrincipal.unity
+    guid: f22504201bbc325b3a3d5f6e9f7ead70
   - enabled: 1
     path: Assets/Scenes/CenaAcessivel.unity
     guid: 523699aeb2bb0ae4bb9b8a2467bda344
