@@ -30,7 +30,7 @@ public class CatitoCorrida : MonoBehaviour
 
         int cenaAtual = SceneManager.GetActiveScene().buildIndex;
 
-        if (Convert.ToBoolean(PlayerPrefs.GetInt("AudioBinaural"))) {
+        if (SceneLoader.IsAcessibleScene()) {
             quantidadePraAndar = 2;
         } else {
             quantidadePraAndar = 1;
@@ -171,7 +171,7 @@ public class CatitoCorrida : MonoBehaviour
     }
 
     void tremeDash(){
-        if (Convert.ToBoolean(PlayerPrefs.GetInt("AudioBinaural"))) {
+        if (SceneLoader.IsAcessibleScene()) {
         //
         } else {
             cameraTreme.Shake(0.1f, 2f, 2f);

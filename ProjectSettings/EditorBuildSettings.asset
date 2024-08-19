@@ -24,6 +24,12 @@ EditorBuildSettings:
     path: Assets/Scenes/CenaAcessivel.unity
     guid: 523699aeb2bb0ae4bb9b8a2467bda344
   - enabled: 1
+    path: Assets/Scenes/CenaAcessivelGelo.unity
+    guid: fd10f57f7b5006a4e870d174701a9d7c
+  - enabled: 1
+    path: Assets/Scenes/CenaAcessivelFogo.unity
+    guid: e408bf6e82fb1854eba4e06055b1069e
+  - enabled: 1
     path: Assets/Scenes/AnimacaoFinal.unity
     guid: 0e623adc6feac774fbbb41f7d9858ffb
   m_configObjects: {}
