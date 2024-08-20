@@ -70,3 +70,6 @@ TagManager:
   - name: Resto
     uniqueID: 1008081165
     locked: 0
+  - name: NoLight
+    uniqueID: 444448473
+    locked: 0
