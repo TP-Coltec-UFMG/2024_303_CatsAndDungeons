@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 namespace Dialogo{
     public class CaixaDialogo : MonoBehaviour
     {
@@ -25,8 +25,8 @@ namespace Dialogo{
                 yield return new WaitForSeconds(1.5f);
             }
             CinematicoBrain.instance.LigarCinematica();
-            yield return new WaitForSeconds(2f);
-            StartCoroutine(FindFirstObjectByType<SceneLoaderGame>().LoadScene("CenaPrincipalInicial"));
+            yield return new WaitForSeconds(1.5f);
+            this.AcabarCena();
         }
 
         private void DesativarTodosDialogos(){
@@ -34,15 +34,23 @@ namespace Dialogo{
                 transform.GetChild(i).gameObject.SetActive(false);
             }
         }
-        private IEnumerator AtivarDialogo(){
-            
-            yield return new WaitForSeconds(1f);
-
-        }
+        
         private IEnumerator DesativarDialogo(Animator dialogoAnim){
             dialogoAnim.SetTrigger("Sumir");
             yield return new WaitForSeconds(1f);
             dialogoAnim.gameObject.SetActive(false);
         }
+        private void AcabarCena(){
+            if(SceneManager.GetActiveScene().name=="AnimacaoInicial"){
+                StartCoroutine(FindFirstObjectByType<SceneLoaderGame>().LoadScene("CenaPrincipalInicial"));
+            }else{
+                StartCoroutine(FindFirstObjectByType<SceneLoaderGame>().LoadScene("Menu"));
+            }
+        }
+        // private IEnumerator AtivarDialogo(){
+            
+        //     yield return new WaitForSeconds(1f);
+
+        // }
     }
 }

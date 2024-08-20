@@ -16,6 +16,7 @@ public class Pontuador : MonoBehaviour
 
     //Pontuação total
     [SerializeField] private TMP_Text textoPontuacao;
+    private TMP_Text textoPontuacaoRecorde;
     public int pontuacaoTotal, pontuacaoExterna;
     [SerializeField] private TMP_Text textoPontuacaoPainel;
     //Pontuação moedas
@@ -50,13 +51,22 @@ public class Pontuador : MonoBehaviour
         textoMoedas.text = pontuacaoMoedas.ToString();
         doublePointsIcon = GameObject.Find("DoublePointsIcon").GetComponent<Image>();
         doublePointsIcon.enabled = false;
-
+        textoPontuacaoRecorde = this.transform.GetChild(0).GetChild(1).GetComponent<TMP_Text>();
+        textoPontuacaoRecorde.text = PlayerPrefs.GetInt("RecordePontos").ToString();
     }
 
     // Update is called once per frame
     void Update() { 
-        timer += Time.deltaTime*num;
+        if(StatusJogo.statusAtual == Status.gameplay){
+            timer += Time.deltaTime*num;
+        }
+        
+        
         pontuacaoTotal = (int)Math.Ceiling(timer) + pontuacaoExterna;
+        if(pontuacaoTotal > PlayerPrefs.GetInt("RecordePontos")){
+            PlayerPrefs.SetInt("RecordePontos", pontuacaoTotal);
+            textoPontuacaoRecorde.text = pontuacaoTotal.ToString();
+        }
         textoPontuacao.text = pontuacaoTotal.ToString();
     }
 

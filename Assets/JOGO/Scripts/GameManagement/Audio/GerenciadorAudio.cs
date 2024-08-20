@@ -117,7 +117,7 @@ public class GerenciadorAudio : MonoBehaviour
     public IEnumerator FadeIn(AudioSource audioSource, float DuracaoFade)
     {
         isFading = true;
-        float volumeInicial = 0.2f;
+        float volumeInicial = PlayerPrefs.GetFloat("volumeMusica") * PlayerPrefs.GetFloat("volumeGeral")/10;
         float volumeTotal = PlayerPrefs.GetFloat("volumeMusica") * PlayerPrefs.GetFloat("volumeGeral");
         audioSource.volume = 0;
         audioSource.Play();
