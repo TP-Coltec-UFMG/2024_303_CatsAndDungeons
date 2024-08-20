@@ -57,34 +57,29 @@ public class CatitoColisao : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D colider){
         switch (colider.tag){
-            
-            case ("EspecialImortal"):
-                StartCoroutine(poderes.Imortalidade());
-                Destroy(colider.gameObject);
-                break;
-
-            case ("EspecialPontos"):
-                StartCoroutine(Pontuador.instance.duplicaValores());
-                Destroy(colider.gameObject);
-                break;
-
-            case ("Gerador"):
+            case "Gerador":
                 gerador.criaPlataforma();
                 Destroy(colider.gameObject);
                 break;
             
-            case ("Transferidor"):
+            case "Transferidor":
                 gerador.MudaCena();
+                Destroy(colider.gameObject);
                 break;
                 
-            case ("MudaCamMov"):
+            case "MudaCamMov":
                 cameraSegue.podeMover = !cameraSegue.podeMover;
-                if(cameraSegue.podeMover){
-                    CinematicoBrain.instance.DesligarCinematica();
+                if(CinematicoBrain.instance!=null){
+                    if(cameraSegue.podeMover){
+                        CinematicoBrain.instance.DesligarCinematica();
+                    }else{
+                        CinematicoBrain.instance.LigarCinematica();
+                    }
                 }else{
-                    CinematicoBrain.instance.LigarCinematica();
+                    print("Cinematico nao encontrado");
                 }
                 
+                Destroy(colider.gameObject);
                 break;
         }
     }

@@ -57,6 +57,9 @@ public class GeradorPlataforma : MonoBehaviour
 
             do{
                 indicePlatSelecionada = (int)UnityEngine.Random.Range(0, plataformas.Count);
+                if(plataformas.Count == 1){
+                    break;
+                }
             }while(plataformas[indicePlatSelecionada].foiSpawnada || indicePlatSelecionada == ultimoindice);
             
             int plataformaTamanho;
@@ -92,12 +95,13 @@ public class GeradorPlataforma : MonoBehaviour
     void AtivaItens(){
         //Horizontal
 
-        //Pega os containers com os esquemas
-        Transform caixaDeEsquemasH = plataformaSpawnada.transform.GetChild(2).GetChild(0).transform;
-        Transform caixaDeEsquemasV = plataformaSpawnada.transform.GetChild(2).GetChild(1).transform;
         //Pega os containers com as areas
         Transform containerAreasH = plataformaSpawnada.transform.GetChild(1).GetChild(0).transform;
         Transform containerAreasV = plataformaSpawnada.transform.GetChild(1).GetChild(1).transform;
+        //Pega os containers com os esquemas
+        Transform caixaDeEsquemasH = plataformaSpawnada.transform.GetChild(2).GetChild(0).transform;
+        Transform caixaDeEsquemasV = plataformaSpawnada.transform.GetChild(2).GetChild(1).transform;
+        
 
         //COLETA QUANTIDADE DE ESQUEMAS DE CADA TIPO
         int quantEsquemasH = caixaDeEsquemasH.childCount; //Coleta a quantidade de esquemasH e coloca na vari�vel quantEsquemasH
@@ -107,57 +111,65 @@ public class GeradorPlataforma : MonoBehaviour
         int quantAreasH = containerAreasH.childCount;//coleta a quantidade de �reasH
         int quantAreasV = containerAreasV.childCount;//coleta a quantidade de �reasV
 
-        //ORGANIZAR ESQUEMAS 
-        GameObject[] esquemasH = new GameObject[quantEsquemasH]; //cria um vetor vazio com o tamanho sendo a quantidade de esquemas
-        GameObject[] esquemasV = new GameObject[quantEsquemasV]; //cria um vetor vazio com o tamanho sendo a quantidade de esquemas
         
-        for (int i = 0; i< quantEsquemasH; i++){
-            esquemasH[i] = caixaDeEsquemasH.GetChild(i).gameObject; //para cada �ndice do vetor esquemas, ele coloca um dos filhos do container de esquemas
-        }
-        for (int i = 0; i < quantEsquemasV; i++) {
-            esquemasV[i] = caixaDeEsquemasV.GetChild(i).gameObject; //para cada �ndice do vetor esquemas, ele coloca um dos filhos do container de esquemas
+        if(quantEsquemasH>0 && quantAreasH>0){
+            //ORGANIZAR ESQUEMAS 
+            GameObject[] esquemasH = new GameObject[quantEsquemasH]; //cria um vetor vazio com o tamanho sendo a quantidade de esquemas
+            for (int i = 0; i< quantEsquemasH; i++){
+                esquemasH[i] = caixaDeEsquemasH.GetChild(i).gameObject; //para cada �ndice do vetor esquemas, ele coloca um dos filhos do container de esquemas
+            }
+            //ORGANIZAR AREAS
+            GameObject[] areasH = new GameObject[quantAreasH];
+            for (int i = 0; i < quantAreasH; i++) {
+                areasH[i] = containerAreasH.GetChild(i).gameObject; //para cada �ndice do vetor esquemas, ele coloca um dos filhos do container de esquemas
+            }
+
+            //COLOCAR ESQUEMAS EM CADA �REA
+            //HORIZONTAL
+            for (int i = 0; i < quantAreasH; i++) {
+                GameObject area = areasH[i];
+                
+                int indiceEsquema;
+                do{ 
+                    indiceEsquema = (int)UnityEngine.Random.Range(0, quantEsquemasH); //Sorteia um esquema para colocar at� pegar um que j� n�o tenha sido ativado
+                } while(esquemasH[indiceEsquema].activeInHierarchy);
+
+                
+                esquemasH[indiceEsquema].transform.position = area.transform.position;
+                esquemasH[indiceEsquema].SetActive(true);
+            }
         }
 
-        //ORGANIZAR AREAS
-        GameObject[] areasH = new GameObject[quantAreasH];
-        GameObject[] areasV = new GameObject[quantAreasV];
-        for (int i = 0; i < quantAreasH; i++) {
-            areasH[i] = containerAreasH.GetChild(i).gameObject; //para cada �ndice do vetor esquemas, ele coloca um dos filhos do container de esquemas
-        }
-        for (int i = 0; i < quantAreasV; i++) {
-            areasV[i] = containerAreasV.GetChild(i).gameObject; //para cada �ndice do vetor esquemas, ele coloca um dos filhos do container de esquemas
-        }
+        if(quantEsquemasV>0 && quantAreasV>0){
+            //ORGANIZAR ESQUEMAS 
+            GameObject[] esquemasV = new GameObject[quantEsquemasV]; //cria um vetor vazio com o tamanho sendo a quantidade de esquemas        
+            for (int i = 0; i < quantEsquemasV; i++) {
+                esquemasV[i] = caixaDeEsquemasV.GetChild(i).gameObject; //para cada �ndice do vetor esquemas, ele coloca um dos filhos do container de esquemas
+            }
 
-
-        //COLOCAR ESQUEMAS EM CADA �REA
-
-        //HORIZONTAL
-        for (int i = 0; i < quantAreasH; i++) {
-            GameObject area = areasH[i];
+        
+            GameObject[] areasV = new GameObject[quantAreasV];
             
-            int indiceEsquema;
-            do{ 
-                indiceEsquema = (int)UnityEngine.Random.Range(0, quantEsquemasH); //Sorteia um esquema para colocar at� pegar um que j� n�o tenha sido ativado
-            } while(esquemasH[indiceEsquema].activeInHierarchy);
+            for (int i = 0; i < quantAreasV; i++) {
+                areasV[i] = containerAreasV.GetChild(i).gameObject; //para cada �ndice do vetor esquemas, ele coloca um dos filhos do container de esquemas
+            }
 
-            
-            esquemasH[indiceEsquema].transform.position = area.transform.position;
-            esquemasH[indiceEsquema].SetActive(true);
+            //COLOCAR ESQUEMAS EM CADA �REA
+            //VERTICAL
+            for (int i = 0; i < quantAreasV; i++) {
+                GameObject area = areasV[i];
+
+                int indiceEsquema;
+                do {
+                    indiceEsquema = (int)UnityEngine.Random.Range(0, quantEsquemasV); //Sorteia um esquema para colocar at� pegar um que j� n�o tenha sido ativado
+                } while (esquemasV[indiceEsquema].activeInHierarchy);
+
+                
+                esquemasV[indiceEsquema].transform.position = area.transform.position;
+                esquemasV[indiceEsquema].SetActive(true);
+            }
         }
-
-        //VERTICAL
-        for (int i = 0; i < quantAreasV; i++) {
-            GameObject area = areasV[i];
-
-            int indiceEsquema;
-            do {
-                indiceEsquema = (int)UnityEngine.Random.Range(0, quantEsquemasV); //Sorteia um esquema para colocar at� pegar um que j� n�o tenha sido ativado
-            } while (esquemasV[indiceEsquema].activeInHierarchy);
-
-            
-            esquemasV[indiceEsquema].transform.position = area.transform.position;
-            esquemasV[indiceEsquema].SetActive(true);
-        }
+        
     }
 
     public void MudaCena(){
