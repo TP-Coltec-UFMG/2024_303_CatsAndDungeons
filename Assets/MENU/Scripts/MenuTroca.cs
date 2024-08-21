@@ -8,18 +8,18 @@ public class MenuTroca : MonoBehaviour
     private GameObject menuP;
     private GameObject menuA;
     private GameObject menuR;
-    //GameObject menuC;
+    private GameObject menuT;
     
     // Start is called before the first frame update
     void Start(){
         menuP = GameObject.Find("MenuPrincipal");
         menuA = GameObject.Find("MenuAjustes");
         menuR = GameObject.Find("MenuRemapeamento");
-        //menuC = GameObject.Find("MenuCustomizacao");
+        menuT = GameObject.Find("MenuTutorial");
         
         menuA.SetActive(false);
         menuR.SetActive(false);
-        //menuC.SetActive(false);
+        menuT.SetActive(false);
     }
 
     public void PraDireita(int botaoClicou){
@@ -37,18 +37,18 @@ public class MenuTroca : MonoBehaviour
         } else {
             animaCamera.SetBool("FoiNaDireita", false);
         }
-        if((botaoClicou != 1) && (botaoClicou != 2)){//Customização>Principal
+        if((botaoClicou != 1) && (botaoClicou != 2)){//Tutorial>Principal
             menuP.SetActive(true);
-            //menuC.SetActive(false);
+            menuT.SetActive(false);
         }
         animaCamera.SetBool("Direita", true);
         animaCamera.SetBool("Esquerda", false);
     }
 
     public void PraEsquerda(int botaoClicou){
-        if (botaoClicou == 1) {//Principal>Customização
+        if (botaoClicou == 1) {//Principal>Tutorial
             animaCamera.SetBool("FoiNoMenu", true);
-            //menuC.SetActive(true);
+            menuT.SetActive(true);
             menuP.SetActive(false);
         } else {
             animaCamera.SetBool("FoiNoMenu", false);
