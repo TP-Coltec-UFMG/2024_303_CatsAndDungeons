@@ -20,6 +20,7 @@
 
 -  [Menu](#Menu)
     - [Menu Principal](#menu-principal)
+    - [Painel de Tutorial](#painel-de-tutorial)
     - [Painel de Ajustes](#painel-de-ajustes)
     - [Remapeamento de controles](#remapeamento-de-controles-1)
 -  [Jogo](#Jogo)
@@ -56,22 +57,21 @@ No entanto, o que ele não imaginava era que seus medos de fracasso e inseguran�
   </p>
   <p align="justify">
 
-  O menu principal apresenta quatro botões, cada um deles levando à uma área diferente:</p>
+  O menu principal apresenta cinco botões, cada um deles levando à uma área diferente:</p>
 
-  - **Iniciar:** faz o jogo começar
-  - **Customização:** leva ao painel de customização do personagem principal do jogo
+  - **Modo história:** faz o jogo começar no modo história (em que há a história do personagem e uma quantidade fixa de plataformas que podem ser ultrapassadas)
+  - **Modo infinito:** faz o jogo começar no modo infinito (em que o jogo só termina quando o jogador perder)
+  - **Tutorial:** leva ao painel de tutorial
   - **Ajustes:** leva ao painel de ajustes do jogo
   - **Sair:** faz sair do jogo
 
-  <!-- ___
-
-  ### Painel de Customização
+  ### Painel de Tutorial
   <p align="center">
     <br>
     <img src="/readmeAssets/">
   </p>
   <p align="justify">
-  No painel de customização do jogo é possível customizar a aparência do personagem principal do jogo</p> -->
+  No painel de tutorial do jogo é possível o jogador ver quais são os controles para jogar, além de uma explicação básica do que é cada elemento (com o modo de leitura de tela ativado também é possível que ele escute os sons de cada elemento para identificá-los pelos seus respectivos sons ao jogar)</p>
 
   ___
 
@@ -135,11 +135,17 @@ ___
   <!--  Flexbox com imagens com enfoque nas moedas e poder  -->
   - Moedas: aumenta pontuação geral e de moedas
   - Poder de imortalidade: deixa personagem imortal por alguns segundos
-  <!-- - Poder de pontuação: faz ganhar pontuação dobrada por alguns segundos -->
+  - Poder de pontuação: faz ganhar pontuação dobrada por alguns segundos
 #### Ruins
   <!-- Flexbox com imagens com enfoque nos inimigos e armadilhas -->
   - **Armadilhas**: causam dano no personagem
   - **Inimigos**: causam dano no personagem, mas podem ser atacados
+
+### Cenários
+  O jogo possui três cenários diferentes
+  - Principal
+  - Gelo
+  - Fogo
 
 ### Menus
 #### Menu de pause
