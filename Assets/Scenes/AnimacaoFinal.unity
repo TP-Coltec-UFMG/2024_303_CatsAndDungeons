@@ -539,7 +539,7 @@ GameObject:
   - component: {fileID: 570525714}
   - component: {fileID: 570525713}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Dialogos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1667,7 +1667,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3613239364202010306, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 8.77001
+      value: -39
       objectReference: {fileID: 0}
     - target: {fileID: 3613239364202010306, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1711,11 +1711,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4254729119108711179, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
       propertyPath: texto
-      value: tropecei e fiquei cagado de medokjkkk
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7260058579551108157, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
       propertyPath: m_Name
-      value: Ansiedade
+      value: Quadro Final
       objectReference: {fileID: 0}
     - target: {fileID: 7260058579551108157, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
       propertyPath: m_IsActive
