@@ -58,8 +58,7 @@ public class CatitoColisao : MonoBehaviour
     void OnTriggerEnter2D(Collider2D colider){
         switch (colider.tag){
             case "Gerador":
-                gerador.criaPlataforma();
-                Destroy(colider.gameObject);
+                StartCoroutine(gerador.criaPlataforma());
                 break;
             
             case "Transferidor":
