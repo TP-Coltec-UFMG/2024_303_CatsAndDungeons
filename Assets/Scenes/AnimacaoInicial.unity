@@ -1795,9 +1795,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3963921661224190750, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6220312617513b3418f9113173c217ef, type: 3}
+    - target: {fileID: 3963921661224190750, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254729119108711179, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
+      propertyPath: texto
+      value: ababuble
+      objectReference: {fileID: 0}
     - target: {fileID: 7260058579551108157, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
       propertyPath: m_Name
       value: Linha de dialogo
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260058579551108157, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

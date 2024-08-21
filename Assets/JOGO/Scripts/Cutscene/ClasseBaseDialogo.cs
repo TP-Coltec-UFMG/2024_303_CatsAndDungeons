@@ -24,8 +24,13 @@ namespace Dialogo
             }
 
             //espera ate o jogador clicar na tela para pular o dialogo
-            yield return new WaitUntil(() =>Input.GetMouseButtonDown(0)||Input.GetKeyDown(KeyCode.Space));
-            DialogoConcluido = true;
+            while (true) {
+                if (Input.anyKeyDown){
+                    DialogoConcluido = true;
+                    break;
+                }
+                yield return null;
+            }            
         }
     }
 }
