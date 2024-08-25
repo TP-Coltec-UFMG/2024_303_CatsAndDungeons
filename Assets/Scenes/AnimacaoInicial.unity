@@ -597,6 +597,10 @@ PrefabInstance:
       value: "Ent\xE3o, decide pegar seu amuleto, que porta uma espada..."
       objectReference: {fileID: 0}
     - target: {fileID: 4254729119108711179, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
+      propertyPath: audioLetra
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254729119108711179, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
       propertyPath: tamanhoFonte
       value: 22.5
       objectReference: {fileID: 0}
@@ -671,9 +675,9 @@ MonoBehaviour:
   m_SecondaryOrder: 0
   m_Pos: {x: 0, y: 0}
   m_TextAsAudio: {fileID: 0}
-  m_Prefix: "O gato protagonista est\xE1 em uma sala com a m\xE3o apoiada em um pequeno
-    arm\xE1rio enquanto olha para os v\xE1rios quadeos na parede, em que h\xE1 em
-    cada um uma imagem de um gato guerreiro, {0}"
+  m_Prefix: Um gato mago guerreiro que, desde pequeno, escuta historias de seu pai
+    sobre como todos os gatos da familia foram herois, sente-se obrigado a seguir
+    os mesmo passos para honrar as tradissoes
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
@@ -801,7 +805,11 @@ PrefabInstance:
       propertyPath: texto
       value: "Um gato mago guerreiro que, desde pequeno, escuta hist\xF3rias de seu
         pai sobre como todos os gatos da fam\xEDlia foram her\xF3is, sente-se obrigado
-        a seguir os passos da fam\xEDlia para honrar as tradi\xE7\xF5es. "
+        a seguir os mesmos passos para honrar as tradi\xE7\xF5es. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254729119108711179, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
+      propertyPath: audioLetra
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4254729119108711179, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
       propertyPath: tamanhoFonte
@@ -1557,8 +1565,7 @@ MonoBehaviour:
   m_SecondaryOrder: 0
   m_Pos: {x: 0, y: 0}
   m_TextAsAudio: {fileID: 0}
-  m_Prefix: "O gato est\xE1 parado perto de uma porta de dungeon contemplando-a,
-    depois \xE9 vista a porta da aberta e o gato n\xE3o est\xE1 mais l\xE1{0}"
+  m_Prefix: ...e encontra uma masmorra para explorar.
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
@@ -2351,6 +2358,10 @@ PrefabInstance:
       propertyPath: m_EditorOverride
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11475380, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
+      propertyPath: m_EditorEnabledState
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4973883477652662, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
       propertyPath: m_LocalPosition.x
       value: -46.724373
@@ -2503,6 +2514,10 @@ PrefabInstance:
     - target: {fileID: 4254729119108711179, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
       propertyPath: texto
       value: ...e encontra uma masmorra para explorar.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254729119108711179, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
+      propertyPath: audioLetra
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4254729119108711179, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
       propertyPath: tamanhoFonte
@@ -2840,6 +2855,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6681133156718214881, guid: f4fe90442ace01e4c8246e0f2c23a188, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7446661447292451847, guid: f4fe90442ace01e4c8246e0f2c23a188, type: 3}
       propertyPath: m_Name
       value: Audio Manager
@@ -2883,7 +2902,7 @@ MonoBehaviour:
   m_SecondaryOrder: 0
   m_Pos: {x: 0, y: 0}
   m_TextAsAudio: {fileID: 0}
-  m_Prefix: "O gato est\xE1 colocando o amuleto em seu pesco\xE7o, {0}"
+  m_Prefix: Entao, decide pegar seu amuleto, que porta uma espada...
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
@@ -3079,9 +3098,10 @@ MonoBehaviour:
   m_SecondaryOrder: 0
   m_Pos: {x: 0, y: 0}
   m_TextAsAudio: {fileID: 0}
-  m_Prefix: "Passam duas imagens, uma com o gato trombando na parede e outra com
-    ele trope\xE7ando, e logo elas somem e podemos ver o gato com v\xE1rios tent\xE1culos
-    atr\xE1s como se remoendo seus pensamentos, {0}"
+  m_Prefix: "No entanto, o que ele n\xE3o imaginava era que seus medos de fracasso
+    e inseguran\xE7as dificultariam seu processo.                                                        
+    Sempre que comete uma pequena falha, sua mente o perturba, como se houvesse um
+    monstro o acompanhando durante sua jornada.           "
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
@@ -3396,6 +3416,10 @@ PrefabInstance:
         e inseguran\xE7as dificultariam seu processo.                                                        
         Sempre que comete uma pequena falha, sua mente o perturba, como se houvesse
         um monstro o acompanhando durante sua jornada.           "
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254729119108711179, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
+      propertyPath: audioLetra
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4254729119108711179, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
       propertyPath: tamanhoFonte
