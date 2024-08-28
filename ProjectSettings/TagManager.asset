@@ -73,3 +73,6 @@ TagManager:
   - name: NoLight
     uniqueID: 444448473
     locked: 0
+  - name: ParedeSuperior
+    uniqueID: 85710203
+    locked: 0

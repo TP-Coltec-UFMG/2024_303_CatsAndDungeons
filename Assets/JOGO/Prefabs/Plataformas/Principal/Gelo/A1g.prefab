@@ -2451,7 +2451,7 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1804400859
+  m_SortingLayerID: 85710203
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
@@ -9134,6 +9134,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TochaGelo (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8767280912392991969, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767280912392991969, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[3]
+      value: 85710203
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9195,6 +9203,14 @@ PrefabInstance:
     - target: {fileID: 6467528535819622869, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
       propertyPath: m_Name
       value: TochaGelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767280912392991969, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767280912392991969, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[3]
+      value: 85710203
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9258,6 +9274,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TochaGelo (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8767280912392991969, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767280912392991969, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[3]
+      value: 85710203
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9319,6 +9343,14 @@ PrefabInstance:
     - target: {fileID: 6467528535819622869, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
       propertyPath: m_Name
       value: TochaGelo (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767280912392991969, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767280912392991969, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[3]
+      value: 85710203
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9382,6 +9414,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TochaGelo (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8767280912392991969, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767280912392991969, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[3]
+      value: 85710203
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9443,6 +9483,14 @@ PrefabInstance:
     - target: {fileID: 6467528535819622869, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
       propertyPath: m_Name
       value: TochaGelo (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767280912392991969, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767280912392991969, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[3]
+      value: 85710203
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9506,6 +9554,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TochaGelo (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8767280912392991969, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767280912392991969, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[3]
+      value: 85710203
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9567,6 +9623,14 @@ PrefabInstance:
     - target: {fileID: 6467528535819622869, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
       propertyPath: m_Name
       value: TochaGelo (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767280912392991969, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767280912392991969, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[3]
+      value: 85710203
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9732,6 +9796,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TochaGelo (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8767280912392991969, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767280912392991969, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[3]
+      value: 85710203
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9793,6 +9865,14 @@ PrefabInstance:
     - target: {fileID: 6467528535819622869, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
       propertyPath: m_Name
       value: TochaGelo (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767280912392991969, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767280912392991969, guid: 79f5562c8d2cfec4caa32efc73fba6bf, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[3]
+      value: 85710203
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
