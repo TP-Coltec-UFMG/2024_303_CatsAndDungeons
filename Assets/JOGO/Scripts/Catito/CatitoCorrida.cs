@@ -8,13 +8,14 @@ public enum Display{horizontal, vertical}
 
 public class CatitoCorrida : MonoBehaviour
 {
-    public float velocidadeCatito = 100f;
+    public float velocidadeCatito = 6;
+    private float velocidadeCatitoPadrao = 6;
     private Rigidbody2D rbCatito; //rigidbody = rb
     public PosicoesH posicaoAtualH;
     public PosicoesV posicaoAtualV;
     public Display orientacao;
-    private int quantidadePraAndar;
-    private const float quantidadePraAndarV = 1.5f;
+    private int quantidadePraAndar = 1;
+    private float quantidadePraAndarV = 1.5f;
     private CatitoColisao colisao;
     private Animator catitoAnim;
     private PlayerInput playerInput;
@@ -31,10 +32,8 @@ public class CatitoCorrida : MonoBehaviour
         int cenaAtual = SceneManager.GetActiveScene().buildIndex;
 
         if (SceneLoader.IsAcessibleScene()) {
-            quantidadePraAndar = 2;
-        } else {
-            quantidadePraAndar = 1;
-        }
+            quantidadePraAndarV = 2f;
+        } 
 
         switch(orientacao){
             case Display.horizontal:
@@ -50,6 +49,7 @@ public class CatitoCorrida : MonoBehaviour
             catitoAnim.SetBool("gameplay", true);
         }
 
+        this.AjustaVelocidade();
     }
 
     void Update() {
@@ -178,5 +178,28 @@ public class CatitoCorrida : MonoBehaviour
             cameraTreme.Shake(0.1f, 2f, 2f);
         }
         
+    }
+    void SetVelocidadeInicial(){
+        //FAZER ISSOOOOOOOOOOO
+        //TEM Q SER DIFERENTE DEPENDENDO DA DIFICULDADE E MODO DE JOGO
+    }
+    void AjustaVelocidade(){
+
+
+        string cenaNome = SceneManager.GetActiveScene().name;
+        
+        if (cenaNome=="CenaPrincipalInicial" || cenaNome=="CenaAcessivelInicial" ){
+            PlayerPrefs.SetFloat("FasesPassadas", 0);
+        
+        }else{
+            PlayerPrefs.SetFloat("FasesPassadas", PlayerPrefs.GetFloat("FasesPassadas")+1);
+        }
+        
+        if(PlayerPrefs.GetFloat("FasesPassadas")>0 && PlayerPrefs.GetFloat("FasesPassadas")<4){
+            velocidadeCatito = velocidadeCatitoPadrao * (1+(PlayerPrefs.GetFloat("FasesPassadas")/10));
+
+        }
+
+
     }
 }

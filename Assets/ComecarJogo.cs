@@ -8,7 +8,7 @@ public class ComecarJogo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(SceneManager.GetActiveScene().name.Contains("PrincipalInicial")){
+        if(SceneManager.GetActiveScene().name.Contains("Inicial")&&SceneLoader.IsGameScene()){
             //coisa q acontece se for cena inicial
             
             StartCoroutine(estadoInicialJogo());
