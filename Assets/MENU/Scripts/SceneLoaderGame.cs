@@ -39,17 +39,23 @@ public class SceneLoaderGame : MonoBehaviour {
 
         StartCoroutine(LoadScene(cenaPraCarregar));
     }
-
+    public void ExitGame(){
+        StartCoroutine(ExitGameCoro());
+    }
     public IEnumerator LoadScene(string cena) {
-        
         transitorAnim.SetTrigger("Comecar");
 
         yield return new WaitForSeconds(1f);
 
         SceneManager.LoadScene(cena);
-
     }
+    public IEnumerator ExitGameCoro() {
+        transitorAnim.SetTrigger("Comecar");
 
+        yield return new WaitForSeconds(1f);
+
+        Application.Quit();
+    }
     public void ToggleAudioBinaural(){
         modoAcessivel = !modoAcessivel;
         PlayerPrefs.SetInt("AudioBinaural", boolToInt(modoAcessivel));
