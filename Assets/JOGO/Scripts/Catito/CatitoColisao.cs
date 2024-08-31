@@ -59,6 +59,7 @@ public class CatitoColisao : MonoBehaviour
         switch (colider.tag){
             case "Gerador":
                 StartCoroutine(gerador.criaPlataforma());
+                colider.enabled = false;
                 break;
             
             case "Transferidor":

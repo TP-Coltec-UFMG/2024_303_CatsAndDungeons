@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class CatitoAtaque : MonoBehaviour
 {
@@ -23,7 +24,8 @@ public class CatitoAtaque : MonoBehaviour
 
     private float ataqueCooldownTimer;
     private const float tempoMaximoAtaque = 0.2f;
-
+    private float cooldownAtaque = 1.8f;
+    private float cooldownAtaquePadrao = 1.8f;
     //private Collider2D catitoColider;
     void Start()
     {
@@ -31,6 +33,7 @@ public class CatitoAtaque : MonoBehaviour
         catitoAnim = this.GetComponent<Animator>();
         colisorAtaque = this.transform.GetChild(0).gameObject;
         colisorAtaque.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -38,7 +41,7 @@ public class CatitoAtaque : MonoBehaviour
     {
         ataqueCooldownTimer += Time.deltaTime;
 
-        if (ataqueCooldownTimer > 2){
+        if (ataqueCooldownTimer > cooldownAtaque){
             espadaIcon.enabled = true;
             podeAtacar = true;
         }
@@ -55,6 +58,7 @@ public class CatitoAtaque : MonoBehaviour
 
     IEnumerator atacar()
     {
+        print("cooldown de " + cooldownAtaque);
         ataqueCooldownTimer = 0;
         cameraTreme.Shake(0.1f, 5f, 5f);
         this.SortearSomAtaque();
@@ -82,5 +86,10 @@ public class CatitoAtaque : MonoBehaviour
                 print("Sortearam o som meio errado aqui");
                 break;
         }
+    }
+
+    public void AjustaCooldown(){      
+        CatitoCorrida catitoCorrida = this.GetComponent<CatitoCorrida>();
+        cooldownAtaque = cooldownAtaquePadrao * (catitoCorrida.velocidadeCatitoPadrao/catitoCorrida.velocidadeCatito);
     }
 }

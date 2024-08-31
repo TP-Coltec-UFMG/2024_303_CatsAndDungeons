@@ -47,15 +47,13 @@ public class GeradorPlataforma : MonoBehaviour
         //Checa se já fez plataformas demais
         quantidadePlataformas++;
         if (quantidadePlataformas >= maximoPlataformasArea) {
-            quantidadePlataformas = 0;
             if(SceneLoader.IsAcessibleScene()){
                 Instantiate(plataformaFinal, new Vector3(0, tamanho), Quaternion.identity);//x, y
             } else {  
                 Instantiate(plataformaFinal, new Vector3(tamanho, 0), Quaternion.identity);//x, y
             }
-        } else {
-        	print("cheguei no loop paia");
-		
+            tamanho += 50;
+        } else {		
             
             indicePlatSelecionada = 0;
             do{

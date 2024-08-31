@@ -21,8 +21,13 @@ namespace Dialogo
                 caixaTexto.text += texto[i];
                 GerenciadorAudio.instance.TocarSFX(audioLetra);
                 yield return new WaitForSeconds(delayEntreLetras);
+                if (Input.anyKeyDown){
+                    
+                    caixaTexto.text = texto;
+                    break;
+                }
             }
-
+            yield return new WaitForSeconds(1f);
             //espera ate o jogador clicar na tela para pular o dialogo
             while (true) {
                 if (Input.anyKeyDown){

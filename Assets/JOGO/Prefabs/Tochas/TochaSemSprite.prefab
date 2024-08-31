@@ -58,11 +58,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6467528535819622869, guid: 47303e60691880743b95054067bb7a23, type: 3}
       propertyPath: m_Name
-      value: Tocha Variant
+      value: TochaSemSprite
       objectReference: {fileID: 0}
     - target: {fileID: 8767280912392991969, guid: 47303e60691880743b95054067bb7a23, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8767280912392991969, guid: 47303e60691880743b95054067bb7a23, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.data[0]
@@ -71,6 +71,10 @@ PrefabInstance:
     - target: {fileID: 8767280912392991969, guid: 47303e60691880743b95054067bb7a23, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.data[1]
       value: 1008081165
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767280912392991969, guid: 47303e60691880743b95054067bb7a23, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[2]
+      value: 85710203
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

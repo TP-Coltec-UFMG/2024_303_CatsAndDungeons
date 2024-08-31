@@ -3443,7 +3443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8574885266577754771, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
       propertyPath: m_HorizontalAlignment
-      value: 8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8654825839082620196, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
       propertyPath: m_AnchoredPosition.x

@@ -9,7 +9,7 @@ public enum Display{horizontal, vertical}
 public class CatitoCorrida : MonoBehaviour
 {
     public float velocidadeCatito = 6;
-    private float velocidadeCatitoPadrao = 6;
+    public float velocidadeCatitoPadrao = 6;
     private Rigidbody2D rbCatito; //rigidbody = rb
     public PosicoesH posicaoAtualH;
     public PosicoesV posicaoAtualV;
@@ -19,6 +19,7 @@ public class CatitoCorrida : MonoBehaviour
     private CatitoColisao colisao;
     private Animator catitoAnim;
     private PlayerInput playerInput;
+    private CatitoAtaque catitoAtaque;
     [SerializeField] private CameraTreme cameraTreme;
 
     void Start() {
@@ -28,7 +29,7 @@ public class CatitoCorrida : MonoBehaviour
         colisao = this.gameObject.GetComponent<CatitoColisao>();
         rbCatito = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
-
+        catitoAtaque = this.GetComponent<CatitoAtaque>();
         int cenaAtual = SceneManager.GetActiveScene().buildIndex;
 
         if (SceneLoader.IsAcessibleScene()) {
@@ -197,7 +198,7 @@ public class CatitoCorrida : MonoBehaviour
         
         if(PlayerPrefs.GetFloat("FasesPassadas")>0 && PlayerPrefs.GetFloat("FasesPassadas")<4){
             velocidadeCatito = velocidadeCatitoPadrao * (1+(PlayerPrefs.GetFloat("FasesPassadas")/10));
-
+            catitoAtaque.AjustaCooldown();
         }
 
 
