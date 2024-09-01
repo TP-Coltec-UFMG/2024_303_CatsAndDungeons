@@ -12,9 +12,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: InimigoGelo Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2887993457308520580, guid: 7aa35499ea63e594890fc441a8cff9eb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4001482863213941100, guid: 7aa35499ea63e594890fc441a8cff9eb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.96
+      objectReference: {fileID: 0}
     - target: {fileID: 4226881579768742465, guid: 7aa35499ea63e594890fc441a8cff9eb, type: 3}
       propertyPath: m_InstanceId
-      value: -492450
+      value: -49820
       objectReference: {fileID: 0}
     - target: {fileID: 8553162106856215598, guid: 7aa35499ea63e594890fc441a8cff9eb, type: 3}
       propertyPath: m_LocalPosition.x
