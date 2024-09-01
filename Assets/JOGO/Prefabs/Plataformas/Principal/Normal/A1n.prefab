@@ -8990,6 +8990,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EsquemaH
       objectReference: {fileID: 0}
+    - target: {fileID: 5084709080471886534, guid: 03105e35ae24efc4d884556c90d3d5a4, type: 3}
+      propertyPath: m_InstanceId
+      value: -67818
+      objectReference: {fileID: 0}
+    - target: {fileID: 5884029381952305348, guid: 03105e35ae24efc4d884556c90d3d5a4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8804353465298311968, guid: 03105e35ae24efc4d884556c90d3d5a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

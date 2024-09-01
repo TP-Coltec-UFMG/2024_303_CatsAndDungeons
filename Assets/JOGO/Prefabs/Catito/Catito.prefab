@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadeCatito: 6
+  velocidadeCatitoPadrao: 6
   posicaoAtualH: 0
   posicaoAtualV: 0
   orientacao: 0
