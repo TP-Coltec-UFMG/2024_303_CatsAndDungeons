@@ -8,8 +8,10 @@ public enum Display{horizontal, vertical}
 
 public class CatitoCorrida : MonoBehaviour
 {
-    public float velocidadeCatito = 6;
-    public float velocidadeCatitoPadrao = 6;
+    [NonSerialized] public float velocidadeCatito = 6;
+    [NonSerialized] public float velocidadeCatitoPadrao = 6;
+    private const float velocidadeFacilP = 5.5f, velocidadeMedioP = 6f, velocidadeDificilP = 6.5f, 
+                        velocidadeFacilA = 4f, velocidadeMedioA = 4.5f, velocidadeDificilA = 5f;
     private Rigidbody2D rbCatito; //rigidbody = rb
     public PosicoesH posicaoAtualH;
     public PosicoesV posicaoAtualV;
@@ -49,8 +51,12 @@ public class CatitoCorrida : MonoBehaviour
         }else{
             catitoAnim.SetBool("gameplay", true);
         }
-
+        this.SetVelocidadeInicial();
         this.AjustaVelocidade();
+        
+        print("a velocidade Padrão eh "+velocidadeCatitoPadrao);
+        print("a velocidade atual eh "+velocidadeCatito);
+        print("Voce passou um total de "+PlayerPrefs.GetFloat("FasesPassadas")+ " Fases");
     }
 
     void Update() {
@@ -183,24 +189,52 @@ public class CatitoCorrida : MonoBehaviour
     void SetVelocidadeInicial(){
         //FAZER ISSOOOOOOOOOOO
         //TEM Q SER DIFERENTE DEPENDENDO DA DIFICULDADE E MODO DE JOGO
+        if (SceneLoader.IsAcessibleScene()){
+            switch(PlayerPrefs.GetInt("Dificuldade")){
+                case 0:
+                    velocidadeCatitoPadrao = velocidadeFacilA;
+                    break;
+                case 1:
+                    velocidadeCatitoPadrao = velocidadeMedioA;
+                    break;
+                case 2:
+                    velocidadeCatitoPadrao = velocidadeDificilA;
+                    break;
+                default:
+                    Debug.LogError("Erro na disposicao da velocidade movimento, assimilando valor padrao");
+                    velocidadeCatitoPadrao = velocidadeMedioA;
+                    break;  
+            }
+        }else{
+            switch(PlayerPrefs.GetInt("Dificuldade")){
+                case 0:
+                    velocidadeCatitoPadrao = velocidadeFacilP;
+                    break;
+                case 1:
+                    velocidadeCatitoPadrao = velocidadeMedioP;
+                    break;
+                case 2:
+                    velocidadeCatitoPadrao = velocidadeDificilP
+            ;
+                    break;
+                default:
+                    Debug.LogError("Erro na disposicao da velocidade movimento, assimilando valor padrao");
+                    velocidadeCatitoPadrao = velocidadeMedioP;
+                    break;  
+            }
+        }
+        velocidadeCatito = velocidadeCatitoPadrao;
     }
     void AjustaVelocidade(){
-
-
         string cenaNome = SceneManager.GetActiveScene().name;
-        
         if (cenaNome=="CenaPrincipalInicial" || cenaNome=="CenaAcessivelInicial" ){
             PlayerPrefs.SetFloat("FasesPassadas", 0);
-        
         }else{
             PlayerPrefs.SetFloat("FasesPassadas", PlayerPrefs.GetFloat("FasesPassadas")+1);
         }
-        
         if(PlayerPrefs.GetFloat("FasesPassadas")>0 && PlayerPrefs.GetFloat("FasesPassadas")<4){
             velocidadeCatito = velocidadeCatitoPadrao * (1+(PlayerPrefs.GetFloat("FasesPassadas")/10));
             catitoAtaque.AjustaCooldown();
         }
-
-
     }
 }

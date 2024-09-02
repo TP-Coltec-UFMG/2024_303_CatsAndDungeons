@@ -19,12 +19,12 @@ namespace Dialogo{
                 
 
                 transform.GetChild(i).gameObject.SetActive(true);
-
                 yield return new WaitUntil(()=> transform.GetChild(i).GetComponent<ClasseBaseDialogo>().DialogoConcluido); 
                 StartCoroutine(DesativarDialogo(transform.GetChild(i).gameObject.GetComponent<Animator>()));
+
                 yield return new WaitForSeconds(1.5f);
             }
-            CinematicoBrain.instance.LigarCinematica();
+            
             yield return new WaitForSeconds(1.5f);
             this.AcabarCena();
         }
