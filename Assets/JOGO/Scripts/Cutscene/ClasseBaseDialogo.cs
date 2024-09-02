@@ -44,7 +44,7 @@ namespace Dialogo
             //Digita cada letra do dialogo
             for(int i = 0;i<texto.Length;i++){
                 caixaTexto.text += texto[i];
-                if (!leitorTela){
+                if (!leitorTela && texto[i]!=' '){
                     
                     GerenciadorAudio.instance.TocarSFX(audioLetra);
                 }else{

@@ -54,9 +54,9 @@ public class CatitoCorrida : MonoBehaviour
         this.SetVelocidadeInicial();
         this.AjustaVelocidade();
         
-        print("a velocidade Padrão eh "+velocidadeCatitoPadrao);
-        print("a velocidade atual eh "+velocidadeCatito);
-        print("Voce passou um total de "+PlayerPrefs.GetFloat("FasesPassadas")+ " Fases");
+        // print("a velocidade Padrão eh "+velocidadeCatitoPadrao);
+        // print("a velocidade atual eh "+velocidadeCatito);
+        // print("Voce passou um total de "+PlayerPrefs.GetFloat("FasesPassadas")+ " Fases");
     }
 
     void Update() {

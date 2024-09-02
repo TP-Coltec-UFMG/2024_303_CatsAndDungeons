@@ -96,7 +96,6 @@ public class GeradorPlataforma : MonoBehaviour
     }
 
     private IEnumerator AtivaItens(){
-            	print("cheguei na parte de esquemas1");
         //Horizontal
 
         //Pega os containers com as areas
@@ -118,7 +117,6 @@ public class GeradorPlataforma : MonoBehaviour
         
         if(quantEsquemasH>0 && quantAreasH>0){
             
-        	print("cheguei na parte de esquemas2");
             //ORGANIZAR ESQUEMAS 
             GameObject[] esquemasH = new GameObject[quantEsquemasH]; //cria um vetor vazio com o tamanho sendo a quantidade de esquemas
             for (int i = 0; i< quantEsquemasH; i++){

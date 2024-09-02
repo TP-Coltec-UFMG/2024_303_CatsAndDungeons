@@ -10,7 +10,7 @@ public class Poderes : MonoBehaviour
 {
     // Start is called before the first frame update
     private bool imortal{ get; set;}
-    private const float tempoImortalidade = 8f;
+    private const float tempoImortalidade = 4;
     private ComportamentoAmeaca ameacaAtivador;
     private Animator catitoAnim;
     [SerializeField] private Image imortalIcon;
@@ -26,8 +26,11 @@ public class Poderes : MonoBehaviour
         imortal = true;
         imortalIcon.enabled = true;
         catitoAnim.SetBool("Imortal", true);
+        print("ta imortal legal");
+
         yield return new WaitForSeconds(tempoImortalidade);
-        
+
+        print("ta morrivel legal");
         imortal = false;
         imortalIcon.enabled = false;
         catitoAnim.SetBool("Imortal", false);

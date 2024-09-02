@@ -577,7 +577,7 @@ PrefabInstance:
     - target: {fileID: 4254729119108711179, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
       propertyPath: audioLetra
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 96356f6861a54a346a0df73e5e5975b1, type: 3}
     - target: {fileID: 4254729119108711179, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
       propertyPath: tamanhoFonte
       value: 22.5
@@ -1138,7 +1138,7 @@ PrefabInstance:
     - target: {fileID: 4254729119108711179, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
       propertyPath: audioLetra
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 96356f6861a54a346a0df73e5e5975b1, type: 3}
     - target: {fileID: 4254729119108711179, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
       propertyPath: tamanhoFonte
       value: 22.5
@@ -3497,7 +3497,7 @@ PrefabInstance:
     - target: {fileID: 4254729119108711179, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
       propertyPath: audioLetra
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 96356f6861a54a346a0df73e5e5975b1, type: 3}
     - target: {fileID: 4254729119108711179, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
       propertyPath: tamanhoFonte
       value: 22.5
@@ -4341,7 +4341,7 @@ PrefabInstance:
     - target: {fileID: 4254729119108711179, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
       propertyPath: audioLetra
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 96356f6861a54a346a0df73e5e5975b1, type: 3}
     - target: {fileID: 4254729119108711179, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
       propertyPath: tamanhoFonte
       value: 22.5

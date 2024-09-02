@@ -22,6 +22,7 @@ public class ColetavelColisao : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider){
         if (collider.CompareTag("Catito")){
             if(!coletado){
+                coletado = true;
                 switch(this.gameObject.tag){
                     case ("Moeda"):
                         //GerenciadorAudio.instance.TocarSFX("");
@@ -51,7 +52,7 @@ public class ColetavelColisao : MonoBehaviour
 
     private IEnumerator Sumir() {
         coletavelAnimator.SetTrigger("Coletado");
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5f);
         Object.Destroy(this.gameObject);
         
     }

@@ -58,7 +58,7 @@ public class CatitoAtaque : MonoBehaviour
 
     IEnumerator atacar()
     {
-        print("cooldown de " + cooldownAtaque);
+        
         ataqueCooldownTimer = 0;
         cameraTreme.Shake(0.1f, 5f, 5f);
         this.SortearSomAtaque();
