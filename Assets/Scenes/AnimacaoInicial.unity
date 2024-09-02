@@ -594,7 +594,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4254729119108711179, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
       propertyPath: texto
-      value: "Ent\xE3o, ele decide pegar seu amuleto, que porta uma espada..."
+      value: "Ent\xE3o, ele decide pegar seu amuleto que porta uma espada..."
       objectReference: {fileID: 0}
     - target: {fileID: 4254729119108711179, guid: 74a16f3fb36577e48a86138aff266574, type: 3}
       propertyPath: audioLetra

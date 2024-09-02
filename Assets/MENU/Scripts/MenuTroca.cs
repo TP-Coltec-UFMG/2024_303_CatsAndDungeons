@@ -67,4 +67,11 @@ public class MenuTroca : MonoBehaviour
         animaCamera.SetBool("Esquerda", true);
         animaCamera.SetBool("Direita", false);
     }
+
+    public void AtivaTutorial(){
+        menuT.SetActive(true);
+    }
+    public void DestivaTutorial(){
+        menuT.SetActive(false);
+    }
 }
