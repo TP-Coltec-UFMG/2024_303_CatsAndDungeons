@@ -6,15 +6,19 @@ using UnityEngine.UI;
 
 public class SceneLoaderGame : MonoBehaviour {
     [SerializeField] private Toggle toggleAB;
-    private string cenaPraCarregar, cenaAtual;
+    public static string cenaPraCarregar, cenaAtual;
     private bool modoAcessivel;
     [SerializeField] private Animator transitorAnim;
-
+    [SerializeField] private Animator dificuldadeAnim;
+    [SerializeField] private Animator botoesIniciaisAnim;
     void Start() {
         modoAcessivel = intToBool(PlayerPrefs.GetInt("AudioBinaural"));
         cenaAtual = SceneManager.GetActiveScene().name;
         if(toggleAB!=null){
             toggleAB.isOn = modoAcessivel;
+        }
+        if(dificuldadeAnim!=null){
+            dificuldadeAnim.gameObject.SetActive(false);
         }
     }
     public void IniciarJogo(){
@@ -27,7 +31,7 @@ public class SceneLoaderGame : MonoBehaviour {
             cenaPraCarregar = "AnimacaoInicial";
         }
 
-        StartCoroutine(LoadScene(cenaPraCarregar));
+        StartCoroutine(this.ApareceBotoesDificuldade());
     }
     public void IniciarJogoInfinito(){
         PlayerPrefs.SetString("Modo de jogo", "Infinito");    
@@ -37,7 +41,15 @@ public class SceneLoaderGame : MonoBehaviour {
             cenaPraCarregar = "CenaPrincipalInicial";
         }
 
-        StartCoroutine(LoadScene(cenaPraCarregar));
+        StartCoroutine(this.ApareceBotoesDificuldade());
+    }
+
+    private IEnumerator ApareceBotoesDificuldade(){
+        botoesIniciaisAnim.SetBool("iniciado", false);
+        yield return new WaitForSeconds(1f);
+        botoesIniciaisAnim.gameObject.SetActive(false);
+        dificuldadeAnim.gameObject.SetActive(true);
+        dificuldadeAnim.SetBool("iniciado", true);
     }
     public void ExitGame(){
         StartCoroutine(ExitGameCoro());
@@ -48,6 +60,13 @@ public class SceneLoaderGame : MonoBehaviour {
         yield return new WaitForSeconds(1f);
 
         SceneManager.LoadScene(cena);
+    }
+    public IEnumerator LoadScene() {
+        transitorAnim.SetTrigger("Comecar");
+
+        yield return new WaitForSeconds(1f);
+
+        SceneManager.LoadScene(cenaPraCarregar);
     }
     public IEnumerator ExitGameCoro() {
         transitorAnim.SetTrigger("Comecar");
