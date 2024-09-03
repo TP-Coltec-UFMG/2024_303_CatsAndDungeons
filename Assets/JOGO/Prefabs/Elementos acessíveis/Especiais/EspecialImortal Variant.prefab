@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: -3728057281132653812, guid: 9853b93d6c60f234fbfdee2a4fcb51e4, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 3f159e0a1b3428b4d9f8859f4187bb69, type: 3}
+      objectReference: {fileID: 8300000, guid: 03ceb8baaaf1bdd468ccddfee07c6a11, type: 3}
     - target: {fileID: 927566125705054456, guid: 9853b93d6c60f234fbfdee2a4fcb51e4, type: 3}
       propertyPath: m_Name
       value: EspecialImortal Variant

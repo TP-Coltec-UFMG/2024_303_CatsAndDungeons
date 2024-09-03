@@ -191,6 +191,11 @@ public class CatitoCorrida : MonoBehaviour
         //TEM Q SER DIFERENTE DEPENDENDO DA DIFICULDADE E MODO DE JOGO
         if (SceneLoader.IsAcessibleScene()){
             switch(PlayerPrefs.GetInt("Dificuldade")){
+                //PlayerPrefs.SetInt("Dificuldade", 0); facil => funcao meio assim pra definir dificuldade
+                //medio = 1
+                //dificil = 2
+                //cria a funcao no gamemanager
+                //chama ao clica no botao
                 case 0:
                     velocidadeCatitoPadrao = velocidadeFacilA;
                     break;
