@@ -53,6 +53,7 @@ public class GeradorPlataforma : MonoBehaviour
                 Instantiate(plataformaFinal, new Vector3(tamanho, 0), Quaternion.identity);//x, y
             }
             tamanho += 50;
+            mudarContraste.altoContrasteRecall();
         } else {		
             
             indicePlatSelecionada = 0;
@@ -90,7 +91,7 @@ public class GeradorPlataforma : MonoBehaviour
 
             StartCoroutine(AtivaItens());
 
-            mudarContraste.altoContrasteRecall();
+            
         }
         yield return null;
     }
@@ -184,6 +185,7 @@ public class GeradorPlataforma : MonoBehaviour
             }
         }
     yield return null;
+    mudarContraste.altoContrasteRecall();
     }
 
     public void MudaCena(){
