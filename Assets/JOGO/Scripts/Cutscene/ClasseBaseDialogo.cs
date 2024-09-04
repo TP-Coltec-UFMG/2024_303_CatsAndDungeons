@@ -40,15 +40,12 @@ namespace Dialogo
             //adiciona cada letra de cada vez
             yield return new WaitForSeconds(0.1f);
             Adiantado = false;
-
+            caixaTexto.text = "";
             //Digita cada letra do dialogo
             for(int i = 0;i<texto.Length;i++){
                 caixaTexto.text += texto[i];
                 if (!leitorTela && texto[i]!=' '){
-                    
                     GerenciadorAudio.instance.TocarSFX(audioLetra);
-                }else{
-                    
                 }
 
                 yield return new WaitForSeconds(delayEntreLetras);
