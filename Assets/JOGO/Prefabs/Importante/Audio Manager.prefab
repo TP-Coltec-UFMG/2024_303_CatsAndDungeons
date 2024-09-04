@@ -204,6 +204,8 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: 12f336be282c2094cb8c2fb8a762c7b8, type: 3}
   - nome: Explodir Armadilha
     audio: {fileID: 8300000, guid: 8a9c738645668f443880137f1e1c0315, type: 3}
+  - nome: musicaEspecial
+    audio: {fileID: 8300000, guid: 7ffbcae37ac0ae966ba6ff1f96cc8fde, type: 3}
   tocadorMusica: {fileID: 1250476193907473621}
   tocadorSFX: {fileID: 8976626235193991823}
 --- !u!1 &7799133962051266083

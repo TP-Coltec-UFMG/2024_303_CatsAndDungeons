@@ -11,6 +11,7 @@ public class SceneLoaderGame : MonoBehaviour {
     [SerializeField] private Animator transitorAnim;
     [SerializeField] private Animator dificuldadeAnim;
     [SerializeField] private Animator botoesIniciaisAnim;
+    Animator catitoAnim;
     void Start() {
         modoAcessivel = intToBool(PlayerPrefs.GetInt("AudioBinaural"));
         cenaAtual = SceneManager.GetActiveScene().name;
@@ -20,6 +21,7 @@ public class SceneLoaderGame : MonoBehaviour {
         if(dificuldadeAnim!=null){
             dificuldadeAnim.gameObject.SetActive(false);
         }
+        catitoAnim = GameObject.FindGameObjectsWithTag("CatitoMenu")[0].GetComponent<Animator>();
     }
     public void IniciarJogo(){
         PlayerPrefs.SetString("Modo de jogo", "Historia");
@@ -46,7 +48,9 @@ public class SceneLoaderGame : MonoBehaviour {
 
     private IEnumerator ApareceBotoesDificuldade(){
         botoesIniciaisAnim.SetBool("iniciado", false);
-        yield return new WaitForSeconds(1f);
+        catitoAnim.SetTrigger("Sumir");
+        yield return new WaitForSeconds(0.5f);
+
         botoesIniciaisAnim.gameObject.SetActive(false);
         dificuldadeAnim.gameObject.SetActive(true);
         dificuldadeAnim.SetBool("iniciado", true);

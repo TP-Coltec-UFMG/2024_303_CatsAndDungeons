@@ -28,6 +28,8 @@ TagManager:
   - MudaCamMov
   - Cinematica
   - PressAnyKey
+  - Ground
+  - CatitoMenu
   layers:
   - Default
   - TransparentFX

@@ -35,6 +35,7 @@ public class ColetavelColisao : MonoBehaviour
                     case ("EspecialImortal"):
                         poderes = collider.gameObject.GetComponent<Poderes>();
                         GerenciadorAudio.instance.TocarSFX("PowerUp Imortal");
+                        GerenciadorAudio.instance.TocarSFX("musicaEspecial");
                         StartCoroutine(poderes.Imortalidade());
                         StartCoroutine(Sumir());
                     break;
