@@ -240,6 +240,10 @@ public class CatitoCorrida : MonoBehaviour
         if(PlayerPrefs.GetFloat("FasesPassadas")>0 && PlayerPrefs.GetFloat("FasesPassadas")<4){
             velocidadeCatito = velocidadeCatitoPadrao * (1+(PlayerPrefs.GetFloat("FasesPassadas")/10));
             catitoAtaque.AjustaCooldown();
+        }else{
+            if(PlayerPrefs.GetFloat("FasesPassadas")>=4){
+                velocidadeCatito = velocidadeCatitoPadrao * (1+(3/10));
+            }
         }
     }
 }

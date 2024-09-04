@@ -179,6 +179,8 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: c6a3a9b3d0838fb4b9c8670abe92bc8d, type: 3}
   - nome: Trilha Dungeon Loop
     audio: {fileID: 8300000, guid: abc9ebf429ad27e468fe0baceb8df3cb, type: 3}
+  - nome: Trilha Gelo Loop
+    audio: {fileID: 8300000, guid: 2ec70600777c6980f923ae907330fd49, type: 3}
   efeitosSonoros:
   - nome: Tomar Dano
     audio: {fileID: 8300000, guid: b39dbc93fe0ae624da6e137c3567bb8d, type: 3}

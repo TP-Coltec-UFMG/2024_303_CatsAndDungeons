@@ -6,131 +6,37 @@ using UnityEngine.SceneManagement;
 
 public class GerenciadorAudio : MonoBehaviour
 {
-
     [SerializeField] Som[] musicas;
     [SerializeField] Som[] efeitosSonoros;
     [SerializeField] AudioSource tocadorMusica; 
     [SerializeField] AudioSource tocadorSFX;
     private bool isFading = false;
     private const float volumeMusicaReduzido = 0.005f;
-    //private const float volumeMusicaPadrao = 0.1f;
 
     public static GerenciadorAudio instance { get; private set; }
-    //Para usar o Gerenciador de �udio, use GerenciadorAudio.instance.Funcao(); ou GerenciadorAudio.instance.atributo;
-    
-    
-    
-    void Awake() //
+    private float multiplicadorAcessivel;
+    void Awake()
     {
-        if(instance == null) {
+        if (instance == null) {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
         } else {
             Destroy(this.gameObject);
         }
+    }
+
+    void Update()
+    {  
+        float volumeGeral = PlayerPrefs.GetFloat("volumeGeral");
         
-    }
-
-    public void TocarMusica(string nome) {
-        Som musicaPraTocar = Array.Find(musicas, x => x.nome == nome);
-
-        if (musicaPraTocar == null) {
-            print("Musica nao encontrada");
-        } else {
-            tocadorMusica.clip = musicaPraTocar.audio;
-            StartCoroutine(FadeIn(tocadorMusica, 3f));
-        }
-    }
-
-    public void TocarSFX(string nome) {
-        Som somPraTocar = Array.Find(efeitosSonoros, x => x.nome == nome);
-
-        if (somPraTocar == null) {
-            print("Som nao encontrado");
-        } else {
-            if (nome == "Tomar Dano" || nome == "Morte") {
-                tocadorMusica.volume = volumeMusicaReduzido * PlayerPrefs.GetFloat("volumeMusica") * PlayerPrefs.GetFloat("volumeGeral");
-                tocadorSFX.clip = somPraTocar.audio;
-                tocadorSFX.Play();
-            } else {
-                tocadorSFX.PlayOneShot(somPraTocar.audio);
-            }
-            
-        }
-
         
-
-    }
-
-    public void TocarSFX(AudioClip clipe) {
-        Som somPraTocar = new Som(clipe);
-
-        if (somPraTocar == null) {
-            print("Som nao encontrado");
-        } else {
-           tocadorSFX.PlayOneShot(somPraTocar.audio);
-        }
-
-        
-
-    }
-
-    void Update() {
-
-        if (!tocadorSFX.isPlaying && !isFading) {
-            tocadorMusica.volume = PlayerPrefs.GetFloat("volumeMusica") * PlayerPrefs.GetFloat("volumeGeral");
-        }    
+         if (!tocadorSFX.isPlaying && !isFading) {
+            tocadorMusica.volume = PlayerPrefs.GetFloat("volumeMusica") * volumeGeral *multiplicadorAcessivel;
+         }
         if (tocadorSFX.isPlaying) {
-            tocadorSFX.volume = PlayerPrefs.GetFloat("volumeEfeitoSonoro") * PlayerPrefs.GetFloat("volumeGeral");
+            tocadorSFX.volume = PlayerPrefs.GetFloat("volumeEfeitoSonoro") * volumeGeral *multiplicadorAcessivel;
         }
-        //fazer código que verifica se a cena atual é de jogo ou não
-        //if (tocadorMusica.isPlaying==false && SceneManager.GetActiveScene().)
     }
-   
-    
-
-    public void PausarSons(){
-        tocadorMusica.Pause();
-        tocadorSFX.Pause();
-    }
-
-    public void ContinuarSons(){
-        tocadorMusica.UnPause();
-        tocadorSFX.UnPause();
-    }
-
-
-    public IEnumerator FadeOut (AudioSource audioSource, float DuracaoFade) {
-        isFading = true;
-        float volumeInicial = audioSource.volume;
-
-        while (audioSource.volume > 0) {
-            audioSource.volume -= volumeInicial * Time.deltaTime / DuracaoFade;
-            yield return null;
-        }
-
-        audioSource.Pause();
-        audioSource.volume = volumeInicial;
-        isFading = false;
-    }
-    
-    public IEnumerator FadeIn(AudioSource audioSource, float DuracaoFade)
-    {
-        isFading = true;
-        float volumeInicial = PlayerPrefs.GetFloat("volumeMusica") * PlayerPrefs.GetFloat("volumeGeral")/10;
-        float volumeTotal = PlayerPrefs.GetFloat("volumeMusica") * PlayerPrefs.GetFloat("volumeGeral");
-        audioSource.volume = 0;
-        audioSource.Play();
-
-        while (audioSource.volume < volumeTotal){
-            audioSource.volume += volumeInicial * Time.deltaTime / DuracaoFade;
-            yield return null;
-        }
-
-        audioSource.volume = 1f;
-        isFading = false;
-    }
-
 
     private void OnEnable()
     {
@@ -142,15 +48,115 @@ public class GerenciadorAudio : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    // Função chamada sempre que uma cena é carregada
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if(SceneLoader.IsGameScene()){
-            this.TocarMusica("Trilha Dungeon Loop");   
-        }  else{
-            this.PausarSons();
+        multiplicadorAcessivel = SceneLoader.IsAcessibleScene()?0.3f:1;
+        if (SceneLoader.IsGameScene()) {
+            string cenaNome = SceneManager.GetActiveScene().name;
+            string musicaParaTocar = "";
+            switch (cenaNome){
+                case "CenaPrincipalInicial":
+                case "CenaAcessivelInicial":
+                case "CenaPrincipal":
+                    musicaParaTocar = "Trilha Dungeon Loop";
+                    break;
+                case "CenaGelo":
+                case "CenaAcessivelGelo":           
+                    musicaParaTocar = "Trilha Gelo Loop";
+                    break;
+                case "CenaFogo":
+                case "CenaAcessivelFogo":
+                    musicaParaTocar = "Trilha Dungeon Loop";
+                    break;   
+            }
+            TocarMusica(musicaParaTocar);   
+        } else {
+            PausarSons();
         }
     }
+
+    public void TocarMusica(string nome) 
+    {
+        Som musicaPraTocar = Array.Find(musicas, x => x.nome == nome);
+
+        if (musicaPraTocar == null) {
+            Debug.LogWarning("Música não encontrada: " + nome);
+        } else {
+            tocadorMusica.clip = musicaPraTocar.audio;
+            StartCoroutine(FadeIn(tocadorMusica, 3f));
+        }
+    }
+
+    public void TocarSFX(string nome) 
+    {
+        Som somPraTocar = Array.Find(efeitosSonoros, x => x.nome == nome);
+
+        if (somPraTocar == null) {
+            Debug.LogWarning("Som não encontrado: " + nome);
+        } else {
+            if (nome == "Tomar Dano" || nome == "Morte") {
+                tocadorMusica.volume = volumeMusicaReduzido * PlayerPrefs.GetFloat("volumeMusica") * PlayerPrefs.GetFloat("volumeGeral");
+                tocadorSFX.clip = somPraTocar.audio;
+                tocadorSFX.Play();
+            } else {
+                tocadorSFX.PlayOneShot(somPraTocar.audio);
+            }
+        }
+    }
+
+    public void TocarSFX(AudioClip clipe) 
+    {
+        if (clipe == null) {
+            Debug.LogWarning("Clip de áudio não fornecido.");
+        } else {
+            tocadorSFX.PlayOneShot(clipe);
+        }
+    }
+
+    public void PausarSons()
+    {
+        tocadorMusica.Pause();
+        tocadorSFX.Pause();
+    }
+
+    public void ContinuarSons()
+    {
+        tocadorMusica.UnPause();
+        tocadorSFX.UnPause();
+    }
+
+    public IEnumerator FadeOut(AudioSource audioSource, float duracaoFade) 
+    {
+        isFading = true;
+        float volumeInicial = audioSource.volume;
+
+        while (audioSource.volume > 0) 
+        {
+            audioSource.volume -= volumeInicial * Time.deltaTime / duracaoFade;
+            yield return null;
+        }
+
+        audioSource.Pause();
+        audioSource.volume = volumeInicial;
+        isFading = false;
+    }
+
+    public IEnumerator FadeIn(AudioSource audioSource, float duracaoFade)
+    {
+        isFading = true;
+        float volumeGeral = PlayerPrefs.GetFloat("volumeGeral");
+        float multiplicadorAcessivel = SceneLoader.IsAcessibleScene()?0.3f:1;
+        float volumeTotal = PlayerPrefs.GetFloat("volumeMusica") * volumeGeral*multiplicadorAcessivel;
+        audioSource.volume = 0;
+        audioSource.Play();
+
+        while (audioSource.volume < volumeTotal) 
+        {
+            audioSource.volume += volumeTotal * Time.deltaTime / duracaoFade;
+            yield return null;
+        }
+
+        audioSource.volume = volumeTotal;
+        isFading = false;
+    }
 }
-
-
