@@ -40,6 +40,7 @@ public class Menus : MonoBehaviour
     }
 
     public void PausarJogo(){
+        PlayerPrefs.Save();
     	monstroAnim.gameObject.SetActive(false);
     	menuPausa.SetActive(true);
         GerenciadorAudio.instance.PausarSons();
@@ -81,6 +82,7 @@ public class Menus : MonoBehaviour
 
     public void GameOver(){
         FindFirstObjectByType<GameOverMenu>(FindObjectsInactive.Include).PreenchePainel();
+        PlayerPrefs.Save();
         //substituirrr por preenchePainel 
         menuGameOver.SetActive(true);
         monstroAnim.gameObject.SetActive(false);

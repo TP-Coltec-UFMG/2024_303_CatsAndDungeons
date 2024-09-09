@@ -62,7 +62,7 @@ public class CatitoAtaque : MonoBehaviour
         ataqueCooldownTimer = 0;
         cameraTreme.Shake(0.1f, 5f, 5f);
         this.SortearSomAtaque();
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
         atacando = true;
         colisorAtaque.SetActive(atacando); //ativa o collider de ataque
 

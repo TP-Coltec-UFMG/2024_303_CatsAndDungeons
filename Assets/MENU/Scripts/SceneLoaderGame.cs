@@ -21,7 +21,10 @@ public class SceneLoaderGame : MonoBehaviour {
         if(dificuldadeAnim!=null){
             dificuldadeAnim.gameObject.SetActive(false);
         }
-        catitoAnim = GameObject.FindGameObjectsWithTag("CatitoMenu")[0].GetComponent<Animator>();
+        
+        if(GameObject.FindGameObjectsWithTag("CatitoMenu")!=null){
+            catitoAnim = GameObject.FindGameObjectsWithTag("CatitoMenu")[0].GetComponent<Animator>();
+        }
     }
     public void IniciarJogo(){
         PlayerPrefs.SetString("Modo de jogo", "Historia");

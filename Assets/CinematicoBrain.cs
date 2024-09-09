@@ -23,11 +23,13 @@ public class CinematicoBrain : MonoBehaviour
 
     // Update is called once per frame
     public void LigarCinematica(){
-        animatorCinematica.SetTrigger("cinemaAbrir");
+        //animatorCinematica.SetTrigger("cinemaAbrir");
+        animatorCinematica.SetBool("ativado", true);
     }
 
     public void DesligarCinematica(){
-        animatorCinematica.SetTrigger("cinemaFechar");
+        //animatorCinematica.SetTrigger("cinemaFechar");
+        animatorCinematica.SetBool("ativado", false);
     }
 
     private void OnEnable()
