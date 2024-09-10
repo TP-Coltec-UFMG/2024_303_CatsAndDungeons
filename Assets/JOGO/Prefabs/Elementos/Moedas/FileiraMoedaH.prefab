@@ -102,22 +102,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moeda (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 5915486411320025634, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
-      propertyPath: m_Radius
-      value: 0.2765727
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915486411320025634, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.1261646
-      objectReference: {fileID: 0}
-    - target: {fileID: 6923064442401212039, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6923064442401212039, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1008081165
-      objectReference: {fileID: 0}
     - target: {fileID: 7990034534039277717, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.3
@@ -179,22 +163,6 @@ PrefabInstance:
     - target: {fileID: 2334006507658992560, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
       propertyPath: m_Name
       value: Moeda (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915486411320025634, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
-      propertyPath: m_Radius
-      value: 0.2765727
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915486411320025634, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.1261646
-      objectReference: {fileID: 0}
-    - target: {fileID: 6923064442401212039, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6923064442401212039, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1008081165
       objectReference: {fileID: 0}
     - target: {fileID: 7990034534039277717, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -258,22 +226,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moeda (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 5915486411320025634, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
-      propertyPath: m_Radius
-      value: 0.2765727
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915486411320025634, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.1261646
-      objectReference: {fileID: 0}
-    - target: {fileID: 6923064442401212039, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6923064442401212039, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1008081165
-      objectReference: {fileID: 0}
     - target: {fileID: 7990034534039277717, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.15
@@ -336,22 +288,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moeda
       objectReference: {fileID: 0}
-    - target: {fileID: 5915486411320025634, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
-      propertyPath: m_Radius
-      value: 0.27657273
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915486411320025634, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.1261646
-      objectReference: {fileID: 0}
-    - target: {fileID: 6923064442401212039, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6923064442401212039, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1008081165
-      objectReference: {fileID: 0}
     - target: {fileID: 7990034534039277717, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -413,22 +349,6 @@ PrefabInstance:
     - target: {fileID: 2334006507658992560, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
       propertyPath: m_Name
       value: Moeda (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915486411320025634, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
-      propertyPath: m_Radius
-      value: 0.2765727
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915486411320025634, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.1261646
-      objectReference: {fileID: 0}
-    - target: {fileID: 6923064442401212039, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6923064442401212039, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1008081165
       objectReference: {fileID: 0}
     - target: {fileID: 7990034534039277717, guid: cca550bb5787e464b8a3a1d1ee4f387d, type: 3}
       propertyPath: m_LocalPosition.x

@@ -150,30 +150,35 @@ public class CatitoCorrida : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D corredor){
+    void OnTriggerStay2D(Collider2D corredor){
         switch (corredor.tag){
             case ("Horizontal"):
-                orientacao = Display.horizontal;
-                posicaoAtualH = PosicoesH.meio;
-                catitoAnim.SetInteger("Orientacao", 0);
-                rbCatito.velocity = new Vector2(velocidadeCatito, 0);
-                corredor.GetComponent<Collider2D>().enabled = false;
-                break;
+                if((rbCatito.velocity.y > 0 && (transform.position.y>corredor.transform.position.y-0.05f)) || rbCatito.velocity.y < 0 && (transform.position.y<corredor.transform.position.y+0.05f)){
+                    orientacao = Display.horizontal;
+                    posicaoAtualH = PosicoesH.meio;
+                    catitoAnim.SetInteger("Orientacao", 0);
+                    rbCatito.velocity = new Vector2(velocidadeCatito, 0);
+                    corredor.GetComponent<Collider2D>().enabled = false;
+                }
+                
+               break;
             case ("VerticalPraBaixo"):
-                orientacao = Display.vertical;
-                posicaoAtualV = PosicoesV.meio;
-                catitoAnim.SetInteger("Orientacao", 1);
-                rbCatito.velocity = new Vector2(0, -velocidadeCatito);
-                corredor.GetComponent<Collider2D>().enabled = false;
-
+                if(transform.position.x > corredor.transform.position.x-0.15f){
+                    orientacao = Display.vertical;
+                    posicaoAtualV = PosicoesV.meio;
+                    catitoAnim.SetInteger("Orientacao", 1);
+                    rbCatito.velocity = new Vector2(0, -velocidadeCatito);
+                    corredor.GetComponent<Collider2D>().enabled = false;
+                }
                 break;
             case ("VerticalPraCima"):
-                orientacao = Display.vertical;
-                posicaoAtualV = PosicoesV.meio;
-                catitoAnim.SetInteger("Orientacao", 2);
-                rbCatito.velocity = new Vector2(0, velocidadeCatito);
-                corredor.GetComponent<Collider2D>().enabled = false;
-
+                if(transform.position.x > corredor.transform.position.x-0.15f){
+                    orientacao = Display.vertical;
+                    posicaoAtualV = PosicoesV.meio;
+                    catitoAnim.SetInteger("Orientacao", 2);
+                    rbCatito.velocity = new Vector2(0, velocidadeCatito);
+                    corredor.GetComponent<Collider2D>().enabled = false;
+                }
                 break;
         }
     }
@@ -219,8 +224,7 @@ public class CatitoCorrida : MonoBehaviour
                     velocidadeCatitoPadrao = velocidadeMedioP;
                     break;
                 case 2:
-                    velocidadeCatitoPadrao = velocidadeDificilP
-            ;
+                    velocidadeCatitoPadrao = velocidadeDificilP;
                     break;
                 default:
                     Debug.LogError("Erro na disposicao da velocidade movimento, assimilando valor padrao");
