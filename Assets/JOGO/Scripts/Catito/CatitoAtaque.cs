@@ -91,5 +91,13 @@ public class CatitoAtaque : MonoBehaviour
     public void AjustaCooldown(){      
         CatitoCorrida catitoCorrida = this.GetComponent<CatitoCorrida>();
         cooldownAtaque = cooldownAtaquePadrao * (catitoCorrida.velocidadeCatitoPadrao/catitoCorrida.velocidadeCatito);
+        if(PlayerPrefs.GetInt("Dificuldade")==0){
+            cooldownAtaque -= 0.5f;
+        }
+        if(PlayerPrefs.GetInt("Dificuldade")==2){
+            cooldownAtaque += 0.1f;
+        }
+        print("Cooldown atual da espada: "+cooldownAtaque);
     }
+
 }

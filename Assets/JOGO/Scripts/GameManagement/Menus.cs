@@ -58,28 +58,17 @@ public class Menus : MonoBehaviour
     public void ReiniciaJogo(){
 
         
+        Time.timeScale = 1;
+        
         if(SceneLoader.IsAcessibleScene()){
             SceneManager.LoadScene("CenaAcessivelInicial", LoadSceneMode.Single);
         }else{
             SceneManager.LoadScene("CenaPrincipalInicial", LoadSceneMode.Single);
         }
-        Pontuador.instance.zeraPontuacao();
-        Time.timeScale = 1;
-        /*
-        menuGameOver.SetActive(false);
-        menuPausa.SetActive(false);
+        Pontuador.instance.ZeraPontuacao();
         
-        monstro.DesligaMonstro();
-        monstroAnim.SetBool("Atordoado", false);
-        catitoTransform.position = this.posicaoInicial;
-        catitoCorrida.orientacao = Display.horizontal;
-        catitoCorrida.posicaoAtualH = PosicoesH.meio;
-        catitoCorrida.posicaoAtualV = PosicoesV.meio;
-
-        pontuador.zeraPontuacao();
-        */
     }
-
+   
     public void GameOver(){
         FindFirstObjectByType<GameOverMenu>(FindObjectsInactive.Include).PreenchePainel();
         PlayerPrefs.Save();

@@ -26,40 +26,20 @@ public class Poderes : MonoBehaviour
         imortal = true;
         imortalIcon.enabled = true;
         catitoAnim.SetBool("Imortal", true);
-        print("ta imortal legal");
 
         yield return new WaitForSeconds(tempoImortalidade);
 
-        print("ta morrivel legal");
         imortal = false;
         imortalIcon.enabled = false;
         catitoAnim.SetBool("Imortal", false);
     }
 
     public void DoublePoints(){
-        StartCoroutine(Pontuador.instance.duplicaValores());
+        Pontuador.instance.DuplicaValores();
     }
 
     public bool isImortal(){
         return imortal;
     }
 
-    void OnCollisionEnter2D(Collision2D other){
-        if (this.isImortal())
-        {
-            switch (other.gameObject.tag)
-            {
-                case "Armadilha":
-                    other.collider.enabled = false;
-                    ameacaAtivador.MataAmeaca();
-
-                    break;
-                case "Inimigo":
-                    other.collider.enabled = false;
-                    ameacaAtivador.MataAmeaca();
-                    break;
-            }
-        }
-        
-    }
 }

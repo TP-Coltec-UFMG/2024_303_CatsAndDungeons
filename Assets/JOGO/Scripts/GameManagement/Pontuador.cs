@@ -21,12 +21,20 @@ public class Pontuador : MonoBehaviour
     [SerializeField] private TMP_Text textoPontuacaoPainel;
     //Pontuação moedas
     [SerializeField] private TMP_Text textoMoedas;
+    private const int valorMoedaPadrao = 3;
     private int valorMoeda = 3;
-    private int num = 1;
+    private const float ganhoPontosFacil = 2;
+    private const float ganhoPontosMedio = 3;
+    private const float ganhoPontosDificil = 4;
+    private float ganhoPontosPadrao;
+    private float ganhoPontos;
     public int pontuacaoMoedas;
+    private int valorAmeaca = 10;
+    private int multiplicador = 1;
     [SerializeField] private TMP_Text textoMoedasPainel;
     private Image doublePointsIcon;
     [SerializeField] private Animator pontosAnimator;
+
     
     public static Pontuador instance { get; private set; }
     //Para usar o Gerenciador de �udio, use Pontuador.instance.Funcao(); ou Pontuador.instance.atributo;
@@ -58,7 +66,8 @@ public class Pontuador : MonoBehaviour
     // Update is called once per frame
     void Update() { 
         if(StatusJogo.statusAtual == Status.gameplay){
-            timer += Time.deltaTime*num;
+            //Debug.Log("toma ponto" + Time.deltaTime + " " + ganhoPontos + " " + multiplicador);
+            timer += Time.deltaTime*ganhoPontos*multiplicador;
         }
         
         
@@ -69,15 +78,34 @@ public class Pontuador : MonoBehaviour
         }
         textoPontuacao.text = pontuacaoTotal.ToString();
     }
-
+    public void SetPontuacaoInicial(){
+        switch(PlayerPrefs.GetInt("Dificuldade")){
+                case 0:
+                    ganhoPontosPadrao = ganhoPontosFacil;
+                    break;
+                case 1:
+                    ganhoPontosPadrao = ganhoPontosMedio;
+                    break;
+                case 2:
+                    ganhoPontosPadrao = ganhoPontosDificil;
+                      break;
+                default:
+                    Debug.LogError("Erro na disposicao da dificuldade, assimilando valor padrao de ganho de pontos");
+                    ganhoPontosPadrao = ganhoPontosMedio;
+                    break;
+        }  
+        ganhoPontos = ganhoPontosPadrao;
+    }
     public void pontuaMoeda(){
         pontuacaoMoedas++;
         textoMoedas.text = pontuacaoMoedas.ToString();
-        pontuacaoExterna += valorMoeda;
+        pontuacaoExterna += valorMoeda * multiplicador;
+    }
+    public void PontuaDestruirAmeaca(){
+        pontuacaoExterna += valorAmeaca * multiplicador;
     }
 
-
-    public void zeraPontuacao(){
+    public void ZeraPontuacao(){
         timer = 0;
         pontuacaoMoedas = 0;
         pontuacaoExterna = 0;
@@ -86,18 +114,23 @@ public class Pontuador : MonoBehaviour
         textoPontuacao.text = pontuacaoTotal.ToString();
     }
 
-    public IEnumerator duplicaValores() {
-        valorMoeda *= 2;
-        num = 2;
+    public void DuplicaValores(){
+        StartCoroutine(DuplicaValoresCoroutine());
+    }
+    public IEnumerator DuplicaValoresCoroutine() {
+        
+        //valorMoeda = valorMoedaPadrao*2;
+        //ganhoPontos = ganhoPontosPadrao*2;
+        multiplicador = 2;
         doublePointsIcon.enabled = true;
         pontosAnimator.SetBool("Dobrado", true);
 
+        yield return new WaitForSeconds(10f);
 
-        yield return new WaitForSeconds(10);
-
+        multiplicador = 1;
+        //valorMoeda = valorMoedaPadrao;
+        //ganhoPontos = ganhoPontosPadrao;
         
-        valorMoeda /= 2;
-        num = 1;
         doublePointsIcon.enabled = false;
         pontosAnimator.SetBool("Dobrado", false);
 
@@ -116,7 +149,9 @@ public class Pontuador : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("Cena trocada para: " + scene.name);
-        
+        Debug.Log("A dificuldade atual: " + PlayerPrefs.GetInt("Dificuldade"));
+        //Facil = 0  Medio = 1  Dificil = 2
+
         if(SceneLoader.IsGameScene()){
             doublePointsIcon = GameObject.Find("DoublePointsIcon").GetComponent<Image>();
         }else{

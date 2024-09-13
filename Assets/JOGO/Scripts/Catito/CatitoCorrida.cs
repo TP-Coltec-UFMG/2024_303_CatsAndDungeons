@@ -32,7 +32,6 @@ public class CatitoCorrida : MonoBehaviour
         rbCatito = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
         catitoAtaque = this.GetComponent<CatitoAtaque>();
-        int cenaAtual = SceneManager.GetActiveScene().buildIndex;
 
         if (SceneLoader.IsAcessibleScene()) {
             quantidadePraAndarV = 2f;
@@ -236,6 +235,8 @@ public class CatitoCorrida : MonoBehaviour
     }
     void AjustaVelocidade(){
         string cenaNome = SceneManager.GetActiveScene().name;
+        catitoAtaque.AjustaCooldown();
+        Pontuador.instance.SetPontuacaoInicial();
         if (cenaNome=="CenaPrincipalInicial" || cenaNome=="CenaAcessivelInicial" ){
             PlayerPrefs.SetFloat("FasesPassadas", 0);
         }else{
@@ -243,7 +244,7 @@ public class CatitoCorrida : MonoBehaviour
         }
         if(PlayerPrefs.GetFloat("FasesPassadas")>0 && PlayerPrefs.GetFloat("FasesPassadas")<4){
             velocidadeCatito = velocidadeCatitoPadrao * (1+(PlayerPrefs.GetFloat("FasesPassadas")/10));
-            catitoAtaque.AjustaCooldown();
+            
         }else{
             if(PlayerPrefs.GetFloat("FasesPassadas")>=4){
                 velocidadeCatito = velocidadeCatitoPadrao * (1+(3/10));

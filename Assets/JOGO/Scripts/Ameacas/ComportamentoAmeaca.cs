@@ -15,21 +15,19 @@ public class ComportamentoAmeaca : MonoBehaviour
         this.ameacaAnimator = this.GetComponent<Animator>();
         this.inimigoMorte = this.GetComponent<InimigoMorte>();
     }
-    public void MataAmeaca(){
-        //coisa q acontece quando o obstaculo ou inimigo morre
-    }
 
     private void OnTriggerEnter2D(Collider2D collider){
         if (collider.CompareTag("Catito")){
             this.catitoColisao = collider.gameObject.GetComponent<CatitoColisao>();
             this.catitoPoderes = collider.gameObject.GetComponent<Poderes>();
-            if(catitoPoderes.isImortal()){
+            if(this.catitoPoderes.isImortal()){
+
                 if (this.CompareTag("Inimigo")){
-                    inimigoMorte.Morrer();
+                    this.inimigoMorte.Morrer();
                 } else {
-                    GerenciadorAudio.instance.TocarSFX("Explodir Armadilha");
-                    ameacaAnimator.SetTrigger("Morrer");
+                    this.DestruirArmadilha();
                 }
+
             }else{
                 this.catitoColisao.simplifiedReceberDano();
             }
@@ -37,6 +35,12 @@ public class ComportamentoAmeaca : MonoBehaviour
             
         }
     }
-
+    
+    private void DestruirArmadilha(){
+        this.GetComponent<Collider2D>().enabled = false;
+        GerenciadorAudio.instance.TocarSFX("Explodir Armadilha");
+        this.ameacaAnimator.SetTrigger("Morrer");
+        Pontuador.instance.PontuaDestruirAmeaca();
+    }
 
 }

@@ -23,7 +23,7 @@ public class InimigoMorte : MonoBehaviour
         Transform catitoTransform = GameObject.FindWithTag("Catito").transform;
         Rigidbody2D inimigoRb = this.GetComponent<Rigidbody2D>();
 
-
+        Pontuador.instance.PontuaDestruirAmeaca();
         Vector3 direcaoEmpurrao = (transform.position - catitoTransform.position).normalized;
 
             // Aplica a força na direção oposta ao jogador
