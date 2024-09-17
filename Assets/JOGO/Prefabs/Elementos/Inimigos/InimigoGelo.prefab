@@ -14,11 +14,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 606265831139417012, guid: 5898776799f633147adae7ff9750f37d, type: 3}
       propertyPath: m_Size.x
-      value: 1.7348938
+      value: 1.6110599
+      objectReference: {fileID: 0}
+    - target: {fileID: 606265831139417012, guid: 5898776799f633147adae7ff9750f37d, type: 3}
+      propertyPath: m_Size.y
+      value: 0.92
       objectReference: {fileID: 0}
     - target: {fileID: 606265831139417012, guid: 5898776799f633147adae7ff9750f37d, type: 3}
       propertyPath: m_Offset.x
-      value: -0.34022713
+      value: -0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 606265831139417012, guid: 5898776799f633147adae7ff9750f37d, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.4182955
       objectReference: {fileID: 0}
     - target: {fileID: 856158465487566220, guid: 5898776799f633147adae7ff9750f37d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -49,6 +57,10 @@ PrefabInstance:
       value: 1.6110599
       objectReference: {fileID: 0}
     - target: {fileID: 1987947510074418420, guid: 5898776799f633147adae7ff9750f37d, type: 3}
+      propertyPath: m_Size.y
+      value: 0.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987947510074418420, guid: 5898776799f633147adae7ff9750f37d, type: 3}
       propertyPath: m_Offset.x
       value: 0.771459
       objectReference: {fileID: 0}
@@ -70,7 +82,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4211291133020300342, guid: 5898776799f633147adae7ff9750f37d, type: 3}
       propertyPath: m_Name
-      value: InimigoGelo1
+      value: InimigoGelo
       objectReference: {fileID: 0}
     - target: {fileID: 5394009976010535118, guid: 5898776799f633147adae7ff9750f37d, type: 3}
       propertyPath: m_LocalPosition.x

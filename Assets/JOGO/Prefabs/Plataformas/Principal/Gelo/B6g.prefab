@@ -19491,9 +19491,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 890437926099541137}
     m_Modifications:
+    - target: {fileID: 541269407148129749, guid: be2c36f8159be124fb74a3d42fb99d49, type: 3}
+      propertyPath: m_InstanceId
+      value: -290022
+      objectReference: {fileID: 0}
+    - target: {fileID: 3305626563143015546, guid: be2c36f8159be124fb74a3d42fb99d49, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8038973059034241519, guid: be2c36f8159be124fb74a3d42fb99d49, type: 3}
       propertyPath: m_Name
       value: EsquemaH
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269861774048542638, guid: be2c36f8159be124fb74a3d42fb99d49, type: 3}
+      propertyPath: m_InstanceId
+      value: -290078
       objectReference: {fileID: 0}
     - target: {fileID: 8340010638682009757, guid: be2c36f8159be124fb74a3d42fb99d49, type: 3}
       propertyPath: m_LocalPosition.x

@@ -13,6 +13,7 @@ public class CatitoAtaque : MonoBehaviour
     private Animator catitoAnim;
 
     [SerializeField] private Image espadaIcon;
+    private Animator espadaAnimator;
     private PlayerInput playerInput;
 
     [SerializeField] private CameraTreme cameraTreme;
@@ -24,8 +25,9 @@ public class CatitoAtaque : MonoBehaviour
 
     private float ataqueCooldownTimer;
     private const float tempoMaximoAtaque = 0.2f;
-    private float cooldownAtaque = 1.8f;
-    private float cooldownAtaquePadrao = 1.8f;
+    private float cooldownAtaque = 1.6f;
+    private float cooldownAtaquePadrao = 1.6f;
+    private CatitoColisao catitoColisao;
     //private Collider2D catitoColider;
     void Start()
     {
@@ -33,7 +35,8 @@ public class CatitoAtaque : MonoBehaviour
         catitoAnim = this.GetComponent<Animator>();
         colisorAtaque = this.transform.GetChild(0).gameObject;
         colisorAtaque.SetActive(false);
-        
+        catitoColisao = this.GetComponent<CatitoColisao>();
+        espadaAnimator = espadaIcon.gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -42,23 +45,26 @@ public class CatitoAtaque : MonoBehaviour
         ataqueCooldownTimer += Time.deltaTime;
 
         if (ataqueCooldownTimer > cooldownAtaque){
-            espadaIcon.enabled = true;
+            
+            espadaIcon.fillAmount = 1;
+            espadaAnimator.SetBool("Ativado", true);
             podeAtacar = true;
         }
         else{
-            espadaIcon.enabled = false;
+            espadaIcon.fillAmount = ataqueCooldownTimer/cooldownAtaque;
+            espadaAnimator.SetBool("Ativado", false);
             podeAtacar = false;
         }
 
         if (playerInput.actions["Ataque"].triggered && podeAtacar){
             catitoAnim.SetTrigger("Atacar");
-            StartCoroutine(atacar());
+            StartCoroutine(Atacar());
         }
     }
 
-    IEnumerator atacar()
+    IEnumerator Atacar()
     {
-        
+        //catitoColisao.AtaqueIframes();
         ataqueCooldownTimer = 0;
         cameraTreme.Shake(0.1f, 5f, 5f);
         this.SortearSomAtaque();

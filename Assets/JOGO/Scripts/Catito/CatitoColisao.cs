@@ -13,6 +13,7 @@ public class CatitoColisao : MonoBehaviour
     private Display orientacao;
     private Animator catitoAnim;
     [SerializeField] float forcaImpulso;
+    [SerializeField] float tempoRecuo;
     private float velocidadeCatito;
     public Vector2 posicaoInicial;
     private float timer;
@@ -20,7 +21,7 @@ public class CatitoColisao : MonoBehaviour
     private Poderes poderes;
     private bool podeTomarDano;
     private bool podeMorrer;
-
+    private CatitoCorrida catitoCorrida;
     private Menus menu;
 
     void Start(){
@@ -32,6 +33,7 @@ public class CatitoColisao : MonoBehaviour
         this.rbCatito = this.gameObject.GetComponent<Rigidbody2D>();
         timer = tempoMonstro;
         catitoAnim = this.GetComponent<Animator>();
+        catitoCorrida = this.GetComponent<CatitoCorrida>();
     }
 
     // Awake is called everytime the scene starts
@@ -45,7 +47,7 @@ public class CatitoColisao : MonoBehaviour
         this.velocidadeCatito = this.gameObject.GetComponent<CatitoCorrida>().velocidadeCatito;
         timer += Time.deltaTime;
         
-        podeMorrer = ((timer < tempoMonstro) && (timer > 2));
+        podeMorrer = (timer < tempoMonstro) && (timer > 2);
         podeTomarDano = timer > 2;
 
         if(!podeTomarDano){
@@ -96,46 +98,45 @@ public class CatitoColisao : MonoBehaviour
                 menu.GameOver();
             }
             else if (podeTomarDano){
-
+                
                 if(GerenciadorAudio.instance!=null){
                 	GerenciadorAudio.instance.TocarSFX("Tomar Dano");
                 }
+                catitoAnim.SetTrigger("Knockback");
                 catitoAnim.SetBool("AtordoadoImortal", false);
                 timer = 0;
                 camera.Shake(tempoMonstro, 1f, 1f);
 
                 if (this.orientacao == Display.horizontal){
                     rbCatito.AddForce(new Vector2(-forcaImpulso, 0), ForceMode2D.Impulse);
-                    yield return new WaitForSeconds(0.5f);
-
-                    //rbCatito.velocity = new Vector2(velocidadeCatito * Time.deltaTime, 0);
-                    rbCatito.velocity = new Vector2(velocidadeCatito, 0);
+                    yield return new WaitForSeconds(tempoRecuo);
+                    catitoCorrida.AjustaCatitoDirecao();
 
                 }
                 else if (this.orientacao == Display.vertical){
 
                     if (rbCatito.velocity.y > 0) { //indo pra cima
                         rbCatito.AddForce(new Vector2(0, -forcaImpulso), ForceMode2D.Impulse);
-                        yield return new WaitForSeconds(0.5f);
-                        rbCatito.velocity = new Vector2(0, velocidadeCatito);
-                        //rbCatito.velocity = new Vector2(0, velocidadeCatito * Time.deltaTime);
+                        yield return new WaitForSeconds(tempoRecuo);
+                        catitoCorrida.AjustaCatitoDirecao();
                     }
 
                     else if (rbCatito.velocity.y < 0) {//indo pra baixo    
                         rbCatito.AddForce(new Vector2(0, forcaImpulso), ForceMode2D.Impulse);
-                        yield return new WaitForSeconds(0.5f);
-
-                        //rbCatito.velocity = new Vector2(0, -velocidadeCatito * Time.deltaTime);
-                        rbCatito.velocity = new Vector2(0, -velocidadeCatito);
+                        yield return new WaitForSeconds(tempoRecuo);
+                        catitoCorrida.AjustaCatitoDirecao();
                     }
                 }
-                
             }
         }
-        
-            //Empurra Catito para trás e ativa monstro 
     }
 
+    //Faz com que o catito tenha alguns segundos de invencibilidade após atacar
+    public void AtaqueIframes(){
+        if(timer>2){
+            timer = 1.6f;
+        }
+    }
     public bool estaAtordoado(){
         if (timer<tempoMonstro){
             return true;

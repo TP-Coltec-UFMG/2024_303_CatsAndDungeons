@@ -115,6 +115,7 @@ MonoBehaviour:
   posicaoAtualH: 0
   posicaoAtualV: 0
   orientacao: 0
+  direcao: 0
   cameraTreme: {fileID: 0}
 --- !u!70 &931595847752711319
 CapsuleCollider2D:
@@ -191,7 +192,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraSegue: {fileID: 0}
-  forcaImpulso: 10
+  forcaImpulso: 13
+  tempoRecuo: 0.4
   posicaoInicial: {x: 0, y: 0}
 --- !u!95 &5812116113648862935
 Animator:

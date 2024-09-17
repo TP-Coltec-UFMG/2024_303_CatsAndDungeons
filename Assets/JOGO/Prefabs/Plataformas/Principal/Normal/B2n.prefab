@@ -18181,6 +18181,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: EsquemaH
       objectReference: {fileID: 0}
+    - target: {fileID: 2596154445562556837, guid: 03105e35ae24efc4d884556c90d3d5a4, type: 3}
+      propertyPath: m_InstanceId
+      value: -568722
+      objectReference: {fileID: 0}
+    - target: {fileID: 3545968011514660263, guid: 03105e35ae24efc4d884556c90d3d5a4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5798056464662562757, guid: 03105e35ae24efc4d884556c90d3d5a4, type: 3}
+      propertyPath: m_InstanceId
+      value: -568666
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405869142425002842, guid: 03105e35ae24efc4d884556c90d3d5a4, type: 3}
+      propertyPath: m_InstanceId
+      value: -568610
+      objectReference: {fileID: 0}
     - target: {fileID: 8804353465298311968, guid: 03105e35ae24efc4d884556c90d3d5a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

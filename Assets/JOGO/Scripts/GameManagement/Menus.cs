@@ -40,6 +40,7 @@ public class Menus : MonoBehaviour
     }
 
     public void PausarJogo(){
+        print("pausei essa bomba");
         PlayerPrefs.Save();
     	monstroAnim.gameObject.SetActive(false);
     	menuPausa.SetActive(true);
@@ -57,24 +58,41 @@ public class Menus : MonoBehaviour
    
     public void ReiniciaJogo(){
 
+        print("tentei reiniciar aqui");
+        menuGameOver.SetActive(false);
         
-        Time.timeScale = 1;
-        
+        SceneManager.sceneLoaded += OnSceneLoaded;
         if(SceneLoader.IsAcessibleScene()){
             SceneManager.LoadScene("CenaAcessivelInicial", LoadSceneMode.Single);
         }else{
             SceneManager.LoadScene("CenaPrincipalInicial", LoadSceneMode.Single);
         }
+        //StartCoroutine(RestaurarTimeScale());
         Pontuador.instance.ZeraPontuacao();
         
-    }
+}
+
+    // IEnumerator RestaurarTimeScale(){
+    //     yield return new WaitForSecondsRealtime(0.2f);
+
+    //     Time.timeScale = 1;
+    // }
    
     public void GameOver(){
+        
         FindFirstObjectByType<GameOverMenu>(FindObjectsInactive.Include).PreenchePainel();
         PlayerPrefs.Save();
         //substituirrr por preenchePainel 
         menuGameOver.SetActive(true);
         monstroAnim.gameObject.SetActive(false);
+        print("gameOver mano, vou pausar");
         Time.timeScale = 0;
     }
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+{
+    // Restaurar o Time.timeScale assim que a nova cena carregar
+    Time.timeScale = 1;
+
+    SceneManager.sceneLoaded -= OnSceneLoaded;
+}
 }

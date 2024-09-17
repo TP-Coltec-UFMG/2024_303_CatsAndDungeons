@@ -5,17 +5,19 @@ using UnityEngine.SceneManagement;
 public enum PosicoesH{cima = 1, meio = 0, baixo = -1}
 public enum PosicoesV{esquerda = 1, meio = 0, direita = -1}
 public enum Display{horizontal, vertical}
+public enum Direcao{cima, baixo}
 
 public class CatitoCorrida : MonoBehaviour
 {
-    [NonSerialized] public float velocidadeCatito = 6;
-    [NonSerialized] public float velocidadeCatitoPadrao = 6;
-    private const float velocidadeFacilP = 5.5f, velocidadeMedioP = 6f, velocidadeDificilP = 6.5f, 
+    public float velocidadeCatito = 6;
+    public float velocidadeCatitoPadrao = 6;
+    private const float velocidadeFacilP = 5.5f, velocidadeMedioP = 6.5f, velocidadeDificilP = 7f, 
                         velocidadeFacilA = 4f, velocidadeMedioA = 4.5f, velocidadeDificilA = 5f;
     private Rigidbody2D rbCatito; //rigidbody = rb
     public PosicoesH posicaoAtualH;
     public PosicoesV posicaoAtualV;
     public Display orientacao;
+    public Direcao direcao;
     private int quantidadePraAndar = 1;
     private float quantidadePraAndarV = 1.5f;
     private CatitoColisao colisao;
@@ -165,6 +167,7 @@ public class CatitoCorrida : MonoBehaviour
                 if(transform.position.x > corredor.transform.position.x-0.15f){
                     orientacao = Display.vertical;
                     posicaoAtualV = PosicoesV.meio;
+                    direcao = Direcao.baixo;
                     catitoAnim.SetInteger("Orientacao", 1);
                     rbCatito.velocity = new Vector2(0, -velocidadeCatito);
                     corredor.GetComponent<Collider2D>().enabled = false;
@@ -174,6 +177,7 @@ public class CatitoCorrida : MonoBehaviour
                 if(transform.position.x > corredor.transform.position.x-0.15f){
                     orientacao = Display.vertical;
                     posicaoAtualV = PosicoesV.meio;
+                    direcao = Direcao.cima;
                     catitoAnim.SetInteger("Orientacao", 2);
                     rbCatito.velocity = new Vector2(0, velocidadeCatito);
                     corredor.GetComponent<Collider2D>().enabled = false;
@@ -250,5 +254,21 @@ public class CatitoCorrida : MonoBehaviour
                 velocidadeCatito = velocidadeCatitoPadrao * (1+(3/10));
             }
         }
+    }
+
+    public void AjustaCatitoDirecao(){
+        if (this.orientacao == Display.horizontal){
+            print("ajustei pra ir pra direita");
+            rbCatito.velocity = new Vector2(velocidadeCatito, 0);
+        }else if (this.orientacao == Display.vertical){
+            if (this.direcao == Direcao.cima) { 
+                rbCatito.velocity = new Vector2(0, velocidadeCatito);
+                print("ajustei pra ir pra cima");
+            } else if (this.direcao == Direcao.baixo) { 
+                rbCatito.velocity = new Vector2(0, -velocidadeCatito);
+                print("ajustei pra ir pra baixo");    
+            }   
+        }
+        print("velocidade catito: "+ rbCatito.velocity);        
     }
 }

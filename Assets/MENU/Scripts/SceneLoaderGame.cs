@@ -22,7 +22,7 @@ public class SceneLoaderGame : MonoBehaviour {
             dificuldadeAnim.gameObject.SetActive(false);
         }
         
-        if(GameObject.FindGameObjectsWithTag("CatitoMenu")!=null){
+        if(GameObject.FindGameObjectsWithTag("CatitoMenu")[0]!=null){
             catitoAnim = GameObject.FindGameObjectsWithTag("CatitoMenu")[0].GetComponent<Animator>();
         }
     }

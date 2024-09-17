@@ -34,7 +34,7 @@ public class Pontuador : MonoBehaviour
     [SerializeField] private TMP_Text textoMoedasPainel;
     private Image doublePointsIcon;
     [SerializeField] private Animator pontosAnimator;
-
+    private Coroutine coroutineAtual;
     
     public static Pontuador instance { get; private set; }
     //Para usar o Gerenciador de �udio, use Pontuador.instance.Funcao(); ou Pontuador.instance.atributo;
@@ -115,26 +115,42 @@ public class Pontuador : MonoBehaviour
     }
 
     public void DuplicaValores(){
-        StartCoroutine(DuplicaValoresCoroutine());
+    IniciarSemAtropelo(DuplicaValoresCoroutine());
+}
+
+void IniciarSemAtropelo(IEnumerator novaCoroutine)
+{
+    // Se já houver uma coroutine rodando, pare ela
+    if (coroutineAtual != null)
+    {
+        StopCoroutine(coroutineAtual);
     }
-    public IEnumerator DuplicaValoresCoroutine() {
-        
-        //valorMoeda = valorMoedaPadrao*2;
-        //ganhoPontos = ganhoPontosPadrao*2;
-        multiplicador = 2;
-        doublePointsIcon.enabled = true;
-        pontosAnimator.SetBool("Dobrado", true);
 
-        yield return new WaitForSeconds(10f);
+    // Inicie a nova coroutine e armazene a referência
+    coroutineAtual = StartCoroutine(GerenciarCoroutine(novaCoroutine));
+}
 
-        multiplicador = 1;
-        //valorMoeda = valorMoedaPadrao;
-        //ganhoPontos = ganhoPontosPadrao;
-        
-        doublePointsIcon.enabled = false;
-        pontosAnimator.SetBool("Dobrado", false);
+IEnumerator GerenciarCoroutine(IEnumerator coroutine)
+{
+    // Executa a coroutine passada
+    yield return StartCoroutine(coroutine);
 
-    }
+    // Define como null após a execução
+    coroutineAtual = null;
+}
+
+public IEnumerator DuplicaValoresCoroutine() {
+    
+    multiplicador = 2;
+    doublePointsIcon.enabled = true;
+    pontosAnimator.SetBool("Dobrado", true);
+    
+    yield return new WaitForSeconds(10f);
+
+    multiplicador = 1;    
+    doublePointsIcon.enabled = false;
+    pontosAnimator.SetBool("Dobrado", false);
+}
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -154,6 +170,7 @@ public class Pontuador : MonoBehaviour
 
         if(SceneLoader.IsGameScene()){
             doublePointsIcon = GameObject.Find("DoublePointsIcon").GetComponent<Image>();
+            doublePointsIcon.enabled = false;
         }else{
             Destroy(this.gameObject);
         }

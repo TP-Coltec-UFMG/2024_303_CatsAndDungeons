@@ -344,6 +344,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7900253884903623914}
     m_Modifications:
+    - target: {fileID: 486765371877516961, guid: 5898776799f633147adae7ff9750f37d, type: 3}
+      propertyPath: m_InstanceId
+      value: -567586
+      objectReference: {fileID: 0}
     - target: {fileID: 4211291133020300342, guid: 5898776799f633147adae7ff9750f37d, type: 3}
       propertyPath: m_Name
       value: Inimigo (3)
@@ -354,7 +358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5394009976010535118, guid: 5898776799f633147adae7ff9750f37d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.37
+      value: 2.85
       objectReference: {fileID: 0}
     - target: {fileID: 5394009976010535118, guid: 5898776799f633147adae7ff9750f37d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1342,7 +1346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8322993810465639768, guid: 1b70a01e4db176f4c9b629f74a19269c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.52
       objectReference: {fileID: 0}
     - target: {fileID: 8322993810465639768, guid: 1b70a01e4db176f4c9b629f74a19269c, type: 3}
       propertyPath: m_LocalPosition.z
