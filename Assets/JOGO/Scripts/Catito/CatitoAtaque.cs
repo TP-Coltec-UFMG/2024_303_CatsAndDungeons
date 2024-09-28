@@ -57,13 +57,20 @@ public class CatitoAtaque : MonoBehaviour
         }
 
         if (playerInput.actions["Ataque"].triggered && podeAtacar){
-            catitoAnim.SetTrigger("Atacar");
+            StartCoroutine(Atacar());
+        }
+        
+    }
+
+    public void SimplifiedAtacar() {
+        if (podeAtacar) {
             StartCoroutine(Atacar());
         }
     }
 
     IEnumerator Atacar()
     {
+        catitoAnim.SetTrigger("Atacar");
         //catitoColisao.AtaqueIframes();
         ataqueCooldownTimer = 0;
         cameraTreme.Shake(0.1f, 5f, 5f);

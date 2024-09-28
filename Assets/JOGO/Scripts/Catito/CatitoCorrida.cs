@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -25,7 +24,7 @@ public class CatitoCorrida : MonoBehaviour
     private PlayerInput playerInput;
     private CatitoAtaque catitoAtaque;
     [SerializeField] private CameraTreme cameraTreme;
-
+    private ControleBotoesMobile controleMobile;
     void Start() {
         catitoAnim = this.GetComponent<Animator>();
         posicaoAtualH = PosicoesH.meio;
@@ -34,7 +33,8 @@ public class CatitoCorrida : MonoBehaviour
         rbCatito = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
         catitoAtaque = this.GetComponent<CatitoAtaque>();
-
+        controleMobile = FindObjectOfType<ControleBotoesMobile>();
+        
         if (SceneLoader.IsAcessibleScene()) {
             quantidadePraAndarV = 2f;
         } 
@@ -81,76 +81,91 @@ public class CatitoCorrida : MonoBehaviour
                 }
             }
             
-            if(playerInput.actions["Cima"].triggered && (orientacao == Display.horizontal)){
-                switch(posicaoAtualH){
-                    case PosicoesH.cima:
-                        break;
-                    case PosicoesH.meio:
-                        this.tremeDash();
-                        rbCatito.position += new Vector2(0, quantidadePraAndar);
-                        posicaoAtualH = PosicoesH.cima;
-                        break;
-                    case PosicoesH.baixo:
-                        this.tremeDash();
-                        rbCatito.position += new Vector2(0, quantidadePraAndar);
-                        posicaoAtualH = PosicoesH.meio;
-                        break;
-                }
+            if(playerInput.actions["Cima"].triggered && (orientacao == Display.horizontal)) {
+                MoverCima();
             }
 
-            if(playerInput.actions["Baixo"].triggered && (orientacao == Display.horizontal)){
-                switch(posicaoAtualH){
-                    case PosicoesH.cima:
-                        this.tremeDash();
-                        rbCatito.position += new Vector2(0, -quantidadePraAndar);
-                        posicaoAtualH = PosicoesH.meio;
-                        break;
-                    case PosicoesH.meio:
-                        this.tremeDash();
-                        rbCatito.position += new Vector2(0, -quantidadePraAndar);
-                        posicaoAtualH = PosicoesH.baixo;
-                        break;       
-                    case PosicoesH.baixo:
-                        break;
-                }
+            if(playerInput.actions["Baixo"].triggered && (orientacao == Display.horizontal)) {
+                MoverBaixo();
             }
 
             if(playerInput.actions["Esquerda"].triggered && (orientacao == Display.vertical)){
-                switch(posicaoAtualV){
-                    case PosicoesV.esquerda: 
-                        break;
-                    case PosicoesV.meio:
-                        this.tremeDash();
-                        rbCatito.position += new Vector2(-quantidadePraAndarV, 0);
-                        posicaoAtualV = PosicoesV.esquerda;
-                        break;
-                    case PosicoesV.direita:
-                        this.tremeDash();
-                        rbCatito.position += new Vector2(-quantidadePraAndarV, 0);
-                        posicaoAtualV = PosicoesV.meio;
-                        break;
-                }
+                MoverEsquerda();
             }
 
             if(playerInput.actions["Direita"].triggered && (orientacao == Display.vertical)){
-                switch(posicaoAtualV){
-                    case PosicoesV.esquerda: 
-                        this.tremeDash();
-                        rbCatito.position += new Vector2(quantidadePraAndarV, 0);
-                        posicaoAtualV = PosicoesV.meio;
-                        break;
-                    case PosicoesV.meio:
-                        this.tremeDash();
-                        rbCatito.position += new Vector2(quantidadePraAndarV, 0);
-                        posicaoAtualV = PosicoesV.direita;
-                        break;
-                    case PosicoesV.direita:
-                        break;
-                }
+                MoverDireita();
             }   
         }
     }
 
+    public void MoverDireita() {
+        switch(posicaoAtualV){
+            case PosicoesV.esquerda: 
+                this.tremeDash();
+                rbCatito.position += new Vector2(quantidadePraAndarV, 0);
+                posicaoAtualV = PosicoesV.meio;
+                break;
+            case PosicoesV.meio:
+                this.tremeDash();
+                rbCatito.position += new Vector2(quantidadePraAndarV, 0);
+                posicaoAtualV = PosicoesV.direita;
+                break;
+            case PosicoesV.direita:
+                break;
+        }
+    }
+
+    public void MoverEsquerda() {
+        switch(posicaoAtualV){
+            case PosicoesV.esquerda: 
+                break;
+            case PosicoesV.meio:
+                this.tremeDash();
+                rbCatito.position += new Vector2(-quantidadePraAndarV, 0);
+                posicaoAtualV = PosicoesV.esquerda;
+                break;
+            case PosicoesV.direita:
+                this.tremeDash();
+                rbCatito.position += new Vector2(-quantidadePraAndarV, 0);
+                posicaoAtualV = PosicoesV.meio;
+                break;
+        }
+    }
+    public void MoverCima(){
+        switch(posicaoAtualH){
+            case PosicoesH.cima:
+                break;
+            case PosicoesH.meio:
+                this.tremeDash();
+                rbCatito.position += new Vector2(0, quantidadePraAndar);
+                posicaoAtualH = PosicoesH.cima;
+                break;
+            case PosicoesH.baixo:
+                this.tremeDash();
+                rbCatito.position += new Vector2(0, quantidadePraAndar);
+                posicaoAtualH = PosicoesH.meio;
+                break;
+        }
+    }
+
+    public void MoverBaixo() {
+        switch(posicaoAtualH){
+            case PosicoesH.cima:
+                this.tremeDash();
+                rbCatito.position += new Vector2(0, -quantidadePraAndar);
+                posicaoAtualH = PosicoesH.meio;
+                break;
+            case PosicoesH.meio:
+                this.tremeDash();
+                rbCatito.position += new Vector2(0, -quantidadePraAndar);
+                posicaoAtualH = PosicoesH.baixo;
+                break;       
+            case PosicoesH.baixo:
+                break;
+        }
+    }
+    
     void OnTriggerStay2D(Collider2D corredor){
         switch (corredor.tag){
             case ("Horizontal"):
@@ -160,9 +175,10 @@ public class CatitoCorrida : MonoBehaviour
                     catitoAnim.SetInteger("Orientacao", 0);
                     rbCatito.velocity = new Vector2(velocidadeCatito, 0);
                     corredor.GetComponent<Collider2D>().enabled = false;
+                    controleMobile.AjustaControle();
                 }
                 
-               break;
+                break;
             case ("VerticalPraBaixo"):
                 if(transform.position.x > corredor.transform.position.x-0.15f){
                     orientacao = Display.vertical;
@@ -171,6 +187,7 @@ public class CatitoCorrida : MonoBehaviour
                     catitoAnim.SetInteger("Orientacao", 1);
                     rbCatito.velocity = new Vector2(0, -velocidadeCatito);
                     corredor.GetComponent<Collider2D>().enabled = false;
+                    controleMobile.AjustaControle();
                 }
                 break;
             case ("VerticalPraCima"):
@@ -181,15 +198,15 @@ public class CatitoCorrida : MonoBehaviour
                     catitoAnim.SetInteger("Orientacao", 2);
                     rbCatito.velocity = new Vector2(0, velocidadeCatito);
                     corredor.GetComponent<Collider2D>().enabled = false;
+                    controleMobile.AjustaControle();
                 }
                 break;
         }
+        
     }
 
     void tremeDash(){
-        if (SceneLoader.IsAcessibleScene()) {
-        //
-        } else {
+        if (!SceneLoader.IsAcessibleScene()) {
             cameraTreme.Shake(0.1f, 2f, 2f);
         }
         
@@ -258,17 +275,14 @@ public class CatitoCorrida : MonoBehaviour
 
     public void AjustaCatitoDirecao(){
         if (this.orientacao == Display.horizontal){
-            print("ajustei pra ir pra direita");
             rbCatito.velocity = new Vector2(velocidadeCatito, 0);
         }else if (this.orientacao == Display.vertical){
             if (this.direcao == Direcao.cima) { 
                 rbCatito.velocity = new Vector2(0, velocidadeCatito);
-                print("ajustei pra ir pra cima");
-            } else if (this.direcao == Direcao.baixo) { 
+            } else if (this.direcao == Direcao.baixo)
+            {
                 rbCatito.velocity = new Vector2(0, -velocidadeCatito);
-                print("ajustei pra ir pra baixo");    
             }   
         }
-        print("velocidade catito: "+ rbCatito.velocity);        
     }
 }
