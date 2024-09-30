@@ -2703,7 +2703,27 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!43 &129223454
+--- !u!1 &257545396 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7406480326530593147, guid: fa5071de6578712459232254e8a42051, type: 3}
+  m_PrefabInstance: {fileID: 3659289851649617624}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &280356331 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3259665497049541664, guid: 4ea6f3d5d2a116942ae450d6311aeaa5, type: 3}
+  m_PrefabInstance: {fileID: 105500775396037883}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &410968300 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5414812985189364974, guid: 47303e60691880743b95054067bb7a23, type: 3}
+  m_PrefabInstance: {fileID: 1665038004}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &417229844 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 21474567888894588, guid: 94e3b8e6231e2c7479c0873ac3dd5b19, type: 3}
+  m_PrefabInstance: {fileID: 6374630758608377556}
+  m_PrefabAsset: {fileID: 0}
+--- !u!43 &439035863
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2868,26 +2888,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &257545396 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7406480326530593147, guid: fa5071de6578712459232254e8a42051, type: 3}
-  m_PrefabInstance: {fileID: 3659289851649617624}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &280356331 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3259665497049541664, guid: 4ea6f3d5d2a116942ae450d6311aeaa5, type: 3}
-  m_PrefabInstance: {fileID: 105500775396037883}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &410968300 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5414812985189364974, guid: 47303e60691880743b95054067bb7a23, type: 3}
-  m_PrefabInstance: {fileID: 1665038004}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &417229844 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 21474567888894588, guid: 94e3b8e6231e2c7479c0873ac3dd5b19, type: 3}
-  m_PrefabInstance: {fileID: 6374630758608377556}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &488584889
 GameObject:
   m_ObjectHideFlags: 0
@@ -7732,6 +7732,14 @@ PrefabInstance:
       propertyPath: gameObPlats.Array.size
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7554102477093751570, guid: af72d042e70b28b4a8596d8f2962e72d, type: 3}
+      propertyPath: gameObPlats.Array.data[0]
+      value: 
+      objectReference: {fileID: 7264143633661271488, guid: f10c8f93d8f0b914fa269855143ccfb7, type: 3}
+    - target: {fileID: 7554102477093751570, guid: af72d042e70b28b4a8596d8f2962e72d, type: 3}
+      propertyPath: gameObPlats.Array.data[1]
+      value: 
+      objectReference: {fileID: 1424329403896848326, guid: 2b095db09dbe8584faa6d5de494e82bc, type: 3}
     - target: {fileID: 7554102477093751570, guid: af72d042e70b28b4a8596d8f2962e72d, type: 3}
       propertyPath: gameObPlats.Array.data[2]
       value: 
